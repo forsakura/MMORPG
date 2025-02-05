@@ -1,0 +1,330 @@
+
+2025-01-24 14:46:49,972 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 14:46:50,695 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 14:46:50,759 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 14:46:50,760 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 14:46:50,760 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 14:46:50,760 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 14:46:50,762 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 14:46:50,762 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 14:46:50,762 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 14:46:50,763 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 14:46:50,854 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 14:47:03,527 [3] [WARN ] [GameServer] ：Client[127.0.0.1:49706]] Connected
+2025-01-24 15:20:48,263 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 15:20:48,334 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 15:20:48,366 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:20:48,366 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:20:48,366 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:20:48,367 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:20:48,368 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:20:48,368 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:20:48,367 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:20:48,369 [13] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:20:48,442 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 15:20:56,899 [3] [WARN ] [GameServer] ：Client[127.0.0.1:52000]] Connected
+2025-01-24 15:20:56,982 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:12
+2025-01-24 15:20:57,126 [6] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name11 Class:None
+2025-01-24 15:21:26,420 [6] [ERROR] [GameServer] ：Message handler exception:, 未将对象引用设置到对象的实例。, GameServer,    在 Network.NetConnection`1.SendResponse() 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Network\NetConnection.cs:行号 135
+   在 GameServer.Services.UserService.OnCreateCharacter(NetConnection`1 sender, UserCreateCharacterRequest request) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 187
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-01-24 15:21:33,745 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:14
+2025-01-24 15:21:33,746 [6] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name11 Class:Warrior
+2025-01-24 15:21:36,146 [6] [ERROR] [GameServer] ：Message handler exception:, 未将对象引用设置到对象的实例。, GameServer,    在 Network.NetConnection`1.SendResponse() 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Network\NetConnection.cs:行号 135
+   在 GameServer.Services.UserService.OnCreateCharacter(NetConnection`1 sender, UserCreateCharacterRequest request) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 187
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-01-24 15:42:47,069 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 15:42:47,139 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 15:42:47,213 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:42:47,213 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:42:47,213 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:42:47,214 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:42:47,214 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:42:47,214 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:42:47,214 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:42:47,214 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:42:47,247 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 15:42:58,262 [3] [WARN ] [GameServer] ：Client[127.0.0.1:53220]] Connected
+2025-01-24 15:42:58,307 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:13
+2025-01-24 15:42:58,397 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name111 Class:None
+2025-01-24 15:52:38,062 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 15:52:38,114 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 15:52:38,128 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:52:38,132 [14] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:52:38,132 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:52:38,140 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:52:38,141 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:52:38,141 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:52:38,142 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:52:38,144 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 15:52:38,220 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 15:52:49,369 [3] [WARN ] [GameServer] ：Client[127.0.0.1:64302]] Connected
+2025-01-24 15:52:49,415 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:13
+2025-01-24 15:52:49,507 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name111 Class:None
+2025-01-24 15:54:03,616 [5] [ERROR] [GameServer] ：Message handler exception:, 未将对象引用设置到对象的实例。, GameServer,    在 GameServer.Services.UserService.OnCreateCharacter(NetConnection`1 sender, UserCreateCharacterRequest request) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 189
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-01-24 15:54:13,368 [3] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 18:44:13,559 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 18:44:13,626 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 18:44:13,655 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:44:13,655 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:44:13,655 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:44:13,655 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:44:13,655 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:44:13,655 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:44:13,656 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:44:13,685 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:44:13,730 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 18:45:53,136 [3] [WARN ] [GameServer] ：Client[127.0.0.1:58698]] Connected
+2025-01-24 18:45:53,182 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 18:45:53,280 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 18:46:06,823 [13] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 18:46:31,723 [13] [WARN ] [GameServer] ：Client[127.0.0.1:49914]] Connected
+2025-01-24 18:46:31,768 [13] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 18:46:31,768 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 18:46:57,885 [16] [WARN ] [GameServer] ：Client[] DataReceived Len:13
+2025-01-24 18:46:57,886 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Namehhh Class:None
+2025-01-24 18:46:57,964 [5] [ERROR] [GameServer] ：Message handler exception:, Validation failed for one or more entities. See 'EntityValidationErrors' property for more details., EntityFramework,    在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 GameServer.Services.UserService.OnCreateCharacter(NetConnection`1 sender, UserCreateCharacterRequest request) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 194
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-01-24 18:47:27,707 [16] [WARN ] [GameServer] ：Client[] DataReceived Len:13
+2025-01-24 18:47:27,707 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Namehhh Class:None
+2025-01-24 18:47:27,714 [5] [ERROR] [GameServer] ：Message handler exception:, Validation failed for one or more entities. See 'EntityValidationErrors' property for more details., EntityFramework,    在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 GameServer.Services.UserService.OnCreateCharacter(NetConnection`1 sender, UserCreateCharacterRequest request) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 194
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-01-24 18:47:30,468 [14] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 18:47:30,469 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Namehhh Class:Warrior
+2025-01-24 18:47:30,475 [5] [ERROR] [GameServer] ：Message handler exception:, Validation failed for one or more entities. See 'EntityValidationErrors' property for more details., EntityFramework,    在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 GameServer.Services.UserService.OnCreateCharacter(NetConnection`1 sender, UserCreateCharacterRequest request) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 194
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-01-24 18:50:45,209 [14] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 18:57:44,669 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 18:57:44,729 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 18:57:44,771 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:57:44,771 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:57:44,771 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:57:44,771 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:57:44,771 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:57:44,772 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:57:44,774 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:57:44,774 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 18:57:44,843 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 18:58:00,211 [3] [WARN ] [GameServer] ：Client[127.0.0.1:53913]] Connected
+2025-01-24 18:58:00,256 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 18:58:00,332 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 18:58:08,450 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:21
+2025-01-24 18:58:08,452 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest:: Name:哈哈哈 Class:Warrior
+2025-01-24 18:58:08,489 [5] [ERROR] [GameServer] ：Message handler exception:, Validation failed for one or more entities. See 'EntityValidationErrors' property for more details., EntityFramework,    在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 GameServer.Services.UserService.OnCreateCharacter(NetConnection`1 sender, UserCreateCharacterRequest request) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 194
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-01-24 19:12:28,097 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:19
+2025-01-24 19:12:28,098 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest:: Name:哈哈哈 Class:None
+2025-01-24 19:12:28,104 [5] [ERROR] [GameServer] ：Message handler exception:, Validation failed for one or more entities. See 'EntityValidationErrors' property for more details., EntityFramework,    在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 GameServer.Services.UserService.OnCreateCharacter(NetConnection`1 sender, UserCreateCharacterRequest request) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 194
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-01-24 19:13:48,841 [37] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 19:13:54,074 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 19:13:54,136 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 19:13:54,141 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:13:54,141 [14] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:13:54,141 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:13:54,142 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:13:54,144 [16] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:13:54,144 [13] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:13:54,144 [15] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:13:54,146 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:13:54,250 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 19:16:31,218 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 19:16:31,282 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 19:16:31,324 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:16:31,324 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:16:31,325 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:16:31,324 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:16:31,324 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:16:31,325 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:16:31,324 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:16:31,326 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:16:31,398 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 19:16:44,589 [3] [WARN ] [GameServer] ：Client[127.0.0.1:62364]] Connected
+2025-01-24 19:16:44,634 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 19:16:44,717 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 19:16:49,683 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 19:16:49,685 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest:: Name:111 Class:Warrior
+2025-01-24 19:16:49,719 [5] [ERROR] [GameServer] ：Message handler exception:, Validation failed for one or more entities. See 'EntityValidationErrors' property for more details., EntityFramework,    在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 GameServer.Services.UserService.OnCreateCharacter(NetConnection`1 sender, UserCreateCharacterRequest request) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 194
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-01-24 19:16:56,905 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 19:16:56,905 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest:: Name:111 Class:Wizard
+2025-01-24 19:16:56,912 [5] [ERROR] [GameServer] ：Message handler exception:, Validation failed for one or more entities. See 'EntityValidationErrors' property for more details., EntityFramework,    在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 GameServer.Services.UserService.OnCreateCharacter(NetConnection`1 sender, UserCreateCharacterRequest request) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 194
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-01-24 19:17:02,294 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 19:17:02,295 [6] [INFO ] [GameServer] ：UserCreateCharacterRequest:: Name:111 Class:Archer
+2025-01-24 19:17:02,301 [6] [ERROR] [GameServer] ：Message handler exception:, Validation failed for one or more entities. See 'EntityValidationErrors' property for more details., EntityFramework,    在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 GameServer.Services.UserService.OnCreateCharacter(NetConnection`1 sender, UserCreateCharacterRequest request) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 194
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-01-24 19:17:13,980 [3] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 19:24:05,791 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 19:24:05,849 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 19:24:05,903 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:24:05,903 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:24:05,903 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:24:05,904 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:24:05,904 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:24:05,904 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:24:05,905 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:24:05,907 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:24:05,963 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 19:24:18,822 [3] [WARN ] [GameServer] ：Client[127.0.0.1:62025]] Connected
+2025-01-24 19:24:18,867 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 19:24:18,946 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 19:24:23,768 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 19:24:23,771 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name:111  Class:Warrior
+2025-01-24 19:39:36,713 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 19:39:36,713 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name:111  Class:Wizard
+2025-01-24 19:39:52,215 [39] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 19:39:52,215 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name:111  Class:Wizard
+2025-01-24 19:40:11,569 [39] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 19:57:27,691 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 19:57:27,747 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 19:57:27,785 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:57:27,785 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:57:27,785 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:57:27,785 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:57:27,785 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:57:27,785 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:57:27,786 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:57:27,785 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 19:57:27,861 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 19:57:56,814 [3] [WARN ] [GameServer] ：Client[127.0.0.1:59645]] Connected
+2025-01-24 19:57:56,998 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 19:57:57,092 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 20:04:19,349 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 20:04:19,351 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name:333  Class:Warrior
+2025-01-24 20:06:54,080 [23] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 20:07:07,103 [26] [WARN ] [GameServer] ：Client[127.0.0.1:54507]] Connected
+2025-01-24 20:07:07,147 [26] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 20:07:07,147 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 20:07:14,224 [26] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 20:07:14,224 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name:222  Class:Wizard
+2025-01-24 20:07:25,440 [29] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 22:02:44,328 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 22:02:44,389 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 22:02:44,434 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:02:44,434 [15] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:02:44,434 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:02:44,434 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:02:44,436 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:02:44,469 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:02:44,469 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:02:44,469 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:02:44,498 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 22:02:56,996 [3] [WARN ] [GameServer] ：Client[127.0.0.1:58711]] Connected
+2025-01-24 22:02:57,040 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 22:02:57,127 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 22:03:33,094 [16] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 22:03:33,096 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name:222  Class:Archer
+2025-01-24 22:03:59,244 [16] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 22:03:59,245 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name:333  Class:Wizard
+2025-01-24 22:04:16,790 [14] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 22:04:16,791 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name:111  Class:Warrior
+2025-01-24 22:04:23,157 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 22:04:23,157 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name:222  Class:Wizard
+2025-01-24 22:04:28,088 [14] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 22:04:28,088 [6] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name:333  Class:Archer
+2025-01-24 22:04:49,848 [14] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 22:11:04,155 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 22:11:04,215 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 22:11:04,275 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:11:04,275 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:11:04,275 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:11:04,275 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:11:04,276 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:11:04,277 [14] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:11:04,304 [16] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:11:04,304 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:11:04,443 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 22:12:17,311 [3] [WARN ] [GameServer] ：Client[127.0.0.1:50919]] Connected
+2025-01-24 22:12:17,504 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 22:12:17,584 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 22:12:55,773 [13] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 22:55:08,959 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 22:55:09,019 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 22:55:09,026 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:55:09,026 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:55:09,027 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:55:09,030 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:55:09,031 [13] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:55:09,032 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:55:09,032 [15] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:55:09,056 [16] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:55:09,131 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 22:55:20,144 [3] [WARN ] [GameServer] ：Client[127.0.0.1:62838]] Connected
+2025-01-24 22:55:20,190 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 22:55:20,275 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 22:56:25,789 [17] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 22:58:26,315 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 22:58:26,377 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 22:58:26,418 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:58:26,418 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:58:26,418 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:58:26,418 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:58:26,418 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:58:26,418 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:58:26,419 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:58:26,420 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 22:58:26,488 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 22:58:37,059 [3] [WARN ] [GameServer] ：Client[127.0.0.1:49155]] Connected
+2025-01-24 22:58:37,105 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 22:58:37,188 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 22:59:30,743 [3] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 23:05:31,992 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 23:05:32,049 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 23:05:32,082 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:05:32,082 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:05:32,084 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:05:32,086 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:05:32,086 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:05:32,086 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:05:32,086 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:05:32,093 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:05:32,153 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 23:05:42,070 [3] [WARN ] [GameServer] ：Client[127.0.0.1:55293]] Connected
+2025-01-24 23:05:42,115 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 23:05:42,191 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 23:05:49,502 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 23:05:49,505 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name:555  Class:Wizard
+2025-01-24 23:06:56,241 [3] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 23:07:21,951 [3] [WARN ] [GameServer] ：Client[127.0.0.1:56901]] Connected
+2025-01-24 23:07:21,997 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 23:07:21,998 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 23:07:28,239 [14] [WARN ] [GameServer] ：Client[] DataReceived Len:15
+2025-01-24 23:07:28,240 [5] [INFO ] [GameServer] ：UserCreateCharacterRequest: Name:999  Class:Wizard
+2025-01-24 23:07:51,889 [16] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 23:10:51,417 [1] [INFO ] [GameServer] ：Game Server Init
+2025-01-24 23:10:51,487 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-01-24 23:10:51,535 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:10:51,536 [14] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:10:51,537 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:10:51,538 [16] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:10:51,539 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:10:51,539 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:10:51,540 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:10:51,540 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-01-24 23:10:51,601 [1] [WARN ] [GameServer] ：NetService Started
+2025-01-24 23:11:06,146 [3] [WARN ] [GameServer] ：Client[127.0.0.1:58891]] Connected
+2025-01-24 23:11:06,190 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 23:11:06,274 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 23:11:50,946 [17] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 23:12:16,361 [17] [WARN ] [GameServer] ：Client[127.0.0.1:58980]] Connected
+2025-01-24 23:12:16,411 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 23:12:16,411 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 23:12:30,793 [15] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 23:14:12,858 [15] [WARN ] [GameServer] ：Client[127.0.0.1:59114]] Connected
+2025-01-24 23:14:12,902 [15] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 23:14:12,903 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 23:16:20,486 [13] [WARN ] [GameServer] ：Client[] Disconnected
+2025-01-24 23:16:33,990 [22] [WARN ] [GameServer] ：Client[127.0.0.1:62550]] Connected
+2025-01-24 23:16:34,039 [22] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-01-24 23:16:34,039 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-01-24 23:16:43,358 [22] [WARN ] [GameServer] ：Client[] Disconnected

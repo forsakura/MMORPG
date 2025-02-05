@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameServer.Entities.Entity" Collapsed="true">
+    <Position X="2.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAIAAgBCAAIAABAAIAAQAAAAAAAEAAAAA=</HashCode>
+      <FileName>Entities\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameServer.Entities.CharacterBase" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAEAABAA=</HashCode>
+      <FileName>Entities\CharacterBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameServer.Entities.Character" Collapsed="true">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEDAAAAAAAAIAAAAAAgAAAAAABAABAAAAABAAAE=</HashCode>
+      <FileName>Entities\Character.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GameServer.Entities.Monster" Collapsed="true">
+    <Position X="5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Monster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameServer.Managers.CharacterManager" Collapsed="true">
+    <Position X="1.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAACAAAABACAAAAAAAAAAAAAAAAQACAABAAAA=</HashCode>
+      <FileName>Managers\CharacterManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameServer.Managers.DataManager" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAggAAAAAAAAAAAAAABAEAAAAAAAAAAwAAAACAAAA=</HashCode>
+      <FileName>Managers\DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameServer.Managers.MapManager" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAACAACAAAA=</HashCode>
+      <FileName>Managers\MapManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameServer.Managers.StatusManager" Collapsed="true">
+    <Position X="1.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAiEAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAABAA=</HashCode>
+      <FileName>Managers\StatusManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameServer.Models.Map" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAEAAAAAAggACAAAAAAAAAAgAAAAQAAAIAAAABAA=</HashCode>
+      <FileName>Models\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameServer.Services.DBService" Collapsed="true">
+    <Position X="0.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAQAAAAECAAAAAAA=</HashCode>
+      <FileName>Services\DBService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameServer.Services.MapService" Collapsed="true">
+    <Position X="3" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAEAAA=</HashCode>
+      <FileName>Services\MapService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameServer.Services.UserService" Collapsed="true">
+    <Position X="5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAEAAACAAAACAA=</HashCode>
+      <FileName>Services\UserSerevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Network.NetService" Collapsed="true">
+    <Position X="7.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACEAAAAAAAAAAAAAAAAIAAAQIAACAgAAAAA=</HashCode>
+      <FileName>Network\NetService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
