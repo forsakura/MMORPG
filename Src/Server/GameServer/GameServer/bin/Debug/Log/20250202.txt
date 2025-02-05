@@ -1,0 +1,476 @@
+
+2025-02-02 19:27:49,377 [1] [INFO ] [GameServer] ：Game Server Init
+2025-02-02 19:27:49,451 [1] [INFO ] [GameServer] ：DataManager > DataManager()
+2025-02-02 19:27:50,507 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:1 MapName:布林镇
+2025-02-02 19:27:50,511 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:2 MapName:落日森林
+2025-02-02 19:27:50,511 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:3 MapName:野外2
+2025-02-02 19:27:50,511 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:4 MapName:落日空间
+2025-02-02 19:27:50,512 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-02-02 19:27:50,579 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 19:27:50,579 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 19:27:50,580 [15] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 19:27:50,580 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 19:27:50,580 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 19:27:50,581 [14] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 19:27:50,584 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 19:27:50,585 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 19:27:50,641 [1] [WARN ] [GameServer] ：NetService Started
+2025-02-02 19:28:01,267 [3] [WARN ] [GameServer] ：Client[127.0.0.1:54133]] Connected
+2025-02-02 19:28:01,311 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:01,411 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:90
+2025-02-02 19:28:01,422 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,422 [9] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,422 [10] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,422 [7] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,422 [8] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,422 [6] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,431 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:01,431 [14] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,489 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:01,504 [15] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,508 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:01,565 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:01,584 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:01,625 [14] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,625 [8] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,625 [6] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,625 [7] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,625 [5] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,625 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:01,625 [15] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,625 [10] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,664 [14] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,666 [10] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,674 [7] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,675 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:01,704 [6] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,735 [7] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,773 [14] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,777 [10] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,845 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,845 [6] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,845 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:72
+2025-02-02 19:28:01,847 [7] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,847 [10] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,847 [8] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,847 [14] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,856 [7] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,870 [5] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,907 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:01,907 [8] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,908 [15] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,940 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:01,940 [14] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:01,970 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:01,970 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:01,970 [10] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,031 [15] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,032 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:02,032 [6] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,094 [5] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,095 [7] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,095 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:02,103 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,103 [7] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,112 [5] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,141 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:02,170 [6] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,171 [7] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,171 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:02,232 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,232 [7] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,232 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:36
+2025-02-02 19:28:02,294 [5] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,294 [6] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,294 [7] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,294 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:02,295 [8] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,357 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:02,357 [8] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,389 [7] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,426 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,426 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:02,426 [6] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,435 [5] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,435 [8] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,435 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:02,443 [8] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,443 [7] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,452 [7] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,453 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:02,454 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,483 [5] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:02,495 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:02,495 [6] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:02,531 [6] [ERROR] [GameServer] ：Message handler exception:, The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe., EntityFramework,    在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 GameServer.Services.UserService.OnLogin(NetConnection`1 sender, UserLoginRequest request) 位置 D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Server\GameServer\GameServer\Services\UserSerevice.cs:行号 45
+   在 Network.MessageDistributer`1.RaiseEvent[Tm](T sender, Tm msg) 位置 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Common\Network\MessageDistributer.cs:行号 105
+2025-02-02 19:28:25,659 [17] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-02 19:28:42,890 [17] [WARN ] [GameServer] ：Client[127.0.0.1:54188]] Connected
+2025-02-02 19:28:42,935 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:28:42,935 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:28:45,946 [11] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-02 19:28:45,948 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:2 CharacterMapID:1
+2025-02-02 19:28:45,951 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:2 MapID:1
+2025-02-02 19:29:10,385 [11] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:2
+2025-02-02 19:29:10,386 [11] [INFO ] [GameServer] ：SendCharacterLeaveMap To 2:111 : Map:1 Character:2:111
+2025-02-02 19:29:10,387 [11] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-02 19:30:57,250 [11] [WARN ] [GameServer] ：Client[127.0.0.1:58056]] Connected
+2025-02-02 19:30:57,314 [11] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 19:30:57,314 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 19:31:00,074 [13] [WARN ] [GameServer] ：Client[] DataReceived Len:8
+2025-02-02 19:31:00,075 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:1 CharacterMapID:1
+2025-02-02 19:31:00,075 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:1 MapID:1
+2025-02-02 19:31:14,813 [13] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:1
+2025-02-02 19:31:14,814 [13] [INFO ] [GameServer] ：SendCharacterLeaveMap To 1:111 : Map:1 Character:1:111
+2025-02-02 19:31:14,814 [13] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-02 20:15:29,352 [1] [INFO ] [GameServer] ：Game Server Init
+2025-02-02 20:15:29,391 [1] [INFO ] [GameServer] ：DataManager > DataManager()
+2025-02-02 20:15:29,481 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:1 MapName:布林镇
+2025-02-02 20:15:29,483 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:2 MapName:落日森林
+2025-02-02 20:15:29,483 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:3 MapName:野外2
+2025-02-02 20:15:29,483 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:4 MapName:落日空间
+2025-02-02 20:15:29,483 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-02-02 20:15:29,574 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 20:15:29,574 [14] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 20:15:29,574 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 20:15:29,575 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 20:15:29,575 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 20:15:29,576 [13] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 20:15:29,576 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 20:15:29,577 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 20:15:29,599 [1] [WARN ] [GameServer] ：NetService Started
+2025-02-02 20:15:42,445 [3] [WARN ] [GameServer] ：Client[127.0.0.1:52985]] Connected
+2025-02-02 20:15:42,497 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 20:15:42,585 [6] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 20:15:44,885 [4] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-02 20:15:44,887 [8] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:3 CharacterMapID:1
+2025-02-02 20:15:44,891 [8] [INFO ] [GameServer] ：CharacterEnter::characterID:3 MapID:1
+2025-02-02 20:16:07,527 [4] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:3
+2025-02-02 20:16:07,528 [4] [INFO ] [GameServer] ：SendCharacterLeaveMap To 3:111 : Map:1 Character:3:111
+2025-02-02 20:16:07,529 [4] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-02 20:21:35,465 [4] [WARN ] [GameServer] ：Client[127.0.0.1:53388]] Connected
+2025-02-02 20:21:35,512 [4] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 20:21:35,512 [6] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 20:21:37,727 [21] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-02 20:21:37,728 [6] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:2 CharacterMapID:1
+2025-02-02 20:21:37,728 [6] [INFO ] [GameServer] ：CharacterEnter::characterID:2 MapID:1
+2025-02-02 20:22:05,164 [21] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:2
+2025-02-02 20:22:05,165 [21] [INFO ] [GameServer] ：SendCharacterLeaveMap To 2:111 : Map:1 Character:2:111
+2025-02-02 20:22:05,165 [21] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-02 20:23:10,693 [26] [WARN ] [GameServer] ：Client[127.0.0.1:62610]] Connected
+2025-02-02 20:23:10,751 [26] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 20:23:10,751 [6] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 20:23:12,832 [25] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-02 20:23:12,832 [6] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:3 CharacterMapID:1
+2025-02-02 20:23:12,832 [6] [INFO ] [GameServer] ：CharacterEnter::characterID:3 MapID:1
+2025-02-02 20:24:00,719 [25] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:3
+2025-02-02 20:24:00,720 [25] [INFO ] [GameServer] ：SendCharacterLeaveMap To 3:111 : Map:1 Character:3:111
+2025-02-02 20:24:00,720 [25] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-02 20:24:22,964 [29] [WARN ] [GameServer] ：Client[127.0.0.1:62704]] Connected
+2025-02-02 20:24:23,011 [29] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 20:24:23,011 [6] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 20:24:26,912 [31] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-02 20:24:26,912 [6] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:333 CharacterID:4 CharacterMapID:1
+2025-02-02 20:24:26,912 [6] [INFO ] [GameServer] ：CharacterEnter::characterID:4 MapID:1
+2025-02-02 20:26:05,386 [31] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:4
+2025-02-02 20:26:05,386 [31] [INFO ] [GameServer] ：SendCharacterLeaveMap To 4:333 : Map:1 Character:4:333
+2025-02-02 20:26:05,386 [31] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-02 20:29:29,270 [31] [WARN ] [GameServer] ：Client[127.0.0.1:62714]] Connected
+2025-02-02 20:29:29,315 [31] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 20:29:29,315 [6] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 20:29:36,499 [31] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-02 20:29:36,500 [6] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:333 CharacterID:10 CharacterMapID:1
+2025-02-02 20:29:36,500 [6] [INFO ] [GameServer] ：CharacterEnter::characterID:10 MapID:1
+2025-02-02 20:33:01,405 [31] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:10
+2025-02-02 20:33:01,405 [31] [INFO ] [GameServer] ：SendCharacterLeaveMap To 10:333 : Map:1 Character:10:333
+2025-02-02 20:33:01,406 [31] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-02 20:36:17,877 [31] [WARN ] [GameServer] ：Client[127.0.0.1:63179]] Connected
+2025-02-02 20:36:17,922 [31] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 20:36:17,922 [6] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 20:36:19,577 [59] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-02 20:36:19,577 [6] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:3 CharacterMapID:1
+2025-02-02 20:36:19,577 [6] [INFO ] [GameServer] ：CharacterEnter::characterID:3 MapID:1
+2025-02-02 20:36:24,845 [59] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:3
+2025-02-02 20:36:24,845 [59] [INFO ] [GameServer] ：SendCharacterLeaveMap To 3:111 : Map:1 Character:3:111
+2025-02-02 20:36:24,845 [59] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-02 22:10:07,621 [1] [INFO ] [GameServer] ：Game Server Init
+2025-02-02 22:10:07,657 [1] [INFO ] [GameServer] ：DataManager > DataManager()
+2025-02-02 22:10:07,715 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:1 MapName:布林镇
+2025-02-02 22:10:07,717 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:2 MapName:落日森林
+2025-02-02 22:10:07,717 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:3 MapName:野外2
+2025-02-02 22:10:07,717 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:4 MapName:落日空间
+2025-02-02 22:10:07,717 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-02-02 22:10:07,796 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 22:10:07,796 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 22:10:07,796 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 22:10:07,797 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 22:10:07,798 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 22:10:07,798 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 22:10:07,798 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 22:10:07,798 [13] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-02 22:10:07,825 [1] [WARN ] [GameServer] ：NetService Started
+2025-02-02 22:10:28,732 [3] [WARN ] [GameServer] ：Client[127.0.0.1:54024]] Connected
+2025-02-02 22:10:28,780 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 22:10:28,862 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 22:10:31,660 [14] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-02 22:10:31,661 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:222 CharacterID:5 CharacterMapID:1
+2025-02-02 22:10:31,665 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:5 MapID:1
+2025-02-02 22:16:12,403 [14] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:5
+2025-02-02 22:16:12,404 [14] [INFO ] [GameServer] ：SendCharacterLeaveMap To 5:222 : Map:1 Character:5:222
+2025-02-02 22:16:12,405 [14] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-02 22:18:40,770 [14] [WARN ] [GameServer] ：Client[127.0.0.1:64240]] Connected
+2025-02-02 22:18:40,823 [14] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-02 22:18:40,823 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-02 22:18:42,819 [26] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-02 22:18:42,819 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:3 CharacterMapID:1
+2025-02-02 22:18:42,819 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:3 MapID:1
+2025-02-02 22:18:51,942 [26] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:3
+2025-02-02 22:18:51,943 [26] [INFO ] [GameServer] ：SendCharacterLeaveMap To 3:111 : Map:1 Character:3:111
+2025-02-02 22:18:51,943 [26] [WARN ] [GameServer] ：Client[] Disconnected

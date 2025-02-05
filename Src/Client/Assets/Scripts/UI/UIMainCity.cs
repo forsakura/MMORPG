@@ -1,0 +1,38 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace Assets.Scripts.UI
+{
+    public class UIMainCity : MonoBehaviour
+    {
+        public Text avaterName;
+        public Text avaterLevel;
+        // Use this for initialization
+        void Start()
+        {
+            UPdaterView();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            UPdaterView();
+        }
+
+        void UPdaterView()
+        {
+            string name = User.Instance.currentCharacter.Name;
+            string level = User.Instance.currentCharacter.Level.ToString();
+            if (name != avaterName.text)
+            {
+                avaterName.text = name;
+            }
+            if (level != avaterLevel.text)
+            {
+                avaterLevel.text = level;
+            }
+        }
+    }
+}

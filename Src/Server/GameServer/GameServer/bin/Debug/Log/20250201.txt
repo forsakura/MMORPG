@@ -1,0 +1,186 @@
+
+2025-02-01 00:13:43,200 [1] [INFO ] [GameServer] ：Game Server Init
+2025-02-01 00:13:43,242 [1] [INFO ] [GameServer] ：DataManager > DataManager()
+2025-02-01 00:13:43,328 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:1 MapName:布林镇
+2025-02-01 00:13:43,330 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:2 MapName:落日森林
+2025-02-01 00:13:43,330 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:3 MapName:野外2
+2025-02-01 00:13:43,331 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:4 MapName:落日空间
+2025-02-01 00:13:43,331 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-02-01 00:13:43,395 [11] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 00:13:43,395 [12] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 00:13:43,396 [13] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 00:13:43,399 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 00:13:43,399 [10] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 00:13:43,399 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 00:13:43,399 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 00:13:43,400 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 00:13:43,499 [1] [WARN ] [GameServer] ：NetService Started
+2025-02-01 00:13:48,507 [3] [WARN ] [GameServer] ：Client[127.0.0.1:61562]] Connected
+2025-02-01 00:13:48,552 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 00:13:48,640 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 00:13:52,174 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 00:13:52,176 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:2 CharacterMapID:1
+2025-02-01 00:13:52,178 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:2 MapID:1
+2025-02-01 00:18:55,023 [17] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:2
+2025-02-01 00:18:55,024 [17] [INFO ] [GameServer] ：SendCharacterLeaveMap To 2:111 : Map:1 Character:2:111
+2025-02-01 00:18:55,025 [17] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 00:19:25,387 [17] [WARN ] [GameServer] ：Client[127.0.0.1:63744]] Connected
+2025-02-01 00:19:25,429 [17] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 00:19:25,430 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 00:19:27,186 [20] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 00:19:27,188 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:3 CharacterMapID:1
+2025-02-01 00:19:27,189 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:3 MapID:1
+2025-02-01 00:20:30,213 [20] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:3
+2025-02-01 00:20:30,213 [20] [INFO ] [GameServer] ：SendCharacterLeaveMap To 3:111 : Map:1 Character:3:111
+2025-02-01 00:20:30,213 [20] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 00:21:18,325 [23] [WARN ] [GameServer] ：Client[127.0.0.1:63872]] Connected
+2025-02-01 00:21:18,372 [25] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 00:21:18,372 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 00:21:20,020 [26] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 00:21:20,020 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:3 CharacterMapID:1
+2025-02-01 00:21:20,020 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:3 MapID:1
+2025-02-01 00:22:16,174 [26] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:3
+2025-02-01 00:22:16,174 [26] [INFO ] [GameServer] ：SendCharacterLeaveMap To 3:111 : Map:1 Character:3:111
+2025-02-01 00:22:16,174 [26] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 00:36:24,602 [26] [WARN ] [GameServer] ：Client[127.0.0.1:63286]] Connected
+2025-02-01 00:36:24,645 [26] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 00:36:24,646 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 00:36:29,038 [58] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 00:36:29,038 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:333 CharacterID:4 CharacterMapID:1
+2025-02-01 00:36:29,038 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:4 MapID:1
+2025-02-01 00:37:22,549 [58] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:4
+2025-02-01 00:37:22,550 [58] [INFO ] [GameServer] ：SendCharacterLeaveMap To 4:333 : Map:1 Character:4:333
+2025-02-01 00:37:22,550 [58] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 00:45:09,239 [58] [WARN ] [GameServer] ：Client[127.0.0.1:56807]] Connected
+2025-02-01 00:45:09,293 [58] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 00:45:09,293 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 00:45:22,455 [75] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 00:45:22,455 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:333 CharacterID:10 CharacterMapID:1
+2025-02-01 00:45:22,455 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:10 MapID:1
+2025-02-01 00:45:35,824 [75] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:10
+2025-02-01 00:45:35,824 [75] [INFO ] [GameServer] ：SendCharacterLeaveMap To 10:333 : Map:1 Character:10:333
+2025-02-01 00:45:35,824 [75] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 00:46:59,372 [75] [WARN ] [GameServer] ：Client[127.0.0.1:50336]] Connected
+2025-02-01 00:46:59,431 [75] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 00:46:59,431 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 00:47:05,613 [80] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 00:47:05,613 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:333 CharacterID:10 CharacterMapID:1
+2025-02-01 00:47:05,613 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:10 MapID:1
+2025-02-01 00:47:48,674 [80] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:10
+2025-02-01 00:47:48,675 [80] [INFO ] [GameServer] ：SendCharacterLeaveMap To 10:333 : Map:1 Character:10:333
+2025-02-01 00:47:48,675 [80] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 00:50:38,680 [81] [WARN ] [GameServer] ：Client[127.0.0.1:59097]] Connected
+2025-02-01 00:50:38,723 [81] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 00:50:38,725 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 00:50:42,232 [88] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 00:50:42,232 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:222 CharacterID:5 CharacterMapID:1
+2025-02-01 00:50:42,233 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:5 MapID:1
+2025-02-01 00:50:59,884 [88] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:5
+2025-02-01 00:50:59,884 [88] [INFO ] [GameServer] ：SendCharacterLeaveMap To 5:222 : Map:1 Character:5:222
+2025-02-01 00:50:59,884 [88] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 00:53:08,735 [88] [WARN ] [GameServer] ：Client[127.0.0.1:59296]] Connected
+2025-02-01 00:53:08,789 [88] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 00:53:08,789 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 00:53:11,763 [82] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 00:53:11,763 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:333 CharacterID:4 CharacterMapID:1
+2025-02-01 00:53:11,763 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:4 MapID:1
+2025-02-01 00:57:36,920 [82] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:4
+2025-02-01 00:57:36,921 [82] [INFO ] [GameServer] ：SendCharacterLeaveMap To 4:333 : Map:1 Character:4:333
+2025-02-01 00:57:36,921 [82] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 00:58:28,882 [82] [WARN ] [GameServer] ：Client[127.0.0.1:64238]] Connected
+2025-02-01 00:58:28,936 [82] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 00:58:28,936 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 00:58:30,673 [71] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 00:58:30,673 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:333 CharacterID:4 CharacterMapID:1
+2025-02-01 00:58:30,673 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:4 MapID:1
+2025-02-01 00:58:46,966 [71] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:4
+2025-02-01 00:58:46,966 [71] [INFO ] [GameServer] ：SendCharacterLeaveMap To 4:333 : Map:1 Character:4:333
+2025-02-01 00:58:46,966 [71] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 00:59:42,667 [72] [WARN ] [GameServer] ：Client[127.0.0.1:52115]] Connected
+2025-02-01 00:59:42,712 [72] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 00:59:42,712 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 00:59:45,749 [68] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 00:59:45,749 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:333 CharacterID:4 CharacterMapID:1
+2025-02-01 00:59:45,749 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:4 MapID:1
+2025-02-01 01:01:15,097 [68] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:4
+2025-02-01 01:01:15,097 [68] [INFO ] [GameServer] ：SendCharacterLeaveMap To 4:333 : Map:1 Character:4:333
+2025-02-01 01:01:15,097 [68] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 01:02:59,373 [64] [WARN ] [GameServer] ：Client[127.0.0.1:52374]] Connected
+2025-02-01 01:02:59,416 [64] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 01:02:59,417 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 01:03:02,143 [57] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 01:03:02,143 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:3 CharacterMapID:1
+2025-02-01 01:03:02,143 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:3 MapID:1
+2025-02-01 01:04:35,167 [57] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:3
+2025-02-01 01:04:35,167 [57] [INFO ] [GameServer] ：SendCharacterLeaveMap To 3:111 : Map:1 Character:3:111
+2025-02-01 01:04:35,167 [57] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 01:05:01,403 [57] [WARN ] [GameServer] ：Client[127.0.0.1:52541]] Connected
+2025-02-01 01:05:01,448 [57] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 01:05:01,448 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 01:05:03,819 [56] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 01:05:03,820 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:333 CharacterID:4 CharacterMapID:1
+2025-02-01 01:05:03,820 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:4 MapID:1
+2025-02-01 01:06:12,809 [56] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:4
+2025-02-01 01:06:12,809 [56] [INFO ] [GameServer] ：SendCharacterLeaveMap To 4:333 : Map:1 Character:4:333
+2025-02-01 01:06:12,809 [56] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 23:32:07,894 [1] [INFO ] [GameServer] ：Game Server Init
+2025-02-01 23:32:07,998 [1] [INFO ] [GameServer] ：DataManager > DataManager()
+2025-02-01 23:32:08,751 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:1 MapName:布林镇
+2025-02-01 23:32:08,753 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:2 MapName:落日森林
+2025-02-01 23:32:08,753 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:3 MapName:野外2
+2025-02-01 23:32:08,753 [1] [INFO ] [GameServer] ：MapManager.Init > MapID:4 MapName:落日空间
+2025-02-01 23:32:08,754 [1] [WARN ] [GameServer] ：Starting Listener...
+2025-02-01 23:32:08,765 [7] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 23:32:08,766 [5] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 23:32:08,766 [14] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 23:32:08,767 [8] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 23:32:08,768 [6] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 23:32:08,769 [16] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 23:32:08,770 [9] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 23:32:08,773 [15] [WARN ] [GameServer] ：MessageDistribute thread start
+2025-02-01 23:32:08,862 [1] [WARN ] [GameServer] ：NetService Started
+2025-02-01 23:32:17,231 [3] [WARN ] [GameServer] ：Client[127.0.0.1:60890]] Connected
+2025-02-01 23:32:17,280 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 23:32:17,367 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 23:32:21,767 [3] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 23:32:21,769 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:2 CharacterMapID:1
+2025-02-01 23:32:21,771 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:2 MapID:1
+2025-02-01 23:33:45,520 [3] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:2
+2025-02-01 23:33:45,520 [3] [INFO ] [GameServer] ：SendCharacterLeaveMap To 2:111 : Map:1 Character:2:111
+2025-02-01 23:33:45,521 [3] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 23:35:33,413 [13] [WARN ] [GameServer] ：Client[127.0.0.1:61182]] Connected
+2025-02-01 23:35:33,469 [13] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 23:35:33,469 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 23:35:36,071 [19] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 23:35:36,073 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:333 CharacterID:4 CharacterMapID:1
+2025-02-01 23:35:36,073 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:4 MapID:1
+2025-02-01 23:36:18,883 [19] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:4
+2025-02-01 23:36:18,883 [19] [INFO ] [GameServer] ：SendCharacterLeaveMap To 4:333 : Map:1 Character:4:333
+2025-02-01 23:36:18,884 [19] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 23:37:34,311 [19] [WARN ] [GameServer] ：Client[127.0.0.1:61330]] Connected
+2025-02-01 23:37:34,369 [19] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 23:37:34,370 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 23:37:36,720 [21] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 23:37:36,720 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:3 CharacterMapID:1
+2025-02-01 23:37:36,720 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:3 MapID:1
+2025-02-01 23:40:48,623 [21] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:3
+2025-02-01 23:40:48,624 [21] [INFO ] [GameServer] ：SendCharacterLeaveMap To 3:111 : Map:1 Character:3:111
+2025-02-01 23:40:48,624 [21] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 23:41:20,289 [21] [WARN ] [GameServer] ：Client[127.0.0.1:61555]] Connected
+2025-02-01 23:41:20,335 [21] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 23:41:20,335 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 23:41:22,805 [30] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 23:41:22,806 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:2 CharacterMapID:1
+2025-02-01 23:41:22,806 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:2 MapID:1
+2025-02-01 23:41:29,539 [30] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:2
+2025-02-01 23:41:29,539 [30] [INFO ] [GameServer] ：SendCharacterLeaveMap To 2:111 : Map:1 Character:2:111
+2025-02-01 23:41:29,539 [30] [WARN ] [GameServer] ：Client[] Disconnected
+2025-02-01 23:54:30,905 [30] [WARN ] [GameServer] ：Client[127.0.0.1:62482]] Connected
+2025-02-01 23:54:30,955 [30] [WARN ] [GameServer] ：Client[] DataReceived Len:18
+2025-02-01 23:54:30,955 [5] [ERROR] [GameServer] ：UserLoginRequest: User:123, Pass:123
+2025-02-01 23:54:33,107 [58] [WARN ] [GameServer] ：Client[] DataReceived Len:10
+2025-02-01 23:54:33,107 [5] [INFO ] [GameServer] ：UserGameEnterRequest:: CharacterName:111 CharacterID:3 CharacterMapID:1
+2025-02-01 23:54:33,107 [5] [INFO ] [GameServer] ：CharacterEnter::characterID:3 MapID:1
+2025-02-01 23:54:41,595 [57] [INFO ] [GameServer] ：CharacterLeave: Map:1 characterId:3
+2025-02-01 23:54:41,595 [57] [INFO ] [GameServer] ：SendCharacterLeaveMap To 3:111 : Map:1 Character:3:111
+2025-02-01 23:54:41,595 [57] [WARN ] [GameServer] ：Client[] Disconnected
