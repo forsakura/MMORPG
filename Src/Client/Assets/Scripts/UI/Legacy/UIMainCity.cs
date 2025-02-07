@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Services;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 public class UIMainCity : MonoBehaviour {
 	public Text nameText;
 	public Text levelText;
+	public Button BtnBackToSelect;
 	// Use this for initialization
 	void Start () {
 		UpdateView();
@@ -31,5 +33,10 @@ public class UIMainCity : MonoBehaviour {
 				levelText.text = level;
 			}
 		}
+	}
+	public void BackToSelect()
+	{
+		SceneManager.Instance.LoadScene("CharacterSelect");
+		UserService.Instance.SendGameLeave(true);
 	}
 }

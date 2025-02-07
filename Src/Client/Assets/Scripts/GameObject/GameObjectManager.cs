@@ -4,11 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameObjectManager : MonoBehaviour {
+public class GameObjectManager : MonoSingleton<GameObjectManager> {
 
 	Dictionary<int, GameObject> Characters = new Dictionary<int, GameObject>();
 	// Use this for initialization
-	void Start () {
+	protected override void OnStart () {
 		StartCoroutine(InitGameObjects());
 		CharacterManager.Instance.OnCharacterEnter += OnCharacterEnter;
 		CharacterManager.Instance.OnCharacterLeave += OnCharacterLeave;
@@ -17,7 +17,8 @@ public class GameObjectManager : MonoBehaviour {
 
     private void OnDestroy()
     {
-        CharacterManager.Instance.OnCharacterEnter = null;
+        CharacterManager.Instance.OnCharacterEnter -= OnCharacterEnter;
+        CharacterManager.Instance.OnCharacterLeave -= OnCharacterLeave;
     }
 
     // Update is called once per frame
@@ -39,9 +40,17 @@ public class GameObjectManager : MonoBehaviour {
 		CreateCharacterObject(cha);
 	}
 
-    private void OnCharacterLeave(Character arg0)
+    private void OnCharacterLeave(Character character)
     {
-        
+        if(!Characters.ContainsKey(character.entityId))
+        {
+            return;
+        }
+        if (Characters[character.entityId] != null)
+        {
+            Destroy(Characters[character.entityId]);
+            Characters.Remove(character.entityId);
+        }
     }
 
     private void CreateCharacterObject(Character cha)
@@ -57,8 +66,8 @@ public class GameObjectManager : MonoBehaviour {
             GameObject go = (GameObject)Instantiate(obj, this.transform);
             go.name = "Character_" + cha.entityId + "_" + cha.Name;
             Characters[cha.entityId] = go;
+            UIWorldElementManager.Instance.AddCharacterElement(go.transform, cha);
         }
-
         InitGameObject(Characters[cha.entityId], cha);
     }
 
@@ -67,7 +76,6 @@ public class GameObjectManager : MonoBehaviour {
         gameObject.transform.position = GameObjectTool.LogicToWorld(cha.position);
         gameObject.transform.forward = GameObjectTool.LogicToWorld(cha.direction);
         EntityController ec = gameObject.GetComponent<EntityController>();
-        Characters[cha.Info.Id] = gameObject;
         if(ec != null)
         {
             ec.entity = cha;
@@ -86,6 +94,5 @@ public class GameObjectManager : MonoBehaviour {
             }
             else playerInputController.enabled = false;
         }
-        UIWorldElementManager.Instance.AddCharacterElement(gameObject.transform, cha);
     }
 }

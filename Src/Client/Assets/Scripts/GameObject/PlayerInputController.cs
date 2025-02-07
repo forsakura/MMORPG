@@ -92,7 +92,7 @@ public class PlayerInputController : MonoBehaviour {
 				SendEntityEvent(EntityEvent.None);
 			}
 		}
-		Debug.LogFormat("velocity {0}", rb.velocity.magnitude);
+		//Debug.LogFormat("velocity {0}", rb.velocity.magnitude);
     }
     Vector3 lastPos;
     float lastSync = 0;
@@ -102,7 +102,7 @@ public class PlayerInputController : MonoBehaviour {
 
         Vector3 offset = this.rb.transform.position - lastPos;
         this.speed = (int)(offset.magnitude * 100f / Time.deltaTime);
-        Debug.LogFormat("LateUpdate velocity {0} : {1}", this.rb.velocity.magnitude, this.speed);
+        //Debug.LogFormat("LateUpdate velocity {0} : {1}", this.rb.velocity.magnitude, this.speed);
         this.lastPos = this.rb.transform.position;
 
         Vector3Int goLogicPos = GameObjectTool.WorldToLogic(this.rb.transform.position);

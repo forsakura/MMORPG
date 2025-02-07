@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Services
 {
-    public class MapService : Singleton<MapService>
+    public class MapService : Singleton<MapService>, IDisposable
     {
         public MapService() 
         {
@@ -16,7 +16,7 @@ namespace Assets.Scripts.Services
             MessageDistributer.Instance.Subscribe<MapCharacterLeaveResponse>(OnMapCharacterLeave);
         }
 
-        ~MapService()
+        public void Dispose()
         {
             MessageDistributer.Instance.Unsubscribe<MapCharacterEnterResponse>(OnMapCharacterEnter);
             MessageDistributer.Instance.Unsubscribe<MapCharacterLeaveResponse>(OnMapCharacterLeave);
@@ -44,11 +44,17 @@ namespace Assets.Scripts.Services
                 EnterMap(message.mapId);
                 currentMapId = message.mapId;
             }
+            else EnterMap(currentMapId);
         }
 
         private void OnMapCharacterLeave(object sender, MapCharacterLeaveResponse message)
         {
-            Debug.LogFormat("OnMapCharacterLeave::Map:{0} Count{1}");
+            Debug.LogFormat("OnMapCharacterLeave::EntityID:{0}", message.entityId);
+            if (message.entityId != User.Instance.currentCharacter.EntityId)
+            {
+                CharacterManager.Instance.RemoveCharacter(message.entityId);
+            }
+            else CharacterManager.Instance.Clear();
         }
 
         private void EnterMap(int mapId)
@@ -66,5 +72,6 @@ namespace Assets.Scripts.Services
         {
             Debug.LogFormat("MapEntitySync::");
         }
+
     }
 }

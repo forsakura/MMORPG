@@ -9,6 +9,8 @@ using UnityEngine;
 using SkillBridge.Message;
 using UnityEngine.Events;
 using GameServer.Managers;
+using Entities;
+using log4net;
 //using Models;
 //using Managers;
 
@@ -36,19 +38,18 @@ namespace Services
             MessageDistributer.Instance.Subscribe<UserLoginResponse>(this.OnUserLogin);
             MessageDistributer.Instance.Subscribe<UserRegisterResponse>(this.OnUserRegister);
             MessageDistributer.Instance.Subscribe<UserCreateCharacterResponse>(this.OnUserCreateCharacter);
-            MessageDistributer.Instance.Subscribe<MapCharacterEnterResponse>(this.OnCharacterEnter);
-            MessageDistributer.Instance.Subscribe<MapCharacterLeaveResponse>(this.OnCharacterLeave);
+            MessageDistributer.Instance.Subscribe<UserGameEnterResponse>(OnUserGameEnter);
+            MessageDistributer.Instance.Subscribe<UserGameLeaveResponse>(OnUserGameLeave);
             
         }
-
 
         public void Dispose()
         {
             MessageDistributer.Instance.Unsubscribe<UserLoginResponse>(this.OnUserLogin);
             MessageDistributer.Instance.Unsubscribe<UserRegisterResponse>(this.OnUserRegister);
             MessageDistributer.Instance.Unsubscribe<UserCreateCharacterResponse>(this.OnUserCreateCharacter);
-            MessageDistributer.Instance.Unsubscribe<MapCharacterEnterResponse>(this.OnCharacterEnter);
-            MessageDistributer.Instance.Unsubscribe<MapCharacterLeaveResponse>(this.OnCharacterLeave);
+            MessageDistributer.Instance.Unsubscribe<UserGameEnterResponse>(OnUserGameEnter);
+            MessageDistributer.Instance.Unsubscribe<UserGameLeaveResponse>(OnUserGameLeave);
             NetClient.Instance.OnConnect -= OnGameServerConnect;
             NetClient.Instance.OnDisconnect -= OnGameServerDisconnect;
         }
@@ -381,19 +382,6 @@ namespace Services
         }
 
         /// <summary>
-        /// 接收服务端发出的进入游戏回应消息
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="message"></param>
-        private void OnCharacterEnter(object sender, MapCharacterEnterResponse message)
-        {
-            Debug.LogFormat("UserGameEnterResponse::MapID:{0}", message.mapId);
-            NCharacterInfo character = message.Characters[0];
-            User.Instance.currentCharacter = character;
-            SceneManager.Instance.LoadScene(DataManager.Instance.Maps[message.mapId].Resource);
-        }
-
-        /// <summary>
         /// 发送客户端玩家离开游戏请求
         /// </summary>
         /// <param name="isQuitGame"></param>
@@ -407,9 +395,16 @@ namespace Services
             NetClient.Instance.SendMessage(message);
         }
 
-        private void OnCharacterLeave(object sender, MapCharacterLeaveResponse message)
+        private void OnUserGameEnter(object sender, UserGameEnterResponse response)
         {
-
+            Debug.LogFormat("UserGameEnterResponse::{0} {1}", response.Result, response.Errormsg);
+            if (response.Result == Result.Success)
+            {
+                if (response.Character != null)
+                {
+                    User.Instance.currentCharacter = response.Character;
+                }
+            }
         }
 
         private void OnUserGameLeave(object sender, UserGameLeaveResponse message)

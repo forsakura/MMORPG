@@ -7,3 +7,12 @@ D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Protocol\bin\Debug\protobuf-net.xml
 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Protocol\obj\Debug\Protocol.csproj.Up2Date
 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Protocol\obj\Debug\Protocol.dll
 D:\BaiduNetdisk\素材工具\mmorpg\Src\Lib\Protocol\obj\Debug\Protocol.pdb
+D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Lib\Protocol\bin\Debug\Protocol.dll
+D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Lib\Protocol\bin\Debug\Protocol.pdb
+D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Lib\Protocol\bin\Debug\protobuf-net.dll
+D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Lib\Protocol\bin\Debug\protobuf-net.xml
+D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Lib\Protocol\obj\Debug\Protocol.csproj.AssemblyReference.cache
+D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Lib\Protocol\obj\Debug\Protocol.csproj.CoreCompileInputs.cache
+D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Lib\Protocol\obj\Debug\Protocol.csproj.Up2Date
+D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Lib\Protocol\obj\Debug\Protocol.dll
+D:\BaiduNetdisk\mmorpgwork\mmorpg\Src\Lib\Protocol\obj\Debug\Protocol.pdb

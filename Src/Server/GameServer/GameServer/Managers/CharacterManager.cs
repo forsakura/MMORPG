@@ -11,7 +11,6 @@ namespace GameServer.Managers
 {
     class CharacterManager : Singleton<CharacterManager>
     {
-        //public Dictionary<int, Character> Characters = new Dictionary<int, Character>();
         public Dictionary<int, Character> Characters = new Dictionary<int, Character>();
 
         public CharacterManager()
@@ -35,9 +34,8 @@ namespace GameServer.Managers
         public Character AddCharacter(TCharacter character)
         {
             Character cha = new Character(CharacterType.Player, character);
-            cha.Info.EntityId = cha.entityId;
+            EntityManager.Instance.AddEntity(character.MapID, cha);
             Characters[cha.Id] = cha;
-            //Characters.Add(character.ID, cha);
             return cha;
         }
 
@@ -46,6 +44,7 @@ namespace GameServer.Managers
             if (Characters.ContainsKey(characterID))
             {
                 var cha = Characters[characterID];
+                EntityManager.Instance.RemoveEntity(cha.Data.MapID, cha);
                 Characters.Remove(characterID);
             }
         }
@@ -56,37 +55,5 @@ namespace GameServer.Managers
             Characters.TryGetValue(characterID, out character); 
             return character;
         }
-
-        /*public void Clear()
-        {
-            this.Characters.Clear();
-        }
-
-        public Character AddCharacter(TCharacter cha)
-        {
-            Character character = new Character(CharacterType.Player, cha);
-            //EntityManager.Instance.AddEntity(cha.MapID, character);
-            character.Info.EntityId = character.entityId;
-            this.Characters[character.Id] = character;
-            return character;
-        }
-
-
-        public void RemoveCharacter(int characterId)
-        {
-            if (this.Characters.ContainsKey(characterId))
-            {
-                var cha = this.Characters[characterId];
-                //EntityManager.Instance.RemoveEntity(cha.Data.MapID, cha);
-                this.Characters.Remove(characterId);
-            }
-        }
-
-        public Character GetCharacter(int characterId)
-        {
-            Character character = null;
-            this.Characters.TryGetValue(characterId, out character);
-            return character;
-        }*/
     }
 }

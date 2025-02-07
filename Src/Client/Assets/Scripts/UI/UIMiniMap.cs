@@ -19,6 +19,7 @@ public class UIMiniMap : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (characterTransform == null || mapBorder == null) return;
 		float realWeight = mapBorder.bounds.size.x;
 		float realHeight = mapBorder.bounds.size.z;
 

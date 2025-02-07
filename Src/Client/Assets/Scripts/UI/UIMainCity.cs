@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Services;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,6 +34,11 @@ namespace Assets.Scripts.UI
             {
                 avaterLevel.text = level;
             }
+        }
+        public void BackToSelect()
+        {
+            SceneManager.Instance.LoadScene("CharacterSelect");
+            UserService.Instance.SendGameLeave(true);
         }
     }
 }

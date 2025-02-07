@@ -270,7 +270,7 @@ namespace GameServer.Services
         {
             CharacterManager.Instance.RemoveCharacter(character.Id);
             character.Clear();
-            MapManager.Instance[character.Info.mapId].CharacterLeave(character);
+            MapManager.Instance[character.Info.mapId].CharacterLeave(character.Info);
         }
 
 
@@ -285,6 +285,8 @@ namespace GameServer.Services
 
             sender.Session.Character = cha;
             sender.Session.PostResponser = cha;
+            sender.Session.Response.gameEnter.Character = cha.Info;
+            sender.SendResponse();
 
             MapManager.Instance[dbchar.MapID].CharacterEnter(sender, cha);
 

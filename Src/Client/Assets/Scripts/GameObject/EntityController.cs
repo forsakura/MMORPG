@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.UI;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.UI;
 using Entities;
 using SkillBridge.Message;
 using System;
@@ -6,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntityController : MonoBehaviour {
+public class EntityController : MonoBehaviour , IEntityNotify {
     public Animator anim;
     public Rigidbody rb;
     private AnimatorStateInfo currentBaseState;
@@ -37,7 +38,7 @@ public class EntityController : MonoBehaviour {
     {
         if (entity != null)
         {
-            //EntityManager.Instance.RegisterEntityChangeNotify(entity.entityId, this);
+            EntityManager.Instance.RegisterEntityChangeNotify(entity.entityId, this);
             this.UpdateTransform();
         }
 
@@ -90,8 +91,8 @@ public class EntityController : MonoBehaviour {
 
     public void OnEntityRemoved()
     {
-        /*if (UIWorldElementManager.Instance != null)
-            UIWorldElementManager.Instance.RemoveCharacterNameBar(this.transform);*/
+        if (UIWorldElementManager.Instance != null)
+            UIWorldElementManager.Instance.RemoveCharacterElement(this.transform);
         Destroy(this.gameObject);
     }
 

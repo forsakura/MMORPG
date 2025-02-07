@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using Assets.Scripts.Managers;
+using Entities;
 using SkillBridge.Message;
 using System;
 using System.Collections;
@@ -28,6 +29,10 @@ public class CharacterManager : Singleton<CharacterManager>, IDisposable
 
     public void Clear()
     {
+        foreach (var item in Characters)
+        {
+            RemoveCharacter(item.Key);
+        }
         Characters.Clear();
     }
 
@@ -35,22 +40,25 @@ public class CharacterManager : Singleton<CharacterManager>, IDisposable
     {
         Debug.LogFormat("AddCharacter:chaID:{0} chaName:{1} Map:{2} Entity:{3}", cha.Id, cha.Name, cha.mapId, cha.EntityId);
         var character = new Character(cha);
-
-        Characters[cha.Id] = character;
+        EntityManager.Instance.AddEntity(character);
+        Characters[cha.Entity.Id] = character;
         if (OnCharacterEnter != null)
         {
             OnCharacterEnter(character);
         }
     }
 
-    void RemoveCharacter(int characterId)
+    public void RemoveCharacter(int characterId)
     {
         Debug.LogFormat("RemoveCharacter: {0}", characterId);
-        Character cha = Characters[characterId];
-        Characters.Remove(characterId);
-        if(OnCharacterLeave != null)
+        if (Characters.ContainsKey(characterId))
         {
-            OnCharacterLeave(cha);
+            EntityManager.Instance.RemoveEntity(Characters[characterId].Info.Entity);
+            if(OnCharacterLeave != null)
+            {
+                OnCharacterLeave(Characters[characterId]);
+            }
+            else Characters.Remove(characterId);
         }
     }
 }
