@@ -49,3 +49,7 @@ Src/Client/.vs/Client/FileContentIndex
 Src/Client/Bin
 Src/Server/GameServer/.vs/GameServer/FileContentIndex
 Src/Client/Log
+Src/Client/.vs
+Src/Client/Library
+Src/Client/Temp
+Src/Server/GameServer/.vs
