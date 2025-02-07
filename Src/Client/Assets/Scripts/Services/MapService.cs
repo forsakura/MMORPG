@@ -1,4 +1,5 @@
-﻿using GameServer.Managers;
+﻿using Assets.Scripts.Managers;
+using GameServer.Managers;
 using Network;
 using SkillBridge.Message;
 using System;
@@ -14,15 +15,17 @@ namespace Assets.Scripts.Services
         {
             MessageDistributer.Instance.Subscribe<MapCharacterEnterResponse>(OnMapCharacterEnter);
             MessageDistributer.Instance.Subscribe<MapCharacterLeaveResponse>(OnMapCharacterLeave);
+            MessageDistributer.Instance.Subscribe<MapEntitySyncResponse>(OnMapEntitySync);
         }
 
         public void Dispose()
         {
             MessageDistributer.Instance.Unsubscribe<MapCharacterEnterResponse>(OnMapCharacterEnter);
             MessageDistributer.Instance.Unsubscribe<MapCharacterLeaveResponse>(OnMapCharacterLeave);
+            MessageDistributer.Instance.Unsubscribe<MapEntitySyncResponse>(OnMapEntitySync);
         }
 
-        public int currentMapId { get; private set; }
+        public int currentMapId { get; set; }
 
         public void Init()
         {
@@ -44,7 +47,6 @@ namespace Assets.Scripts.Services
                 EnterMap(message.mapId);
                 currentMapId = message.mapId;
             }
-            else EnterMap(currentMapId);
         }
 
         private void OnMapCharacterLeave(object sender, MapCharacterLeaveResponse message)
@@ -70,8 +72,26 @@ namespace Assets.Scripts.Services
 
         internal void SendMapEntitySync(EntityEvent entityEvent, NEntity entityData, int param)
         {
-            Debug.LogFormat("MapEntitySync::");
+            Debug.LogFormat("MapEntitySyncRequest::ID:{0} POS: {1} DIR: {2} SPD: {3}", entityData.Id, entityData.Position, entityData.Direction, entityData.Speed);
+            NetMessage message = new NetMessage();
+            message.Request = new NetMessageRequest();
+            message.Request.mapEntitySync = new MapEntitySyncRequest();
+            message.Request.mapEntitySync.entitySync = new NEntitySync()
+            {
+                Id = entityData.Id,
+                Event = entityEvent,
+                Entity = entityData,
+                Param = param
+            };
+            NetClient.Instance.SendMessage(message);
         }
 
+        private void OnMapEntitySync(object sender, MapEntitySyncResponse message)
+        {
+            foreach (var item in message.entitySyncs)
+            {
+                EntityManager.Instance.OnEntitySync(item);
+            }
+        }
     }
 }

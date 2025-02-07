@@ -96,7 +96,7 @@ public class EntityController : MonoBehaviour , IEntityNotify {
         Destroy(this.gameObject);
     }
 
-    public void OnEntityEvent(EntityEvent entityEvent, int param)
+    public void OnEntityEvent(EntityEvent entityEvent)
     {
         switch (entityEvent)
         {

@@ -11,6 +11,7 @@ using UnityEngine.Events;
 using GameServer.Managers;
 using Entities;
 using log4net;
+using Assets.Scripts.Services;
 //using Models;
 //using Managers;
 
@@ -409,15 +410,17 @@ namespace Services
 
         private void OnUserGameLeave(object sender, UserGameLeaveResponse message)
         {
+            MapService.Instance.currentMapId = 0;
+            CharacterManager.Instance.Clear();
             Debug.LogFormat("UserGameLeaveResponse::{0} {1}", message.Result, message.Errormsg);
-            if (this.isQuitGame)
+            /*if (this.isQuitGame)
             {
 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
 #else
                 Application.Quit();
 #endif
-            }
+            }*/
         }
 
         /*public void SendGameEnter(int characterIdx)

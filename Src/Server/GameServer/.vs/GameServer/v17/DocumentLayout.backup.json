@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\gameserver\\models\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\models\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\gameserver\\managers\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\managers\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|d:\\baidunetdisk\\mmorpgwork\\mmorpg\\src\\server\\gameserver\\gameserver\\services\\userserevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\services\\userserevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|d:\\baidunetdisk\\mmorpgwork\\mmorpg\\src\\server\\gameserver\\gameserver\\network\\netsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\network\\netsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\gameserver\\models\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\models\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\gameserver\\services\\mapservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,6 +21,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\gameserver\\managers\\charactermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\managers\\charactermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\gameserver\\managers\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|solutionrelative:gameserver\\managers\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C54695D-AC9F-455B-846D-0E865991F681}|GameServer\\GameServer.csproj|D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\gameserver\\gameserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,6 +51,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "NetSession.cs",
+              "DocumentMoniker": "D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\GameServer\\Network\\NetSession.cs",
+              "RelativeDocumentMoniker": "GameServer\\Network\\NetSession.cs",
+              "ToolTip": "D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\GameServer\\Network\\NetSession.cs",
+              "RelativeToolTip": "GameServer\\Network\\NetSession.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAhwBgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T13:35:05.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "EntityManager.cs",
               "DocumentMoniker": "D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\GameServer\\Managers\\EntityManager.cs",
               "RelativeDocumentMoniker": "GameServer\\Managers\\EntityManager.cs",
@@ -59,26 +76,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Map.cs",
               "DocumentMoniker": "D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\GameServer\\Models\\Map.cs",
               "RelativeDocumentMoniker": "GameServer\\Models\\Map.cs",
               "ToolTip": "D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\GameServer\\Models\\Map.cs",
               "RelativeToolTip": "GameServer\\Models\\Map.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAIA2wGgAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAQwGUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-06T11:21:52.793Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "UserSerevice.cs",
               "DocumentMoniker": "D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\GameServer\\Services\\UserSerevice.cs",
               "RelativeDocumentMoniker": "GameServer\\Services\\UserSerevice.cs",
               "ToolTip": "D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\GameServer\\Services\\UserSerevice.cs",
               "RelativeToolTip": "GameServer\\Services\\UserSerevice.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAIA2wCwAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAAAAYBAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-06T11:20:21.79Z",
               "EditorCaption": ""
@@ -91,7 +108,7 @@
               "RelativeDocumentMoniker": "GameServer\\Managers\\CharacterManager.cs",
               "ToolTip": "D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\GameServer\\Managers\\CharacterManager.cs",
               "RelativeToolTip": "GameServer\\Managers\\CharacterManager.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA1wA8AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAArwCQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-06T07:12:00.408Z",
               "EditorCaption": ""
@@ -104,14 +121,14 @@
               "RelativeDocumentMoniker": "GameServer\\Services\\MapService.cs",
               "ToolTip": "D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\GameServer\\Services\\MapService.cs",
               "RelativeToolTip": "GameServer\\Services\\MapService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAAD0AAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAYwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-06T07:11:06.319Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "GameServer.cs",
               "DocumentMoniker": "D:\\BaiduNetdisk\\mmorpgwork\\mmorpg\\Src\\Server\\GameServer\\GameServer\\GameServer.cs",
               "RelativeDocumentMoniker": "GameServer\\GameServer.cs",

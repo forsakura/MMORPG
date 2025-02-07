@@ -1,5 +1,6 @@
 ﻿using Entities;
 using SkillBridge.Message;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ namespace Assets.Scripts.Managers
     interface IEntityNotify
     {
         void OnEntityRemoved();
+        void OnEntityChanged(Entity entity);
+        void OnEntityEvent(EntityEvent @event);
     }
     class EntityManager : Singleton<EntityManager>
     {
@@ -33,6 +36,25 @@ namespace Assets.Scripts.Managers
             {
                 notifiers[entity.Id].OnEntityRemoved();
                 notifiers.Remove(entity.Id);
+            }
+        }
+
+        internal void OnEntitySync(NEntitySync item)
+        {
+            Entity entity = null;
+            entities.TryGetValue(item.Id, out entity);
+            if (entity != null)
+            {
+                if(item.Entity != null)
+                {
+                    entity.EntityData = item.Entity;
+                }
+                if(notifiers.ContainsKey(item.Id))
+                {
+                    notifiers[entity.entityId].OnEntityChanged(entity);
+                    notifiers[entity.entityId].OnEntityEvent(item.Event);
+
+                }
             }
         }
     }

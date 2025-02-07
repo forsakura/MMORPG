@@ -264,6 +264,10 @@ namespace GameServer.Services
         {
             Character character = sender.Session.Character;
             Log.InfoFormat("UserGameLeaveRequest::{0}", character.Name);
+            sender.Session.Response.gameLeave = new UserGameLeaveResponse();
+            sender.Session.Response.gameLeave.Result = Result.Success;
+            sender.Session.Response.gameLeave.Errormsg = "None";
+            sender.SendResponse();
             CharacterLeave(character);
         }
         public void CharacterLeave(Character character)
