@@ -53,3 +53,11 @@ Src/Client/.vs
 Src/Client/Library
 Src/Client/Temp
 Src/Server/GameServer/.vs
+Src/Client/.vs/Client/v17
+Src/Client/Bin1
+Src/Client/Library
+Src/Client/obj
+Src/Client/Temp
+Src/Server/GameServer/.vs/GameServer/v17
+Src/Server/GameServer/GameServer/bin
+Src/Server/GameServer/GameServer/obj
