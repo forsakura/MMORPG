@@ -78,7 +78,7 @@ namespace GameServer.Models
                 if (item.Value.character != character)
                     this.AddCharacterEnterMap(item.Value.connection, character.Info);
             }
-            MapCharacters[character.Id] = new MapCharacter(conn, character);
+            MapCharacters[character.EntityData.Id] = new MapCharacter(conn, character);
 
             conn.SendResponse();
         }
@@ -97,19 +97,19 @@ namespace GameServer.Models
 
         internal void CharacterLeave(Character cha)
         {
-            Log.InfoFormat("CharacterLeave: Map:{0} characterId:{1}", this.Define.ID, cha.Id);
+            Log.InfoFormat("CharacterLeave: Map:{0} characterId:{1}", this.Define.ID, cha.EntityData.Id);
             foreach (var kv in this.MapCharacters)
             {
                 this.SendCharacterLeaveMap(kv.Value.connection, cha);
             }
-            this.MapCharacters.Remove(cha.Id);
+            this.MapCharacters.Remove(cha.EntityData.Id);
         }
 
         void SendCharacterLeaveMap(NetConnection<NetSession> conn, Character character)
         {
-            Log.InfoFormat("SendCharacterLeaveMap To {0}:{1} : Map:{2} Character:{3}:{4}", conn.Session.Character.Id, conn.Session.Character.Info.Name, this.Define.ID, character.Id, character.Name);
+            Log.InfoFormat("SendCharacterLeaveMap To {0}:{1} : Map:{2} Character:{3}:{4}", conn.Session.Character.EntityData.Id, conn.Session.Character.Info.Name, this.Define.ID, character.Id, character.Name);
             conn.Session.Response.mapCharacterLeave = new MapCharacterLeaveResponse();
-            conn.Session.Response.mapCharacterLeave.entityId = character.Id;
+            conn.Session.Response.mapCharacterLeave.entityId = character.EntityData.Id;
             conn.SendResponse();
         }
 
