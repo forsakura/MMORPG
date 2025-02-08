@@ -13,17 +13,18 @@ namespace Assets.Scripts.UI
         // Use this for initialization
         void Start()
         {
-            UPdaterView();
+            UpdaterView();
         }
 
         // Update is called once per frame
         void Update()
         {
-            UPdaterView();
+            UpdaterView();
         }
 
-        void UPdaterView()
+        void UpdaterView()
         {
+            if (User.Instance.currentCharacter == null) return;
             string name = User.Instance.currentCharacter.Name;
             string level = User.Instance.currentCharacter.Level.ToString();
             if (name != avaterName.text)

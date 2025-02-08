@@ -12,13 +12,16 @@ public class UIMiniMap : MonoBehaviour {
 	public Transform characterTransform;
 	// Use this for initialization
 	void Start () {
-		characterTransform = User.Instance.currentCharacterObject.transform;
 		mapName.text = User.Instance.curentMiniMap.Name;
 		mapImage.overrideSprite = MiniMapManager.Instance.LoadCurrentMiniMap();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (characterTransform == null)
+        {
+            characterTransform = MiniMapManager.Instance.currentCharacterTransform;
+        }
 		if (characterTransform == null || mapBorder == null) return;
 		float realWeight = mapBorder.bounds.size.x;
 		float realHeight = mapBorder.bounds.size.z;

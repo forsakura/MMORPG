@@ -43,7 +43,7 @@ namespace GameServer.Entities
             this.Id = cha.ID;
             this.Info = new NCharacterInfo();
             this.Info.Type = type;
-            this.Info.Id = cha.ID;
+            this.Info.Id = cha.ID; 
             this.Info.EntityId = this.entityId;
             this.Info.Name = cha.Name;
             this.Info.Level = 10;//cha.Level;

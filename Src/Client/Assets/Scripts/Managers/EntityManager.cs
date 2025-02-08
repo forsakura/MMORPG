@@ -49,6 +49,24 @@ namespace Assets.Scripts.Managers
                 {
                     entity.EntityData = item.Entity;
                 }
+                if (notifiers.ContainsKey(item.Id))
+                {
+                    notifiers[entity.entityId].OnEntityChanged(entity);
+                    notifiers[entity.entityId].OnEntityEvent(item.Event);
+                }
+            }
+        }
+
+        /*internal void OnEntitySync(NEntitySync item)
+        {
+            Entity entity = null;
+            entities.TryGetValue(item.Id, out entity);
+            if (entity != null)
+            {
+                if(item.Entity != null)
+                {
+                    entity.EntityData = item.Entity;
+                }
                 if(notifiers.ContainsKey(item.Id))
                 {
                     notifiers[entity.entityId].OnEntityChanged(entity);
@@ -56,6 +74,6 @@ namespace Assets.Scripts.Managers
 
                 }
             }
-        }
+        }*/
     }
 }

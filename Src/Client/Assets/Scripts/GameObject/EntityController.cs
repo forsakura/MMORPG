@@ -85,7 +85,8 @@ public class EntityController : MonoBehaviour , IEntityNotify {
 
     public void OnEntityChanged(Entity entity)
     {
-        Debug.LogFormat("OnEntityChanged :ID:{0} POS:{1} DIR:{2} SPD:{3} ", entity.entityId, entity.position, entity.direction, entity.speed);
+        /*Debug.LogFormat("OnEntityChanged :ID:{0} POS:{1} DIR:{2} SPD:{3} ", entity.entityId, entity.position, entity.direction, entity.speed);*/
+        Debug.LogFormat("OnEntityChanged : ID: {0} POS : {1} DIR: {2} SPD: {3}", entity.entityId, entity.position, entity.direction, entity.speed);
     }
 
 
@@ -100,6 +101,8 @@ public class EntityController : MonoBehaviour , IEntityNotify {
     {
         switch (entityEvent)
         {
+            case EntityEvent.None:
+                break;
             case EntityEvent.Idle:
                 anim.SetBool("Move", false);
                 anim.SetTrigger("Idle");
@@ -113,12 +116,30 @@ public class EntityController : MonoBehaviour , IEntityNotify {
             case EntityEvent.Jump:
                 anim.SetTrigger("Jump");
                 break;
-            /*case EntityEvent.Ride:
+            default:
+                break;
+        }
+        /*switch (entityEvent)
+        {
+            case EntityEvent.Idle:
+                anim.SetBool("Move", false);
+                anim.SetTrigger("Idle");
+                break;
+            case EntityEvent.MoveFwd:
+                anim.SetBool("Move", true);
+                break;
+            case EntityEvent.MoveBack:
+                anim.SetBool("Move", true);
+                break;
+            case EntityEvent.Jump:
+                anim.SetTrigger("Jump");
+                break;
+            case EntityEvent.Ride:
                 {
                     this.Ride(param);
                 }
-                break;*/
-        }
+                break;
+        }*/
         //if (this.rideController != null) this.rideController.OnEntityEvent(entityEvent, param);
     }
 

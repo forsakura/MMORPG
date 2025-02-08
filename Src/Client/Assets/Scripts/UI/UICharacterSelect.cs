@@ -17,7 +17,7 @@ public class UICharacterSelect : MonoBehaviour {
 	public InputField charName;
 	CharacterClass charClass;
 
-	int selsectCharacterIndex;
+	int selectCharacterIndex = -1;
 
 	public Transform uiCharList;
 	public GameObject uiCharInfo;
@@ -77,14 +77,14 @@ public class UICharacterSelect : MonoBehaviour {
 			MessageBox.Show("未创建角色", "提示", MessageBoxType.Information);
 			return;
 		}
-		else if(User.Instance.currentCharacter == null)
+		else if(selectCharacterIndex == -1)
 		{
 			MessageBox.Show("未选择角色", " 提示", MessageBoxType.Information);
 			return;
 		}
-        else if (User.Instance.currentCharacter != null)
+        else if (selectCharacterIndex != -1)
         {
-			UserService.Instance.SendGameEnter(selsectCharacterIndex);
+			UserService.Instance.SendGameEnter(selectCharacterIndex);
         }
     }
 
@@ -135,10 +135,9 @@ public class UICharacterSelect : MonoBehaviour {
 
     private void OnCharacterSelect(int index)
     {
-		selsectCharacterIndex = index;
+		selectCharacterIndex = index;
 		var cha = User.Instance.Info.Player.Characters[index];
 		Debug.LogFormat("Select Char : [{0} {1} {2}]", cha.Id, cha.Name, cha.Class);
-		User.Instance.currentCharacter = cha;
 		characterView.CurrentCharacterIndex = (int)cha.Class - 1;
 		for (int i = 0;i < uiCharList.childCount; i++)
 		{

@@ -16,29 +16,29 @@ namespace GameServer.Services
     {
         public MapService()
         {
-            MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<MapEntitySyncRequest>(this.OnMapEntitySync);
+            MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<MapEntitySyncRequest>(OnMapEntitySync);
 
             MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<MapTeleportRequest>(this.OnMapTeleport);
         }
+
 
         public void Init()
         {
             MapManager.Instance.Init();
         }
 
-        private void OnMapEntitySync(NetConnection<NetSession> sender, MapEntitySyncRequest request)
+        internal void SendEntityUpdate(NetConnection<NetSession> connection, NEntitySync entitySync)
         {
-            Character character = sender.Session.Character;
-            Log.InfoFormat("OnMapEntitySync: characterID:{0}:{1} Entity.Id:{2} Evt:{3} Entity:{4}", character.Id, character.Info.Name, request.entitySync.Id, request.entitySync.Event, request.entitySync.Entity.String());
-
-            MapManager.Instance[character.Info.mapId].UpdateEntity(request.entitySync);
+            connection.Session.Response.mapEntitySync = new MapEntitySyncResponse();
+            connection.Session.Response.mapEntitySync.entitySyncs.Add(entitySync);
+            connection.SendResponse();
         }
 
-        public void SendEntityUpdate(NetConnection<NetSession> conn, NEntitySync entity)
+        private void OnMapEntitySync(NetConnection<NetSession> sender, MapEntitySyncRequest message)
         {
-            conn.Session.Response.mapEntitySync = new MapEntitySyncResponse();
-            conn.Session.Response.mapEntitySync.entitySyncs.Add(entity);
-            conn.SendResponse();
+            Character character = sender.Session.Character;
+            Log.InfoFormat("MapEntitySync:: characterID: {0}:{1} Entity.ID:{2} Evt:{3} Entity:{4}", character.Id, character.Info.Name, message.entitySync.Id, message.entitySync.Event, message.entitySync.Entity);
+            MapManager.Instance[character.Info.mapId].UpdateEntity(message.entitySync);
         }
 
         void OnMapTeleport(NetConnection<NetSession> sender, MapTeleportRequest request)
@@ -59,7 +59,7 @@ namespace GameServer.Services
 
             TeleporterDefine target = DataManager.Instance.Teleporters[source.LinkTo];
 
-            MapManager.Instance[source.MapID].CharacterLeave(character.Info);
+            MapManager.Instance[source.MapID].CharacterLeave(character);
             character.Position = target.Position;
             character.Direction = target.Direction;
             MapManager.Instance[target.MapID].CharacterEnter(sender, character);

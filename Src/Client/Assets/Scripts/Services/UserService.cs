@@ -126,27 +126,6 @@ namespace Services
             return false;
         }
 
-        /*public void SendLogin(string user, string psw)
-        {
-            Debug.LogFormat("UserLoginRequest::user :{0} psw:{1}", user, psw);
-            NetMessage message = new NetMessage();
-            message.Request = new NetMessageRequest();
-            message.Request.userLogin = new UserLoginRequest();
-            message.Request.userLogin.User = user;
-            message.Request.userLogin.Passward = psw;
-
-            if (this.connected && NetClient.Instance.Connected)
-            {
-                this.pendingMessage = null;
-                NetClient.Instance.SendMessage(message);
-            }
-            else
-            {
-                this.pendingMessage = message;
-                this.ConnectToServer();
-            }
-        }*/
-
         /// <summary>
         /// 发送用户登录请求
         /// </summary>
@@ -175,21 +154,6 @@ namespace Services
                 ConnectToServer();
             }
         }
-
-        /*void OnUserLogin(object sender, UserLoginResponse response)
-        {
-            Debug.LogFormat("OnLogin:{0} [{1}]", response.Result, response.Errormsg);
-
-            if (response.Result == Result.Success)
-            {//登陆成功逻辑
-                //Models.User.Instance.SetupUserInfo(response.Userinfo);
-            };
-            if (this.OnLogin != null)
-            {
-                this.OnLogin(response.Result, response.Errormsg);
-
-            }
-        }*/
         /// <summary>
         /// 当服务端发送回应时，触发登录事件
         /// </summary>
@@ -233,26 +197,6 @@ namespace Services
                 ConnectToServer();
             }
         }
-        /*public void SendRegister(string user, string psw)
-        {
-            Debug.LogFormat("UserRegisterRequest::user :{0} psw:{1}", user, psw);
-            NetMessage message = new NetMessage();
-            message.Request = new NetMessageRequest();
-            message.Request.userRegister = new UserRegisterRequest();
-            message.Request.userRegister.User = user;
-            message.Request.userRegister.Passward = psw;
-
-            if (this.connected && NetClient.Instance.Connected)
-            {
-                this.pendingMessage = null;
-                NetClient.Instance.SendMessage(message);
-            }
-            else
-            {
-                this.pendingMessage = message;
-                this.ConnectToServer();
-            }
-        }*/
 
         /// <summary>
         /// 接收服务端注册请求回应，并触发注册事件
@@ -268,16 +212,6 @@ namespace Services
                 this.OnRegister(response.Result, response.Errormsg);
             }
         }
-        /*void OnUserRegister(object sender, UserRegisterResponse response)
-        {
-            Debug.LogFormat("OnUserRegister:{0} [{1}]", response.Result, response.Errormsg);
-
-            if (this.OnRegister != null)
-            {
-                this.OnRegister(response.Result, response.Errormsg);
-
-            }
-        }*/
 
         //发送创建角色的请求：有如下操作
         //创建创建角色请求，为创建角色请求的角色名称和角色类型赋值
@@ -300,26 +234,6 @@ namespace Services
                 this.ConnectToServer();
             }
         }
-        //public void SendCharacterCreate(string name, CharacterClass cls)
-        //{
-        //    Debug.LogFormat("UserCreateCharacterRequest::name :{0} class:{1}", name, cls);
-        //    NetMessage message = new NetMessage();
-        //    message.Request = new NetMessageRequest();
-        //    message.Request.createChar = new UserCreateCharacterRequest();
-        //    message.Request.createChar.Name = name;
-        //    message.Request.createChar.Class = cls;
-
-        //    if (this.connected && NetClient.Instance.Connected)
-        //    {
-        //        this.pendingMessage = null;
-        //        NetClient.Instance.SendMessage(message);
-        //    }
-        //    else
-        //    {
-        //        this.pendingMessage = message;
-        //        this.ConnectToServer();
-        //    }
-        //}
 
         /// <summary>
         /// 接收服务端创建角色的回应
@@ -341,23 +255,6 @@ namespace Services
                 OnCharacterCreate(response.Result, response.Errormsg);
             }
         }
-
-        //void OnUserCreateCharacter(object sender, UserCreateCharacterResponse response)
-        //{
-        //    Debug.LogFormat("OnUserCreateCharacter:{0} [{1}]", response.Result, response.Errormsg);
-
-        //    if(response.Result == Result.Success)
-        //    {
-        //        //Models.User.Instance.Info.Player.Characters.Clear();
-        //        //Models.User.Instance.Info.Player.Characters.AddRange(response.Characters);
-        //    }
-
-        //    if (this.OnCharacterCreate != null)
-        //    {
-        //        this.OnCharacterCreate(response.Result, response.Errormsg);
-
-        //    }
-        //}
 
         /// <summary>
         /// 发送客户端角色进入游戏的逻辑，将该玩家的角色序号发给服务端
@@ -411,7 +308,7 @@ namespace Services
         private void OnUserGameLeave(object sender, UserGameLeaveResponse message)
         {
             MapService.Instance.currentMapId = 0;
-            CharacterManager.Instance.Clear();
+            User.Instance.currentCharacter = null;
             Debug.LogFormat("UserGameLeaveResponse::{0} {1}", message.Result, message.Errormsg);
             /*if (this.isQuitGame)
             {

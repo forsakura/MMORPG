@@ -68,10 +68,10 @@ namespace GameServer.Models
         {
             Log.InfoFormat("CharacterEnter::characterID:{0} MapID:{1}", character.Id, Define.ID);
             character.Info.mapId = this.ID;
-            MapCharacters[character.Id] = new MapCharacter(conn, character);
 
             conn.Session.Response.mapCharacterEnter = new MapCharacterEnterResponse();
             conn.Session.Response.mapCharacterEnter.mapId = this.Define.ID;
+            conn.Session.Response.mapCharacterEnter.Characters.Add(character.Info);
             foreach (var item in MapCharacters)
             {
                 conn.Session.Response.mapCharacterEnter.Characters.Add(item.Value.character.Info);
@@ -95,45 +95,23 @@ namespace GameServer.Models
         }
 
 
-        internal void CharacterLeave(NCharacterInfo cha)
+        internal void CharacterLeave(Character cha)
         {
             Log.InfoFormat("CharacterLeave: Map:{0} characterId:{1}", this.Define.ID, cha.Id);
-            this.MapCharacters.Remove(cha.Id);
             foreach (var kv in this.MapCharacters)
             {
                 this.SendCharacterLeaveMap(kv.Value.connection, cha);
             }
+            this.MapCharacters.Remove(cha.Id);
         }
 
-        void SendCharacterLeaveMap(NetConnection<NetSession> conn, NCharacterInfo character)
+        void SendCharacterLeaveMap(NetConnection<NetSession> conn, Character character)
         {
             Log.InfoFormat("SendCharacterLeaveMap To {0}:{1} : Map:{2} Character:{3}:{4}", conn.Session.Character.Id, conn.Session.Character.Info.Name, this.Define.ID, character.Id, character.Name);
             conn.Session.Response.mapCharacterLeave = new MapCharacterLeaveResponse();
-            conn.Session.Response.mapCharacterLeave.entityId = character.Entity.Id;
+            conn.Session.Response.mapCharacterLeave.entityId = character.Id;
             conn.SendResponse();
         }
-
-        internal void UpdateEntity(NEntitySync entity)
-        {
-            foreach (var kv in this.MapCharacters)
-            {
-                if (kv.Value.character.entityId == entity.Id)
-                {
-                    kv.Value.character.Position = entity.Entity.Position;
-                    kv.Value.character.Direction = entity.Entity.Direction;
-                    kv.Value.character.Speed = entity.Entity.Speed;
-                    if (entity.Event == EntityEvent.Ride)
-                    {
-                        kv.Value.character.Ride = entity.Param;
-                    }
-                }
-                else
-                {
-                    MapService.Instance.SendEntityUpdate(kv.Value.connection, entity);
-                }
-            }
-        }
-
 
 
         /// <summary>
@@ -146,6 +124,20 @@ namespace GameServer.Models
             foreach (var kv in this.MapCharacters)
             {
                 this.AddCharacterEnterMap(kv.Value.connection, monster.Info);
+            }
+        }
+
+        internal void UpdateEntity(NEntitySync entitySync)
+        {
+            foreach (var kv in this.MapCharacters)
+            {
+                if (kv.Value.character.EntityData.Id == entitySync.Entity.Id)
+                {
+                    kv.Value.character.Position = entitySync.Entity.Position;
+                    kv.Value.character.Direction = entitySync.Entity.Direction;
+                    kv.Value.character.Speed = entitySync.Entity.Speed;
+                }
+                else MapService.Instance.SendEntityUpdate(kv.Value.connection, entitySync);
             }
         }
     }
