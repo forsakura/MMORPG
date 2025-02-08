@@ -37,7 +37,7 @@ namespace Assets.Scripts.Services
             Debug.LogFormat("OnMapCharacterEnter:Map:{0} Count:{1}", message.mapId, message.Characters.Count);
             foreach (var cha in message.Characters)
             {
-                if(User.Instance.currentCharacter == null || User.Instance.currentCharacter.Id == cha.Id)
+                if(User.Instance.currentCharacter == null || User.Instance.currentCharacter.Entity.Id == cha.Entity.Id)
                 {
                     User.Instance.currentCharacter = cha;
                 }

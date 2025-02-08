@@ -84,7 +84,7 @@ public class GameObjectManager : MonoSingleton<GameObjectManager> {
         PlayerInputController playerInputController = gameObject.GetComponent<PlayerInputController>();
         if (playerInputController != null)
         {
-            if(cha.Info.Id == User.Instance.currentCharacter.Id)
+            if(cha.entityId == User.Instance.currentCharacter.Entity.Id)
             {
                 User.Instance.currentCharacterObject = gameObject;
                 MainPlayerCamera.Instance.player = gameObject;
