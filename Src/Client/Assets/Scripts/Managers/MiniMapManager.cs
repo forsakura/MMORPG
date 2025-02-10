@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MiniMapManager : Singleton<MiniMapManager> {
-
+	
 	public Transform currentCharacterTransform
 	{
 		get

@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
 {
-    public class UIMainCity : MonoBehaviour
+    public class UIMainCity : MonoSingleton<UIMainCity>
     {
         public Text avaterName;
         public Text avaterLevel;
         // Use this for initialization
-        void Start()
+        protected override void OnStart()
         {
             UpdaterView();
         }

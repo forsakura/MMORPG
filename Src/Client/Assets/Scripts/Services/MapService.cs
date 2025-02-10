@@ -109,5 +109,15 @@ namespace Assets.Scripts.Services
                 EntityManager.Instance.OnEntitySync(item);
             }
         }
+
+        internal void SendMapTeleport(int iD)
+        {
+            Debug.LogFormat("MapTeleportRequest::TeleporterID:{0}", iD);
+            NetMessage message = new NetMessage();
+            message.Request = new NetMessageRequest();
+            message.Request.mapTeleport = new MapTeleportRequest();
+            message.Request.mapTeleport.teleporterId = iD;
+            NetClient.Instance.SendMessage(message);
+        }
     }
 }

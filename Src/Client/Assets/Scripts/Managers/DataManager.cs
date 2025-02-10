@@ -8,14 +8,15 @@ using Common;
 using Common.Data;
 
 using Newtonsoft.Json;
+using UnityEngine;
 namespace GameServer.Managers
 {
     public class DataManager : Singleton<DataManager>
     {
-        internal string DataPath;
-        internal Dictionary<int, MapDefine> Maps = null;
-        internal Dictionary<int, CharacterDefine> Characters = null;
-        internal Dictionary<int, TeleporterDefine> Teleporters = null;
+        public string DataPath;
+        public Dictionary<int, MapDefine> Maps = null;
+        public Dictionary<int, CharacterDefine> Characters = null;
+        public Dictionary<int, TeleporterDefine> Teleporters = null;
         public Dictionary<int, Dictionary<int, SpawnPointDefine>> SpawnPoints = null;
         public Dictionary<int, Dictionary<int,SpawnRuleDefine>> SpawnRules = null;
 		//public Dictionary<int, NpcDefine> Npcs = null;
@@ -27,10 +28,10 @@ namespace GameServer.Managers
         public DataManager()
         {
             this.DataPath = "Data/";
-            Log.Info("DataManager > DataManager()");
+            Debug.LogFormat("DataManager > DataManager()");
         }
 
-        internal void Load()
+        public void Load()
         {
             string json = File.ReadAllText(this.DataPath + "MapDefine.txt");
             this.Maps = JsonConvert.DeserializeObject<Dictionary<int, MapDefine>>(json);
@@ -93,5 +94,13 @@ namespace GameServer.Managers
             
             yield return null;*/
         }
+
+#if UNITY_EDITOR
+        public void SaveTeleporters()
+        {
+            string json = JsonConvert.SerializeObject(Teleporters, Formatting.Indented);
+            File.WriteAllText(DataPath + "TeleporterDefine.txt", json);
+        }
+#endif
     }
 }

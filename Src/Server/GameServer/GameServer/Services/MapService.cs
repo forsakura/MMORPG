@@ -17,10 +17,8 @@ namespace GameServer.Services
         public MapService()
         {
             MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<MapEntitySyncRequest>(OnMapEntitySync);
-
-            MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<MapTeleportRequest>(this.OnMapTeleport);
+            MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<MapTeleportRequest>(OnMapTeleport);
         }
-
 
         public void Init()
         {
@@ -41,25 +39,25 @@ namespace GameServer.Services
             MapManager.Instance[character.Info.mapId].UpdateEntity(message.entitySync);
         }
 
-        void OnMapTeleport(NetConnection<NetSession> sender, MapTeleportRequest request)
+        private void OnMapTeleport(NetConnection<NetSession> sender, MapTeleportRequest message)
         {
             Character character = sender.Session.Character;
-            Log.InfoFormat("OnMapTeleport: characterID:{0}:{1} TeleporterId:{2}", character.Id, character.Data, request.teleporterId);
+            Log.InfoFormat("OnMapTeleport: CharacterID:{0}:{1} TeleportID:{2}", character.Id, character.Data, message.teleporterId);
 
-            if(!DataManager.Instance.Teleporters.ContainsKey(request.teleporterId))
+            if (!DataManager.Instance.Teleporters.ContainsKey(message.teleporterId))
             {
-                Log.WarningFormat("Source TeleporterID [{0}] not existed", request.teleporterId);
+                Log.WarningFormat("Source TeleporterID:{0} not existed", message.teleporterId);
                 return;
             }
-            TeleporterDefine source = DataManager.Instance.Teleporters[request.teleporterId];
-            if(source.LinkTo==0 || !DataManager.Instance.Teleporters.ContainsKey(source.LinkTo))
+            TeleporterDefine teleporterDefine = DataManager.Instance.Teleporters[message.teleporterId];
+            if (teleporterDefine.LinkTo == 0 || !DataManager.Instance.Teleporters.ContainsKey(teleporterDefine.LinkTo))
             {
-                Log.WarningFormat("Source TeleporterID [{0}] LinkTo ID [{1}] not existed", request.teleporterId, source.LinkTo);
+                Log.WarningFormat("Source TeleporterID [{0}] LinkTo [{1}] not existed", message.teleporterId, teleporterDefine.LinkTo);
             }
 
-            TeleporterDefine target = DataManager.Instance.Teleporters[source.LinkTo];
+            TeleporterDefine target =  DataManager.Instance.Teleporters[teleporterDefine.LinkTo];
 
-            MapManager.Instance[source.MapID].CharacterLeave(character);
+            MapManager.Instance[teleporterDefine.MapID].CharacterLeave(character);
             character.Position = target.Position;
             character.Direction = target.Direction;
             MapManager.Instance[target.MapID].CharacterEnter(sender, character);
