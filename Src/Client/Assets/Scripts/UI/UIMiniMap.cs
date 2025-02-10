@@ -7,19 +7,27 @@ public class UIMiniMap : MonoSingleton<UIMiniMap> {
 
 	public Image mapImage;
 	public Text mapName;
-	public Collider mapBorder;
+	private Collider mapBorder;
 	public GameObject arraw;
 	public Transform characterTransform;
 	// Use this for initialization
 	protected override void OnStart () {
-		mapName.text = User.Instance.curentMiniMap.Name;
-		mapImage.overrideSprite = MiniMapManager.Instance.LoadCurrentMiniMap();
+		MiniMapManager.Instance.minimap = this;
+		UpdateMap();
 	}
 	
+	public void UpdateMap()
+	{
+		mapName.text = User.Instance.curentMiniMap.Name;
+		mapImage.overrideSprite = MiniMapManager.Instance.LoadCurrentMiniMap();
+		mapImage.SetNativeSize();
+		mapImage.transform.position = Vector3.zero;
+		mapBorder = MiniMapManager.Instance.BoxCollider;
+		characterTransform = null;
+    }
+
 	// Update is called once per frame
 	void Update () {
-		if (mapImage.overrideSprite != MiniMapManager.Instance.LoadCurrentMiniMap()) 
-			mapImage.overrideSprite = MiniMapManager.Instance.LoadCurrentMiniMap();
 		if (characterTransform == null)
         {
             characterTransform = MiniMapManager.Instance.currentCharacterTransform;

@@ -17921,6 +17921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff81ee48a9670247bab44a6f04ba346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  global: 1
   avaterName: {fileID: 302755220}
   avaterLevel: {fileID: 1239651920}
 --- !u!114 &518925101
@@ -28554,6 +28555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920991109}
+  - component: {fileID: 920991108}
   m_Layer: 0
   m_Name: MapRoot
   m_TagString: Untagged
@@ -28561,6 +28563,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &920991108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 920991107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5399789f2668f47a5d3b7b7f679da9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoxCollider: {fileID: 161746897}
 --- !u!4 &920991109
 Transform:
   m_ObjectHideFlags: 0
@@ -58181,7 +58195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -184, y: -190.54999}
+  m_AnchoredPosition: {x: -184, y: -190.5498}
   m_SizeDelta: {x: 264, y: 321}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1943523457
@@ -58195,9 +58209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc307865b43601948a01162f76d9d4db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  global: 1
   mapImage: {fileID: 694415013}
   mapName: {fileID: 1429599992}
-  mapBorder: {fileID: 161746897}
   arraw: {fileID: 332563955}
   characterTransform: {fileID: 0}
 --- !u!114 &1943523458

@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MiniMapManager : Singleton<MiniMapManager> {
-	
+	public UIMiniMap minimap;
+	Collider boxCollider;
+	public Collider BoxCollider
+	{
+		get { return boxCollider; }
+	}
 	public Transform currentCharacterTransform
 	{
 		get
@@ -18,5 +23,14 @@ public class MiniMapManager : Singleton<MiniMapManager> {
 	public Sprite LoadCurrentMiniMap()
 	{
 		return Resloader.Load<Sprite>("UI/MiniMap/" + User.Instance.curentMiniMap.MiniMap);
+	}
+
+	public void UpdateMiniMap(Collider collider)
+	{
+		boxCollider = collider;
+		if (minimap != null)
+		{
+			minimap.UpdateMap();
+		}
 	}
 }
