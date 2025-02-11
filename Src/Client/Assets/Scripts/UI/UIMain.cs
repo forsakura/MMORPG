@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
 {
-    public class UIMainCity : MonoSingleton<UIMainCity>
+    public class UIMain : MonoSingleton<UIMain>
     {
         public Text avaterName;
         public Text avaterLevel;
