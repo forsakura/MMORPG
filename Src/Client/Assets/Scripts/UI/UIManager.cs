@@ -18,7 +18,7 @@ namespace Assets.Scripts.UI
 
         public UIManager()
         {
-
+            UIResources.Add(typeof(UITest), new UIElement() { resource = "UI/UITest", cache = false, instance = null });
         }
 
         public T Show<T>()
@@ -35,8 +35,9 @@ namespace Assets.Scripts.UI
                 {
                     UnityEngine.Object obj = Resloader.Load<UnityEngine.Object>(res.resource);
                     if (obj == null) return default(T);
-                    res.instance = (GameObject)UnityEngine.Object.Instantiate(obj);
+                    res.instance = (GameObject)UnityEngine.Object.Instantiate(obj, UIMain.Instance.transform);
                 }
+                return res.instance.GetComponent<T>();
             }
             return default(T);
         }

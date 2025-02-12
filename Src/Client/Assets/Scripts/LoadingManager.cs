@@ -8,6 +8,7 @@ using SkillBridge.Message;
 using ProtoBuf;
 using Services;
 using Assets.Scripts.Services;
+using Assets.Scripts.Managers;
 //using Managers;
 
 public class LoadingManager : MonoBehaviour {
@@ -41,6 +42,7 @@ public class LoadingManager : MonoBehaviour {
         //Init basic services
         MapService.Instance.Init();
         UserService.Instance.Init();
+        TestManager.Instance.Init();
         //StatusService.Instance.Init();
         //FriendService.Instance.Init();
         //TeamService.Instance.Init();

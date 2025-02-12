@@ -122,6 +122,7 @@
     <Compile Include="Network\NetEventArgs.cs" />
     <Compile Include="Network\NetConnection.cs" />
     <Compile Include="Network\NetService.cs" />
+    <Compile Include="Services\NpcService.cs" />
     <Compile Include="Network\TcpSocketListener.cs" />
     <Compile Include="Network\NetSession.cs" />
     <Compile Include="Program.cs" />
