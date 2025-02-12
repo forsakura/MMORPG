@@ -6,28 +6,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NpcManager : Singleton<NpcManager> {
-
-	public delegate bool NPCActionHandler(NpcDefine npc);
-	public Dictionary<NpcFunction, NPCActionHandler> NpcActions = new Dictionary<NpcFunction, NPCActionHandler>();
-    internal NpcDefine GetDefine(int iD)
-    {
-		NpcDefine npcDefine = null;
-		DataManager.Instance.Npcs.TryGetValue(iD, out npcDefine);
-		return npcDefine;
-    }
-
-	public void RegisterNpcFunction(NpcFunction npcFunction, NPCActionHandler actionHandler)
+	public NpcDefine GetNPCDefine(int npcId)
 	{
-		if (NpcActions.ContainsKey(npcFunction))
+		return DataManager.Instance.Npcs[npcId];
+	}
+	public delegate bool NPCActionHandler(NpcDefine npcDefine);
+	public Dictionary<NpcFunction, NPCActionHandler> NpcMaps = new Dictionary<NpcFunction, NPCActionHandler>();	
+
+	public void RegisterNPCActionHandler(NpcFunction npcFunction, NPCActionHandler handler)
+	{
+		if (NpcMaps.ContainsKey(npcFunction))
 		{
-			NpcActions[npcFunction] += actionHandler;
+			NpcMaps[npcFunction] += handler;
 		}
-		else NpcActions[npcFunction] = actionHandler;
+		else NpcMaps[npcFunction] = handler;
 	}
 
 	public bool Interactive(int npcID)
 	{
-		if (DataManager.Instance.Npcs.ContainsKey(npcID))
+		if(DataManager.Instance.Npcs.ContainsKey(npcID))
 		{
 			return Interactive(DataManager.Instance.Npcs[npcID]);
 		}
@@ -47,16 +44,18 @@ public class NpcManager : Singleton<NpcManager> {
 		return false;
 	}
 
-    private bool DoFunctionalactive(NpcDefine npcDefine)
-    {
-		MessageBox.Show("点击了NPC：" + npcDefine.Name, "NPC对话");
-		return true;
-    }
-
     private bool DoTaskInteractive(NpcDefine npcDefine)
     {
-        if(npcDefine.Type != NpcType.Task) return false;
-		if(!NpcActions.ContainsKey(npcDefine.Function)) return false;
-		return NpcActions[npcDefine.Function](npcDefine);
+        Debug.LogFormat("NPCManager:DoTaskInteractive::NPC: [{0} : {1}] : Task: {2} : {3}", npcDefine.ID, npcDefine.Name, npcDefine.Type, npcDefine.Function);
+        if (npcDefine.Type != NpcType.Task) return false;
+        if(!NpcMaps.ContainsKey(npcDefine.Function)) return false;
+        return NpcMaps[npcDefine.Function](npcDefine);
+    }
+
+    private bool DoFunctionalactive(NpcDefine npcDefine)
+    {
+        Debug.LogFormat("NPCManager:DoFunctionalInteractive::NPC: [{0} : {1}] : Task: {2} : {3}", npcDefine.ID, npcDefine.Name, npcDefine.Type, npcDefine.Function);
+        MessageBox.Show("触发任务NPC:" + npcDefine.Name, "NPC对话");
+        throw new NotImplementedException();
     }
 }

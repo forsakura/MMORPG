@@ -1,32 +1,37 @@
 ﻿using Common.Data;
+using GameServer.Managers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+/// <summary>
+/// NPCController的功能包括点击交互以及高亮显示
+/// </summary>
 public class NpcController : MonoBehaviour {
-	public int ID;
-	public NpcDefine npcDefine;
+    public int npcID;
+    NpcDefine npcDefine;
+    bool inInteractive;
     Animator animator;
-    SkinnedMeshRenderer render;
+    SkinnedMeshRenderer skinnedMeshRenderer;
     Color originColor;
-    bool inInteracive;
-	// Use this for initialization
-	void Start () {
-		npcDefine = NpcManager.Instance.GetDefine(ID);
-        animator = GetComponent<Animator>();
-        render = GetComponentInChildren<SkinnedMeshRenderer>();
-        originColor = render.sharedMaterial.color;
-        StartCoroutine(Actions());
-	}
-
-    IEnumerator  Actions()
+    private void Start()
     {
-        while (true) {
-            if (inInteracive) yield return new WaitForSeconds(2f);
-            else yield return new WaitForSeconds(UnityEngine.Random.Range(5f, 10f));
-            this.Relax();
+        npcDefine = NpcManager.Instance.GetNPCDefine(npcID);
+        animator = GetComponent<Animator>();
+        skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+        originColor =skinnedMeshRenderer.sharedMaterial.color;
+        StartCoroutine(Actions());
+    }
+
+    IEnumerator Actions()
+    {
+        while(true)
+        {
+            if (inInteractive) yield return new WaitForSeconds(2f);
+            else yield return new WaitForSeconds(UnityEngine.Random.Range(3f, 5f));
+            Relax(); 
         }
     }
 
@@ -42,31 +47,37 @@ public class NpcController : MonoBehaviour {
 
     private void Interactive()
     {
-        if(!inInteracive)
+        if(!inInteractive)
         {
-            inInteracive = true;
+            inInteractive = true;
             StartCoroutine(DoInteractive());
         }
     }
+
     IEnumerator DoInteractive()
     {
         yield return FaceToPlayer();
-        if (NpcManager.Instance.Interactive(npcDefine))
+        if(NpcManager.Instance.Interactive(npcID))
         {
             animator.SetTrigger("Talk");
         }
         yield return new WaitForSeconds(3f);
-        inInteracive = false;
+        inInteractive = true;
     }
 
-    private IEnumerator FaceToPlayer()
+    IEnumerator FaceToPlayer()
     {
-        Vector3 faceto = (User.Instance.currentCharacterObject.transform.position-transform.position).normalized;
-        while (Mathf.Abs(Vector3.Angle(gameObject.transform.forward, faceto)) > 5)
+        Vector3 faceTo = (User.Instance.currentCharacterObject.transform.position - transform.position).normalized;
+        while(Mathf.Abs(Vector3.Angle(transform.forward, faceTo)) > 5f)
         {
-            transform.forward = Vector3.Lerp(transform.forward, faceto, Time.deltaTime * 5f);
+            Vector3.Lerp(transform.forward, faceTo, Time.deltaTime * 5f);
             yield return null;
         }
+    }
+
+    private void OnMouseEnter()
+    {
+        HighLight(true);
     }
 
     private void OnMouseExit()
@@ -74,23 +85,18 @@ public class NpcController : MonoBehaviour {
         HighLight(false);
     }
 
-    private void OnMouseEnter()
-    {
-        HighLight(true);
-    }
     private void OnMouseOver()
     {
-        HighLight(true);
+        HighLight(false);
     }
+
     private void HighLight(bool v)
     {
         if(v)
         {
-            if(render.sharedMaterial.color != Color.white) render.sharedMaterial.color = Color.white;
+            if(skinnedMeshRenderer.sharedMaterial.color !=  Color.white) skinnedMeshRenderer.sharedMaterial.color = Color.white;
         }
-        else
-        {
-            if(render.sharedMaterial.color != originColor) render.sharedMaterial.color = originColor;
-        }
+        else 
+            if(skinnedMeshRenderer.sharedMaterial.color != originColor) skinnedMeshRenderer.sharedMaterial.color= originColor;
     }
 }

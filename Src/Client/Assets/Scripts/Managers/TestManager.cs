@@ -11,8 +11,8 @@ namespace Assets.Scripts.Managers
     {
         public void Init()
         {
-            NpcManager.Instance.RegisterNpcFunction(Common.Data.NpcFunction.InvokeShop, OnNPCInvokeShop);
-            NpcManager.Instance.RegisterNpcFunction(Common.Data.NpcFunction.InvokeInsrance, OnNPCInvokeInsrance);
+            NpcManager.Instance.RegisterNPCActionHandler(Common.Data.NpcFunction.InvokeShop, OnNPCInvokeShop);
+            NpcManager.Instance.RegisterNPCActionHandler(Common.Data.NpcFunction.InvokeInsrance, OnNPCInvokeInsrance);
         }
 
         private bool OnNPCInvokeInsrance(NpcDefine npc)
