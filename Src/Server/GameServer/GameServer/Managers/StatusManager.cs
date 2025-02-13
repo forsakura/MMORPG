@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GameServer.Managers
 {
-    class StatusManager
+    public class StatusManager
     {
         Character Owner;
 

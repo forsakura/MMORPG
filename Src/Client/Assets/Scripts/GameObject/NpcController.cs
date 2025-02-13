@@ -20,7 +20,7 @@ public class NpcController : MonoBehaviour {
     {
         npcDefine = NpcManager.Instance.GetNPCDefine(npcID);
         animator = GetComponent<Animator>();
-        skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+        skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         originColor =skinnedMeshRenderer.sharedMaterial.color;
         StartCoroutine(Actions());
     }

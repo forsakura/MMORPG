@@ -301,6 +301,7 @@ namespace Services
                 if (response.Character != null)
                 {
                     User.Instance.currentCharacter = response.Character;
+                    ItemManager.Instance.Init(response.Character.Items);
                 }
             }
         }

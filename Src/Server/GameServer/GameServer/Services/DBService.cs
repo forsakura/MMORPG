@@ -28,7 +28,7 @@ namespace GameServer.Services
 
         public void Save(bool async = false)
         {
-            if (async)
+            if(async)
                 entities.SaveChangesAsync();
             else
                 entities.SaveChanges();

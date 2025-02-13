@@ -18,7 +18,7 @@ namespace GameServer.Entities
     /// Character
     /// 玩家角色类
     /// </summary>
-    class Character : CharacterBase,IPostResponser
+    public class Character : CharacterBase,IPostResponser
     {
         public TCharacter Data;
 
@@ -55,8 +55,8 @@ namespace GameServer.Entities
             this.Info.Entity = this.EntityData;
             this.Define = DataManager.Instance.Characters[this.Info.ConfigId];
 
-            //this.ItemManager = new ItemManager(this);
-            //this.ItemManager.GetItemInfos(this.Info.Items);
+            ItemManager itemManager = new ItemManager(this);
+            itemManager.GetItemsInfo(Info.Items);
             this.Info.Bag = new NBagInfo();
             //this.Info.Bag.Unlocked = this.Data.Bag.Unlocked;
             //this.Info.Bag.Items = this.Data.Bag.Items;
