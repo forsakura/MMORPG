@@ -23,7 +23,7 @@ namespace GameServer.Entities
         public TCharacter Data;
 
 
-        //public ItemManager ItemManager;
+        public ItemManager ItemManager;
         //public QuestManager QuestManager;
         public StatusManager StatusManager;
         //public FriendManager FriendManager;
@@ -55,9 +55,12 @@ namespace GameServer.Entities
             this.Info.Entity = this.EntityData;
             this.Define = DataManager.Instance.Characters[this.Info.ConfigId];
 
-            ItemManager itemManager = new ItemManager(this);
-            itemManager.GetItemsInfo(Info.Items);
-            this.Info.Bag = new NBagInfo();
+            this.ItemManager = new ItemManager(this);
+            ItemManager.GetItemsInfo(Info.Items);
+            Info.Bag = new NBagInfo();
+            Info.Bag.Unlocked = this.Data.Bag.Unlocked;
+            Info.Bag.Items = this.Data.Bag.Items;
+            //this.Info.Bag = new NBagInfo();
             //this.Info.Bag.Unlocked = this.Data.Bag.Unlocked;
             //this.Info.Bag.Items = this.Data.Bag.Items;
             this.Info.Equips = this.Data.Equips;

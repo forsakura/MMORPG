@@ -12,6 +12,7 @@ using GameServer.Managers;
 using Entities;
 using log4net;
 using Assets.Scripts.Services;
+using Assets.Scripts.Managers;
 //using Models;
 //using Managers;
 
@@ -302,6 +303,7 @@ namespace Services
                 {
                     User.Instance.currentCharacter = response.Character;
                     ItemManager.Instance.Init(response.Character.Items);
+                    BagManager.Instance.Init(response.Character.Bag);
                 }
             }
         }

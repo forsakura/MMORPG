@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using Assets.Scripts.UI;
+using Services;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,6 +41,12 @@ namespace Assets.Scripts.UI
         {
             SceneManager.Instance.LoadScene("CharacterSelect");
             UserService.Instance.SendGameLeave(true);
+        }
+
+        public void OnClickBag()
+        {
+            Debug.LogFormat("Open Bag");
+            UIManager.Instance.Show<UI.UIBag.UIBag>();
         }
     }
 }

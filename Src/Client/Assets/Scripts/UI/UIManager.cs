@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.UI.TabView;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace Assets.Scripts.UI
         public UIManager()
         {
             UIResources.Add(typeof(UITest), new UIElement() { resource = "UI/UITest", cache = false, instance = null });
+            UIResources.Add(typeof(UIBag.UIBag), new UIElement() { resource = "UI/UIBag", cache = false, instance = null });
         }
 
         public T Show<T>()

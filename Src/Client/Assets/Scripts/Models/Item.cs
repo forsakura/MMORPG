@@ -1,19 +1,23 @@
-﻿using SkillBridge.Message;
+﻿using Common.Data;
+using GameServer.Managers;
+using SkillBridge.Message;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.SymbolStore;
 using UnityEngine;
 
-namespace Assets.Scripts.Entities
+namespace Assets.Scripts.Models
 {
     public class Item
     {
         public int itemID;
         public int itemCount;
+        public ItemDefine define;
         public Item(NItemInfo info)
         {
-            this.itemID = info.Id;
-            this.itemCount = info.Count;
+            itemID = info.Id;
+            itemCount = info.Count;
+            define = DataManager.Instance.Items[itemID];
         }
 
         public override string ToString()

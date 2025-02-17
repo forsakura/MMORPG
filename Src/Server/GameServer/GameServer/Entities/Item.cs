@@ -17,7 +17,7 @@ namespace GameServer.Entities
         public Item(TCharacterItem item)
         {
             this.tCharacterItem = item;
-            itemID = item.Id;
+            itemID = item.ItemID;
             itemCount = item.ItemCount;
         }
 

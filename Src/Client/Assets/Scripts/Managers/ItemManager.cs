@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Entities;
+﻿using Assets.Scripts.Models;
 using Common.Data;
 using SkillBridge.Message;
 using System.Collections;
@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ItemManager : Singleton<ItemManager> {
 
-	Dictionary<int, Item> items = new Dictionary<int, Item>();
+	public Dictionary<int, Item> items = new Dictionary<int, Item>();
 	public void Init(List<NItemInfo> list)
 	{
 		items.Clear();

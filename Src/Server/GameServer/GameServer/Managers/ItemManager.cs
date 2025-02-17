@@ -38,8 +38,8 @@ namespace GameServer.Managers
                 itemTemp = new Item(item);
                 items[itemID] = itemTemp;
             }
-            Debug.LogFormat("ItemManager::Add: ItemID: {0} ItemCount: {1}", itemID, count);
-            DBService.Instance.Save(true);
+            Common.Log.InfoFormat("ItemManager::Add: ItemID: {0} ItemCount: {1}", itemID, count);
+            //DBService.Instance.Save(true);
             return true;
         }
 
@@ -53,7 +53,7 @@ namespace GameServer.Managers
                     //ToDo: 添加使用逻辑
 
                     itemTemp.Remove(count);
-                    DBService.Instance.Save(true);
+                    //DBService.Instance.Save(true);
                     return true;
                 }
             }
@@ -68,7 +68,7 @@ namespace GameServer.Managers
                 if (itemTemp.itemCount > count)
                 {
                     itemTemp.Remove(count);
-                    DBService.Instance.Save(true);
+                    //DBService.Instance.Save(true);
                     return true;
                 }
             }
