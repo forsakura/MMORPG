@@ -10,6 +10,7 @@ public class NpcManager : Singleton<NpcManager> {
 	{
 		return DataManager.Instance.Npcs[npcId];
 	}
+
 	public delegate bool NPCActionHandler(NpcDefine npcDefine);
 	public Dictionary<NpcFunction, NPCActionHandler> NpcMaps = new Dictionary<NpcFunction, NPCActionHandler>();	
 
@@ -31,7 +32,7 @@ public class NpcManager : Singleton<NpcManager> {
 		return false;
 	}
 
-	public bool Interactive(NpcDefine npcDefine)
+	private bool Interactive(NpcDefine npcDefine)
 	{
 		if(npcDefine.Type == NpcType.Task)
 		{
