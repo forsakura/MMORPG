@@ -1,4 +1,5 @@
-﻿using Common.Data;
+﻿using Assets.Scripts.Models;
+using Common.Data;
 using GameServer.Managers;
 using System;
 using System.Collections;

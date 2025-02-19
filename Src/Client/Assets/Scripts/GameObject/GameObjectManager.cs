@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.UI;
+﻿using Assets.Scripts.Models;
+using Assets.Scripts.UI;
 using Entities;
 using System.Collections;
 using System.Collections.Generic;

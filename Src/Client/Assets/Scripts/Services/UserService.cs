@@ -7,6 +7,7 @@ using SkillBridge.Message;
 using UnityEngine.Events;
 using Assets.Scripts.Services;
 using Assets.Scripts.Managers;
+using Assets.Scripts.Models;
 //using Models;
 //using Managers;
 

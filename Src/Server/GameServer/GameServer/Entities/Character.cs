@@ -24,8 +24,8 @@ namespace GameServer.Entities
 
 
         public ItemManager ItemManager;
-        //public QuestManager QuestManager;
         public StatusManager StatusManager;
+        //public QuestManager QuestManager;
         //public FriendManager FriendManager;
 
         //public Team Team;
@@ -51,22 +51,19 @@ namespace GameServer.Entities
             this.Info.Class = (CharacterClass)cha.Class;
             this.Info.mapId = cha.MapID;
             this.Info.Gold = cha.Gold;
-            this.Info.Ride = 0;
+            //this.Info.Ride = 0;
             this.Info.Entity = this.EntityData;
             this.Define = DataManager.Instance.Characters[this.Info.ConfigId];
 
             this.ItemManager = new ItemManager(this);
             ItemManager.GetItemsInfo(Info.Items);
+            StatusManager = new StatusManager(this);
             Info.Bag = new NBagInfo();
             Info.Bag.Unlocked = this.Data.Bag.Unlocked;
             Info.Bag.Items = this.Data.Bag.Items;
-            //this.Info.Bag = new NBagInfo();
-            //this.Info.Bag.Unlocked = this.Data.Bag.Unlocked;
-            //this.Info.Bag.Items = this.Data.Bag.Items;
-            this.Info.Equips = this.Data.Equips;
+            //this.Info.Equips = this.Data.Equips;
             //this.QuestManager = new QuestManager(this);
             //this.QuestManager.GetQuestInfos(this.Info.Quests);
-            this.StatusManager = new StatusManager(this);
             //this.FriendManager = new FriendManager(this);
             //this.FriendManager.GetFriendInfos(this.Info.Friends);
 
@@ -82,12 +79,12 @@ namespace GameServer.Entities
             {
                 if (this.Data.Gold == value)
                     return;
-                this.StatusManager.AddGoldChange((int)(value - this.Data.Gold));
+                StatusManager.AddGoldChange((int)(value - Data.Gold));
                 this.Data.Gold = value;
             }
         }
 
-        public int Ride
+        /*public int Ride
         {
             get { return this.Info.Ride; }
             set
@@ -96,7 +93,7 @@ namespace GameServer.Entities
                     return;
                 this.Info.Ride = value;
             }
-        }
+        }*/
 
         public void PostProcess(NetMessageResponse message)
         {

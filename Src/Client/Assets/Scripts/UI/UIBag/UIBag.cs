@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Models;
 using Assets.Scripts.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -47,9 +48,14 @@ namespace Assets.Scripts.UI.UIBag
             yield return null;
         }
 
-        public void SetTitle(string title)
+        private void Update()
         {
-            money.text = User.Instance.currentCharacter.Gold.ToString();
+            SetMoney();
+        }
+
+        public void SetMoney()
+        {
+            if(money.text != User.Instance.currentCharacter.Gold.ToString()) money.text = User.Instance.currentCharacter.Gold.ToString();
         }
 
         public void OnReset()

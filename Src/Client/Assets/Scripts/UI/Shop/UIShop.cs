@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.UI;
+﻿using Assets.Scripts.Models;
+using Assets.Scripts.UI;
 using Assets.Scripts.UI.Shop;
 using Assets.Scripts.UI.TabView;
 using Common.Data;
@@ -37,7 +38,12 @@ public class UIShop : UIWindow {
 		yield return null;
     }
 
-	public void SetShop(ShopDefine shop)
+    private void Update()
+    {
+        if(coinText.text != User.Instance.currentCharacter.Gold.ToString()) coinText.text = User.Instance.currentCharacter.Gold.ToString();
+    }
+
+    public void SetShop(ShopDefine shop)
 	{
 		this.shopDefine = shop;
 		title.text = shop.Name;
@@ -48,7 +54,7 @@ public class UIShop : UIWindow {
 	{
 		if (currentShopItem == null)
 		{
-			MessageBox.Show("棾选择要购买的道具", "购买提示");
+			MessageBox.Show("请选择要购买的道具", "购买提示");
 			return;
 		}
 		ShopManager.Instance.BuyItem(this.shopDefine.ID, currentShopItem.shopItemID);

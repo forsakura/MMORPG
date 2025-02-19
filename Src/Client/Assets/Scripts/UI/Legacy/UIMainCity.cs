@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using Assets.Scripts.Models;
+using Services;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.UI;
+﻿using Assets.Scripts.Models;
+using Assets.Scripts.UI;
 using Services;
 using System.Collections;
 using System.Collections.Generic;

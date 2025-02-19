@@ -38,6 +38,7 @@ namespace GameServer.Managers
                 itemTemp = new Item(item);
                 items[itemID] = itemTemp;
             }
+            owner.StatusManager.AddItemChange(itemID, count, StatusAction.Add);
             Common.Log.InfoFormat("ItemManager::Add: ItemID: {0} ItemCount: {1}", itemID, count);
             //DBService.Instance.Save(true);
             return true;
@@ -68,6 +69,7 @@ namespace GameServer.Managers
                 if (itemTemp.itemCount > count)
                 {
                     itemTemp.Remove(count);
+                    owner.StatusManager.AddItemChange(itemID, count, StatusAction.Delete);
                     //DBService.Instance.Save(true);
                     return true;
                 }

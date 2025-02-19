@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using Assets.Scripts.Models;
+using Common;
 using GameServer.Managers;
 using Services;
 using SkillBridge.Message;

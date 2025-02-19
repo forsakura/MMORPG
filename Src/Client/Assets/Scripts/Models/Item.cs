@@ -13,10 +13,14 @@ namespace Assets.Scripts.Models
         public int itemID;
         public int itemCount;
         public ItemDefine define;
-        public Item(NItemInfo info)
+        public Item(NItemInfo info) : this(info.Id, info.Count)
         {
-            itemID = info.Id;
-            itemCount = info.Count;
+        }
+
+        public Item(int itemID, int itemCount)
+        {
+            this.itemID = itemID;
+            this.itemCount = itemCount;
             define = DataManager.Instance.Items[itemID];
         }
 

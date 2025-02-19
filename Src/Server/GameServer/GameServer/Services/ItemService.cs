@@ -12,6 +12,10 @@ namespace GameServer.Services
 {
     internal class ItemService : Singleton<ItemService>, IDisposable
     {
+        public void Init()
+        {
+
+        }
         public ItemService()
         {
             MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<ItemBuyRequest>(OnItemBuy);

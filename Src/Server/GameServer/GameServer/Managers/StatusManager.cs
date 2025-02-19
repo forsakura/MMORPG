@@ -10,29 +10,26 @@ namespace GameServer.Managers
 {
     public class StatusManager
     {
-        Character Owner;
+        Character owner;
 
-        private List<NStatus> Status { get; set; }
+        List<NStatus> Status {  get; set; }
 
-        public bool HasStatus
+        public bool HasStatus { get { return Status.Count > 0; } }
+
+        public StatusManager(Character character)
         {
-            get { return this.Status.Count > 0; }
-        }
-
-        public StatusManager(Character owner)
-        {
-            this.Owner = owner;
-            this.Status = new List<NStatus>();
+            owner = character;
+            Status = new List<NStatus>();
         }
 
         public void AddStatus(StatusType type, int id, int value, StatusAction action)
         {
-            this.Status.Add(new NStatus()
+            Status.Add(new NStatus()
             {
-                Type = type,
                 Id = id,
                 Value = value,
-                Action = action
+                Action = action,
+                Type = type
             });
         }
 
@@ -40,28 +37,26 @@ namespace GameServer.Managers
         {
             if (goldDelta > 0)
             {
-                this.AddStatus(StatusType.Money, 0, goldDelta, StatusAction.Add);
+                Status.Add(new NStatus() { Type = StatusType.Money, Id = 0, Value = goldDelta, Action = StatusAction.Add });
             }
-            if (goldDelta < 0)
-            {
-                this.AddStatus(StatusType.Money, 0, -goldDelta, StatusAction.Delete);
-            }
+            else if (goldDelta < 0)
+                Status.Add(new NStatus() { Type = StatusType.Money, Id = 0, Value = -goldDelta, Action = StatusAction.Delete });
         }
 
-        public void AddItemChange(int id, int count, StatusAction action)
+        public void AddItemChange(int ItemID, int count, StatusAction action)
         {
-            this.AddStatus(StatusType.Item, id, count, action);
+            Status.Add(new NStatus() { Type = StatusType.Item, Id = ItemID, Value = count, Action = action });
         }
 
         public void PostProcess(NetMessageResponse message)
         {
             if (message.statusNotify == null)
                 message.statusNotify = new StatusNotify();
-            foreach(var status in this.Status)
+            foreach (var status in Status)
             {
                 message.statusNotify.Status.Add(status);
             }
-            this.Status.Clear();
+            Status.Clear();
         }
     }
 }

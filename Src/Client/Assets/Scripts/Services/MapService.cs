@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Models;
 using GameServer.Managers;
 using Network;
 using SkillBridge.Message;

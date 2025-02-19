@@ -46,8 +46,12 @@ namespace Network
         {
             if (response != null)
             {
-                if (PostResponser != null)
-                    this.PostResponser.PostProcess(Response);
+                /*if (PostResponser != null)
+                    this.PostResponser.PostProcess(Response);*/
+                if (Character != null && Character.StatusManager.HasStatus)
+                {
+                    Character.StatusManager.PostProcess(Response);
+                }
 
                 byte[] data = PackageHandler.PackMessage(response);
                 response = null;

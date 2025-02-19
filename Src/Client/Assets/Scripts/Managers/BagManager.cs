@@ -1,5 +1,7 @@
 ﻿using Assets.Scripts.Models;
+using GameServer.Managers;
 using SkillBridge.Message;
+using System;
 
 namespace Assets.Scripts.Managers
 {
@@ -85,6 +87,53 @@ namespace Assets.Scripts.Managers
                 }
             }
             return info;
+        }
+
+        internal void AddItem(int id, int value)
+        {
+            ushort addCount = (ushort)value;
+            for (int i = 0; i < items.Length; i++)
+            {
+                if(items[i].itemID == id)
+                {
+                    ushort canAdd = (ushort)(DataManager.Instance.Items[id].stackLimit - items[i].count);
+                    if(canAdd >= addCount)
+                    {
+                        this.items[i].count += addCount;
+                        addCount = 0;
+                        return;
+                    }
+                    else
+                    {
+                        items[i].count += canAdd;
+                        addCount -= canAdd;
+                    }
+                }
+            }
+            int j = 0;
+            int countLimit = DataManager.Instance.Items[id].stackLimit;
+            for (; j < items.Length && addCount > 0; j++)
+            {
+                if (items[j].itemID == 0)
+                {
+                    items[j].itemID = (ushort)id;
+                    if (countLimit < addCount)
+                    {
+                        items[j].count = (ushort)countLimit;
+                        addCount -= (ushort)countLimit;
+                    }
+                    else
+                    {
+                        items[j].count = addCount;
+                        addCount = 0;
+                    }    
+                }
+            }
+        }
+
+        internal void RemoveItem(int id, int value)
+        {
+            
         }
     }
 }
