@@ -25,9 +25,9 @@ public class UIShop : UIWindow {
 
 	IEnumerator InitItems()
 	{
-        foreach (var item in DataManager.Instance.ShopItems[shopDefine.shopID])
+        foreach (var item in DataManager.Instance.ShopItems[shopDefine.ID])
         {
-            if(item.Value.shopItemStatus > 0)
+            if(item.Value.Status > 0)
 			{
 				var go = Instantiate(uiShopItem, itemRoots[0]);
 				UIShopItem uIShopItem = go.GetComponent<UIShopItem>();
@@ -40,7 +40,7 @@ public class UIShop : UIWindow {
 	public void SetShop(ShopDefine shop)
 	{
 		this.shopDefine = shop;
-		title.text = shop.shopName;
+		title.text = shop.Name;
 		coinText.text = User.Instance.currentCharacter.Gold.ToString();
 	}
 
@@ -51,7 +51,7 @@ public class UIShop : UIWindow {
 			MessageBox.Show("棾选择要购买的道具", "购买提示");
 			return;
 		}
-		ShopManager.Instance.BuyItem(this.shopDefine.shopID, currentShopItem.shopItemID);
+		ShopManager.Instance.BuyItem(this.shopDefine.ID, currentShopItem.shopItemID);
 	}
 
     internal void SelectItem(UIShopItem uIShopItem)

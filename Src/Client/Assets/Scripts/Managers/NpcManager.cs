@@ -48,15 +48,15 @@ public class NpcManager : Singleton<NpcManager> {
     private bool DoTaskInteractive(NpcDefine npcDefine)
     {
         Debug.LogFormat("NPCManager:DoTaskInteractive::NPC: [{0} : {1}] : Task: {2} : {3}", npcDefine.ID, npcDefine.Name, npcDefine.Type, npcDefine.Function);
-        if (npcDefine.Type != NpcType.Task) return false;
-        if(!NpcMaps.ContainsKey(npcDefine.Function)) return false;
-        return NpcMaps[npcDefine.Function](npcDefine);
+        MessageBox.Show("触发任务NPC:" + npcDefine.Name, "NPC对话");
+        return true;
     }
 
     private bool DoFunctionalactive(NpcDefine npcDefine)
     {
         Debug.LogFormat("NPCManager:DoFunctionalInteractive::NPC: [{0} : {1}] : Task: {2} : {3}", npcDefine.ID, npcDefine.Name, npcDefine.Type, npcDefine.Function);
-        MessageBox.Show("触发任务NPC:" + npcDefine.Name, "NPC对话");
-        throw new NotImplementedException();
+		if (npcDefine.Type != NpcType.Functional) return false;
+		if (!NpcManager.Instance.NpcMaps.ContainsKey(npcDefine.Function)) return false;
+		return NpcManager.Instance.NpcMaps[npcDefine.Function](npcDefine);
     }
 }

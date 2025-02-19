@@ -21,6 +21,7 @@ namespace Assets.Scripts.UI
         {
             UIResources.Add(typeof(UITest), new UIElement() { resource = "UI/UITest", cache = false, instance = null });
             UIResources.Add(typeof(UIBag.UIBag), new UIElement() { resource = "UI/UIBag", cache = false, instance = null });
+            UIResources.Add(typeof(UIShop), new UIElement() { resource = "UI/UIShop", cache = false });
         }
 
         public T Show<T>()

@@ -7,11 +7,9 @@ namespace Common.Data
 {
     public class ShopItemDefine
     {
-        public int shopID {  get; set; }
-        public int shopItemID { get; set; }
         public int itemID { get; set; }
-        public int shopItemCount { get; set; }
-        public int shopItemPrice { get; set; }
-        public int shopItemStatus { get; set; }
+        public int Count { get; set; }
+        public int Price { get; set; }
+        public int Status { get; set; }
     }
 }

@@ -7,10 +7,10 @@ namespace Common.Data
 {
     public class ShopDefine
     {
-        public int shopID {  get; set; }
-        public string shopName { get; set; }
-        public string shopIcon { get; set; }
-        public string shopDescription { get; set; }
-        public int shopStatus {  get; set; }
+        public int ID {  get; set; }
+        public string Name { get; set; }
+        public string Icon { get; set; }
+        public string Description { get; set; }
+        public int Status {  get; set; }
     }
 }

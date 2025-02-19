@@ -17,6 +17,7 @@ namespace Assets.Scripts.UI.Shop
         public Text title;
         public Text shopItemCount;
         public Text shopItemPrice;
+        public Text shopItemClass;
 
         public Image bg;
         public Image icon;
@@ -45,8 +46,9 @@ namespace Assets.Scripts.UI.Shop
             itemDefine = DataManager.Instance.Items[shopItemDefine.itemID];
 
             title.text = itemDefine.itemName;
-            shopItemCount.text = shopItemDefine.shopItemCount.ToString();
-            shopItemPrice.text = shopItemDefine.shopItemPrice.ToString();
+            shopItemCount.text = shopItemDefine.Count.ToString();
+            shopItemPrice.text = shopItemDefine.Price.ToString();
+            shopItemClass.text = "";
             icon.overrideSprite = Resloader.Load<Sprite>(itemDefine.icon);
         }
 

@@ -12,7 +12,7 @@ using UnityEngine;
 public class NpcController : MonoBehaviour {
     public int npcID;
     NpcDefine npcDefine;
-    bool inInteractive;
+    public bool inInteractive;
     Animator animator;
     SkinnedMeshRenderer skinnedMeshRenderer;
     Color originColor;
@@ -62,7 +62,7 @@ public class NpcController : MonoBehaviour {
             animator.SetTrigger("Talk");
         }
         yield return new WaitForSeconds(3f);
-        inInteractive = true;
+        inInteractive = false;
     }
 
     IEnumerator FaceToPlayer()
@@ -70,13 +70,13 @@ public class NpcController : MonoBehaviour {
         Vector3 faceTo = (User.Instance.currentCharacterObject.transform.position - transform.position).normalized;
         while(Mathf.Abs(Vector3.Angle(transform.forward, faceTo)) > 5f)
         {
-            Vector3.Lerp(transform.forward, faceTo, Time.deltaTime * 5f);
+            transform.forward =  Vector3.Lerp(transform.forward, faceTo, Time.deltaTime * 5f);
             yield return null;
         }
     }
 
     private void OnMouseEnter()
-    {
+    { 
         HighLight(true);
     }
 
@@ -87,7 +87,7 @@ public class NpcController : MonoBehaviour {
 
     private void OnMouseOver()
     {
-        HighLight(false);
+        HighLight(true);
     }
 
     private void HighLight(bool v)
