@@ -9,7 +9,7 @@ namespace GameServer.Managers
     public class ItemManager
     {
         public Character owner;
-        Dictionary<int, Item> items = new Dictionary<int, Item>();
+        public Dictionary<int, Item> items = new Dictionary<int, Item>();
         public ItemManager(Character character)
         {
             owner = character;

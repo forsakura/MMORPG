@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.UI.TabView;
+﻿using Assets.Scripts.UI.CharEquip;
+using Assets.Scripts.UI.TabView;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,9 +20,9 @@ namespace Assets.Scripts.UI
 
         public UIManager()
         {
-            UIResources.Add(typeof(UITest), new UIElement() { resource = "UI/UITest", cache = false, instance = null });
             UIResources.Add(typeof(UIBag.UIBag), new UIElement() { resource = "UI/UIBag", cache = false, instance = null });
             UIResources.Add(typeof(UIShop), new UIElement() { resource = "UI/UIShop", cache = false });
+            UIResources.Add(typeof(UICharEquip), new UIElement() { resource = "UI/UICharEquip", cache = false });
         }
 
         public T Show<T>()

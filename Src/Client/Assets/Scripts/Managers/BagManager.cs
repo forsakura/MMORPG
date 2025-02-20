@@ -34,7 +34,7 @@ namespace Assets.Scripts.Managers
             int i = 0;
             foreach (var item in ItemManager.Instance.items)
             {
-                if (item.Value.itemCount <= item.Value.define.stackLimit)
+                if (item.Value.itemCount <= item.Value.itemDefine.StackLimit)
                 {
                     items[i].itemID = (ushort)item.Key;
                     items[i].count = (ushort)item.Value.itemCount;
@@ -42,12 +42,12 @@ namespace Assets.Scripts.Managers
                 else
                 {
                     int count = item.Value.itemCount;
-                    while (count > item.Value.define.stackLimit)
+                    while (count > item.Value.itemDefine.StackLimit)
                     {
                         items[i].itemID = (ushort)item.Key;
-                        items[i].count = (ushort)item.Value.define.stackLimit;
+                        items[i].count = (ushort)item.Value.itemDefine.StackLimit;
                         i++;
-                        count -= (ushort)item.Value.define.stackLimit;
+                        count -= (ushort)item.Value.itemDefine.StackLimit;
                     }
                     items[i].itemID = (ushort)item.Key;
                     items[i].count = (ushort)count;
@@ -96,7 +96,7 @@ namespace Assets.Scripts.Managers
             {
                 if(items[i].itemID == id)
                 {
-                    ushort canAdd = (ushort)(DataManager.Instance.Items[id].stackLimit - items[i].count);
+                    ushort canAdd = (ushort)(DataManager.Instance.Items[id].StackLimit - items[i].count);
                     if(canAdd >= addCount)
                     {
                         this.items[i].count += addCount;
@@ -111,7 +111,7 @@ namespace Assets.Scripts.Managers
                 }
             }
             int j = 0;
-            int countLimit = DataManager.Instance.Items[id].stackLimit;
+            int countLimit = DataManager.Instance.Items[id].StackLimit;
             for (; j < items.Length && addCount > 0; j++)
             {
                 if (items[j].itemID == 0)

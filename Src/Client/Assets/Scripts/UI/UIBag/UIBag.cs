@@ -37,8 +37,8 @@ namespace Assets.Scripts.UI.UIBag
                 {
                     GameObject go = Instantiate(bagItem, slots[i].transform);
                     var ui = go.GetComponent<UIIconItem>();
-                    var def = ItemManager.Instance.items[item.itemID].define;
-                    ui.SetMain(def.icon, item.count.ToString());
+                    var def = ItemManager.Instance.items[item.itemID].itemDefine;
+                    ui.SetMain(def.Icon, item.count.ToString());
                 }
             }
             for(int j = BagManager.Instance.items.Length; j < slots.Count; j++)

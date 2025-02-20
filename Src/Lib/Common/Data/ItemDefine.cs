@@ -19,21 +19,21 @@ namespace Common.Data
     }
     public class ItemDefine
     {
-        public int itemID {  get; set; }
-        public string itemName { get; set; }
-        public  string itemDescription { get; set; }
-        public ItemType itemType { get; set; }
-        public string itemCategory { get; set; }
-        public int itemLevel { get; set; }
-        public string limitClass { get; set; }
-        public bool canUse { get; set; }
-        public float useCD { get; set; }
-        public int price { get; set; }
-        public int sellPrice { get; set; }
-        public int stackLimit { get; set; }
-        public string icon { get; set; }
-        public ItemFunction function { get; set; }
-        public int itemParam { get; set; }
-        public List<int> itemParams { get; set; }
+        public int ID {  get; set; }
+        public string Name { get; set; }
+        public  string Description { get; set; }
+        public ItemType Type { get; set; }
+        public string Category { get; set; }
+        public int Level { get; set; }
+        public CharacterClass LimitClass { get; set; }
+        public bool CanUse { get; set; }
+        public float UseCD { get; set; }
+        public int Price { get; set; }
+        public int SellPrice { get; set; }
+        public int StackLimit { get; set; }
+        public string Icon { get; set; }
+        public ItemFunction Function { get; set; }
+        public int Param { get; set; }
+        public List<int> Params { get; set; }
     }
 }

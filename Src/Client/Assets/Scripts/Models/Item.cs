@@ -12,7 +12,8 @@ namespace Assets.Scripts.Models
     {
         public int itemID;
         public int itemCount;
-        public ItemDefine define;
+        public EquipDefine equipDefine;
+        public ItemDefine itemDefine;
         public Item(NItemInfo info) : this(info.Id, info.Count)
         {
         }
@@ -21,7 +22,8 @@ namespace Assets.Scripts.Models
         {
             this.itemID = itemID;
             this.itemCount = itemCount;
-            define = DataManager.Instance.Items[itemID];
+            DataManager.Instance.Equips.TryGetValue(itemID, out equipDefine);
+            DataManager.Instance.Items.TryGetValue(itemID, out itemDefine);
         }
 
         public override string ToString()

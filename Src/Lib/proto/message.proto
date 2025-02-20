@@ -53,21 +53,21 @@ enum ITEM_TYPE
 	NORMAL = 0;
 	MATERIAL = 1;
 	TASK = 2;  //任务道具
-	EQUIP = 3;
-	RIDE = 4;
+	EQUIP = 4;
+	RIDE = 5;
 }
 
-//enum EQUIP_SLOT
-//{
-//	WEAPON 		= 0;
-//	ACCESSORY 	= 1;
-//	HELMET 		= 2; //头盔
-//	CHEST 		= 3; //胸甲
-//	SHOULDER 	= 4; //护肩
-//	PANTS 		= 5; //裤子
-//	BOOTS 		= 6; //靴子
-//	SLOT_MAX	= 7;
-//}
+enum EQUIP_SLOT
+{
+	WEAPON = 0;				//武器
+	ACCESSORY = 1;			//副手
+	HELMET = 2;				//头部
+	CHEST = 3;					//胸部
+	SHOULDER = 4;			//肩部
+	PANTS = 5;					//腿部
+	BOOTS = 6;					//脚部
+	SLOT_MAX = 7;			//最大值
+}
 
 message NUserInfo {
 	int32 id = 1;
@@ -94,7 +94,7 @@ message NCharacterInfo {
 
 	repeated NItemInfo Items = 11;
 	NBagInfo Bag = 12;
-	//bytes Equips = 13;
+	bytes Equips = 13;
 	//repeated NQuestInfo  quests = 14;
 	//repeated NFriendInfo friends = 15;
 	//NGuildInfo guild = 16;
@@ -201,7 +201,7 @@ message NetMessageRequest{
 
 
 	ItemBuyRequest itemBuy = 10;
-//	ItemEquipRequest itemEquip = 11;
+	ItemEquipRequest itemEquip = 11;
 
 //	QuestListRequest questList = 12;
 //	QuestAcceptRequest questAccept = 13;
@@ -241,7 +241,7 @@ message NetMessageResponse{
 	MapEntitySyncResponse mapEntitySync = 8;
 
 	ItemBuyResponse itemBuy = 10;
-//	ItemEquipResponse itemEquip = 11;
+	ItemEquipResponse itemEquip = 11;
 
 //	QuestListResponse questList = 12;
 //	QuestAcceptResponse questAccept = 13;
@@ -380,6 +380,19 @@ message BagSaveRequest
 }
 
 message BagSaveResponse
+{
+	RESULT result = 1;
+	string errormsg = 2;
+}
+
+message ItemEquipRequest
+{
+	int32 slot = 1;
+	int32 itemId = 2;
+	bool isEquip = 3;
+}
+
+message ItemEquipResponse
 {
 	RESULT result = 1;
 	string errormsg = 2;

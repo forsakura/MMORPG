@@ -127,12 +127,16 @@ namespace GameServer.Services
                 Gold = 100000, //初始10万金币
                 Equips = new byte[28]
             };
+
             var bag = new TCharacterBag();
             bag.Items = new byte[0];
             bag.Unlocked = 20;
             bag.Owner = character;
             character.Bag = DBService.Instance.Entities.CharacterBags.Add(bag);
             character = DBService.Instance.Entities.Characters.Add(character);
+            character.Items.Add(new TCharacterItem() { Owner = character, ItemID = 1, ItemCount = 20 });
+            character.Items.Add(new TCharacterItem() { Owner = character, ItemID = 2, ItemCount = 20 });
+
             sender.Session.User.Player.Characters.Add(character);
             DBService.Instance.Entities.SaveChanges();
 
@@ -184,22 +188,6 @@ namespace GameServer.Services
             sender.Session.Character = cha;
             sender.Session.PostResponser = cha;
             sender.Session.Response.gameEnter.Character = cha.Info;
-
-            int itemID = 3;
-            bool hasItem = cha.ItemManager.HasItem(itemID);
-            if (hasItem)
-            {
-            }
-            else
-            {
-                cha.ItemManager.Add(1, 200);
-                cha.ItemManager.Add(2, 100);
-                cha.ItemManager.Add(3, 4);
-                cha.ItemManager.Add(4, 80);
-                cha.ItemManager.Add(5, 3);
-            }
-
-            DBService.Instance.Save();
 
             sender.SendResponse();
 

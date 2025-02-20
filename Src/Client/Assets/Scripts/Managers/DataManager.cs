@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using System;
 using System.IO;
 
-using Common;
 using Common.Data;
 
 using Newtonsoft.Json;
@@ -23,6 +20,7 @@ namespace GameServer.Managers
         public Dictionary<int, ItemDefine> Items = null;
         public Dictionary<int, ShopDefine> Shops = null;
         public Dictionary<int, Dictionary<int, ShopItemDefine>> ShopItems = null;
+        public Dictionary<int, EquipDefine> Equips = null;
         //public Dictionary<int, EquipDefine> Equips = null;
         //public Dictionary<int, QuestDefine> Quests = null; 
         public DataManager()
@@ -60,8 +58,8 @@ namespace GameServer.Managers
             json = File.ReadAllText(this.DataPath + "ShopItemDefine.txt");
             this.ShopItems = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, ShopItemDefine>>>(json);
 
-            //json = File.ReadAllText(this.DataPath + "EquipDefine.txt");
-            //this.Equips = JsonConvert.DeserializeObject<Dictionary<int, EquipDefine>>(json);
+            json = File.ReadAllText(DataPath + "EquipDefine.txt");
+            this.Equips = JsonConvert.DeserializeObject<Dictionary<int, EquipDefine>>(json);
 
             //json = File.ReadAllText(this.DataPath + "QuestDefine.txt");
             //this.Quests = JsonConvert.DeserializeObject<Dictionary<int, QuestDefine>>(json);
@@ -101,6 +99,11 @@ namespace GameServer.Managers
 
             json = File.ReadAllText(DataPath + "ShopItemDefine.txt");
             ShopItems = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, ShopItemDefine>>>(json);
+
+            yield return null;
+
+            json = File.ReadAllText(DataPath + "EquipDefine.txt");
+            Equips = JsonConvert.DeserializeObject<Dictionary<int, EquipDefine>>(json);
 
             yield return null;
 

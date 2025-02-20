@@ -61,7 +61,7 @@ namespace GameServer.Entities
             Info.Bag = new NBagInfo();
             Info.Bag.Unlocked = this.Data.Bag.Unlocked;
             Info.Bag.Items = this.Data.Bag.Items;
-            //this.Info.Equips = this.Data.Equips;
+            Info.Equips = this.Data.Equips;
             //this.QuestManager = new QuestManager(this);
             //this.QuestManager.GetQuestInfos(this.Info.Quests);
             //this.FriendManager = new FriendManager(this);

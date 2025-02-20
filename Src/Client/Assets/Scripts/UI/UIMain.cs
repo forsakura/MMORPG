@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Models;
 using Assets.Scripts.UI;
+using Assets.Scripts.UI.CharEquip;
 using Services;
 using System.Collections;
 using System.Collections.Generic;
@@ -48,6 +49,11 @@ namespace Assets.Scripts.UI
         {
             Debug.LogFormat("Open Bag");
             UIManager.Instance.Show<UI.UIBag.UIBag>();
+        }
+
+        public void OnClickChar()
+        {
+            UIManager.Instance.Show<UICharEquip>();
         }
     }
 }
