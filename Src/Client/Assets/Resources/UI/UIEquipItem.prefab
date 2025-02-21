@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc5a08ad25ef834daeb4c3e5d3e7eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroud: {fileID: 114738418683604458}
   title: {fileID: 114430948798585590}
   level: {fileID: 114384193692200144}
   LimitClass: {fileID: 114437334527687222}
@@ -320,7 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

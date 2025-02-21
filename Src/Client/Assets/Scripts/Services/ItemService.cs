@@ -45,7 +45,7 @@ namespace Assets.Scripts.Services
         bool isEquip;
         public bool SendItemEquip(Item item, bool isEquip)
         {
-            if (pendingEquip == null)
+            if (pendingEquip != null)
                 return false;
             Debug.Log("SendItemEquip");
             pendingEquip = item;

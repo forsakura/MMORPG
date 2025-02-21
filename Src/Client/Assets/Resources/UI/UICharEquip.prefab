@@ -1179,7 +1179,7 @@ MonoBehaviour:
   title: {fileID: 114525310995034400}
   money: {fileID: 114265166892036614}
   ItemPrefab: {fileID: 1031848238136558, guid: 1f19b0c935be5ca44aa9c1e5e39c8cab, type: 2}
-  ItemEquipedPrefab: {fileID: 1031848238136558, guid: 1f19b0c935be5ca44aa9c1e5e39c8cab,
+  ItemEquipedPrefab: {fileID: 1989752164923558, guid: 992e5522cc92620489c24d1678834ffa,
     type: 2}
   EquipListRoot: {fileID: 224503367752164834}
   Slots:
@@ -1773,7 +1773,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224582774637014370}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3214,7 +3214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000024814951, y: 0.000012909668}
+  m_AnchoredPosition: {x: -0.0000024814951, y: 0.000048174963}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224568584960052672

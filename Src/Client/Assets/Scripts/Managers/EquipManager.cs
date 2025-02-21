@@ -45,7 +45,7 @@ namespace Assets.Scripts.Managers
             {
                 for(int i = 0; i < Equips.Length; i++)
                 {
-                    int itemId = (int)(pt + i * sizeof(int));
+                    int itemId = *(int*)(pt + i * sizeof(int));
                     if (itemId > 0)
                         Equips[i] = ItemManager.Instance.items[itemId];
                     else
