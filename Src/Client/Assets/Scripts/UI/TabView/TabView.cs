@@ -6,7 +6,7 @@ using UnityEngine.Experimental.UIElements;
 
 namespace Assets.Scripts.UI.TabView
 {
-    public class BagView : MonoBehaviour
+    public class TabView : MonoBehaviour
     {
         public GameObject[] bagViews;
         public TabButton[] btnPages;

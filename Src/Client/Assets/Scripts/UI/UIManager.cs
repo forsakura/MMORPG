@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.UI.CharEquip;
+using Assets.Scripts.UI.Quest;
 using Assets.Scripts.UI.TabView;
 using System;
 using System.Collections;
@@ -23,6 +24,7 @@ namespace Assets.Scripts.UI
             UIResources.Add(typeof(UIBag.UIBag), new UIElement() { resource = "UI/UIBag", cache = false, instance = null });
             UIResources.Add(typeof(UIShop), new UIElement() { resource = "UI/UIShop", cache = false });
             UIResources.Add(typeof(UICharEquip), new UIElement() { resource = "UI/UICharEquip", cache = false });
+            UIResources.Add(typeof(UIQuest), new UIElement() { resource = "UI/UIQuest", cache=false });
         }
 
         public T Show<T>()

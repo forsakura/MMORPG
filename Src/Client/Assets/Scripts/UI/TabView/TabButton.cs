@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TabButton : MonoBehaviour {
 	Sprite originSprite;
 	public Sprite activeSprite;
-	public BagView bagView;
+	public TabView bagView;
 	public int tabIndex;
 	public bool selected;
 	Image tabImage;
