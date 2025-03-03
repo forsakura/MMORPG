@@ -29,13 +29,13 @@ public class LoadingManager : MonoBehaviour {
         Common.Log.Init("Unity");
         Common.Log.Info("LoadingManager start");
 
-        //UITips.SetActive(true);
+        UITips.SetActive(true);
         UILoading.SetActive(false);
         UILogin.SetActive(false);
         yield return new WaitForSeconds(2f);
         UILoading.SetActive(true);
         yield return new WaitForSeconds(1f);
-        //UITips.SetActive(false);
+        UITips.SetActive(false);
 
         yield return DataManager.Instance.LoadData();
 
