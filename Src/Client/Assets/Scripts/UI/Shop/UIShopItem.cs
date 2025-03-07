@@ -48,7 +48,7 @@ namespace Assets.Scripts.UI.Shop
             title.text = itemDefine.Name;
             shopItemCount.text = shopItemDefine.Count.ToString();
             shopItemPrice.text = shopItemDefine.Price.ToString();
-            shopItemClass.text = itemDefine.LimitClass.ToString();
+            if(itemDefine.LimitClass != SkillBridge.Message.CharacterClass.None) shopItemClass.text = itemDefine.LimitClass.ToString();
             icon.overrideSprite = Resloader.Load<Sprite>(itemDefine.Icon);
         }
 

@@ -25,7 +25,7 @@ namespace Assets.Scripts.UI.ListView
 
             public virtual void OnSelected(bool selected)
             {
-                throw new NotImplementedException();
+                
             }
 
             public ListView owner;

@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Experimental.UIElements;
 
 namespace Assets.Scripts.UI.TabView
 {
     public class TabView : MonoBehaviour
     {
+        public UnityAction<int> OnTabSelected;
         public GameObject[] bagViews;
         public TabButton[] btnPages;
         public int index = -1;

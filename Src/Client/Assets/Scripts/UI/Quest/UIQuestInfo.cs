@@ -1,16 +1,47 @@
-﻿using System.Collections;
+﻿using Common.Data;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIQuestInfo : MonoBehaviour {
+namespace Assets.Scripts.UI.Quest
+{
+    public class UIQuestInfo : MonoBehaviour
+    {
+        public Text title;
+        public Text questDiscribution;
+        public Text[] questTarget;
+        public Image[] questRewards;
+        public Text questGoldCount;
+        public Text questEXPCount;
+        
+        public void SetQuestInfo(Models.Quest quest)
+        {
+            title.text = string.Format("[{0}]{1}", quest.Define.Type, quest.Define.Name);
+            questGoldCount.text = quest.Define.RewardGold.ToString();
+            questEXPCount.text = quest.Define.RewardExp.ToString();
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+            if(quest.Info ==null)
+            {
+                questDiscribution.text = quest.Define.Dialog;
+            }
+            else
+            {
+                if(quest.Info.Status == SkillBridge.Message.QuestStatus.Complated)
+                {
+                    questDiscribution.text = quest.Define.DialogFinish;
+                }
+            }
+
+            foreach (var fitter in GetComponentsInChildren<ContentSizeFitter>())
+            {
+                fitter.SetLayoutVertical();
+            }
+        }
+
+        public void OnClickAbandon()
+        {
+
+        }
+    }
 }

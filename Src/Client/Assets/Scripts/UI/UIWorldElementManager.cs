@@ -1,4 +1,6 @@
-﻿using Entities;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.UI.Quest;
+using Entities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +12,10 @@ namespace Assets.Scripts.UI
         Dictionary<Transform, GameObject> elements = new Dictionary<Transform, GameObject>();
 
         public GameObject uiNameBarPrefab;
+
+        Dictionary<Transform, GameObject> elementsQuest = new Dictionary<Transform, GameObject>();
+
+        public GameObject uiQuestBarPrefab;
 
         public void AddCharacterElement(Transform owner, Character character)
         {
@@ -27,6 +33,32 @@ namespace Assets.Scripts.UI
             {
                 Destroy(elements[owner]);
                 elements.Remove(owner);
+            }
+        }
+
+        public void AddNpcQuestStatus(Transform owner, NpcQuestStatus status)
+        {
+            if (elementsQuest.ContainsKey(owner))
+            {
+                elementsQuest[owner].GetComponent<UIQuestStatus>().SetQuestStatus(status);
+            }
+            else
+            {
+                GameObject go = Instantiate(uiQuestBarPrefab, transform);
+                go.name = "UIWorldName" + status;
+                go.GetComponent<UIWorldElement>().owner = owner;
+                go.GetComponent<UIQuestStatus>().SetQuestStatus(status);
+                go.SetActive(true);
+                elementsQuest[owner] = go;
+            }
+        }
+
+        public void RemoveNpcQuestStatus(Transform owner)
+        {
+            if (elementsQuest.ContainsKey(owner))
+            {
+                Destroy(elementsQuest[owner]);
+                elementsQuest.Remove(owner);
             }
         }
     }

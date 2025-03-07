@@ -24,7 +24,8 @@ namespace Assets.Scripts.UI
             UIResources.Add(typeof(UIBag.UIBag), new UIElement() { resource = "UI/UIBag", cache = false, instance = null });
             UIResources.Add(typeof(UIShop), new UIElement() { resource = "UI/UIShop", cache = false });
             UIResources.Add(typeof(UICharEquip), new UIElement() { resource = "UI/UICharEquip", cache = false });
-            UIResources.Add(typeof(UIQuest), new UIElement() { resource = "UI/UIQuest", cache=false });
+            UIResources.Add(typeof(UIQuestSystem), new UIElement() { resource = "UI/UIQuest", cache=false });
+            UIResources.Add(typeof(UIQuestDialog), new UIElement() { resource = "UI/UIQuestDialog", cache = false });
         }
 
         public T Show<T>()

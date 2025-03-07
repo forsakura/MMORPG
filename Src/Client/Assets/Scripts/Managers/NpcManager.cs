@@ -1,4 +1,5 @@
-﻿using Common.Data;
+﻿using Assets.Scripts.Managers;
+using Common.Data;
 using GameServer.Managers;
 using System;
 using System.Collections;
@@ -34,9 +35,9 @@ public class NpcManager : Singleton<NpcManager> {
 
 	private bool Interactive(NpcDefine npcDefine)
 	{
-		if(npcDefine.Type == NpcType.Task)
+		if(DoTaskInteractive(npcDefine))
 		{
-			return DoTaskInteractive(npcDefine);
+			return true;
 		}
 		else if(npcDefine.Type == NpcType.Functional)
 		{
@@ -47,9 +48,10 @@ public class NpcManager : Singleton<NpcManager> {
 
     private bool DoTaskInteractive(NpcDefine npcDefine)
     {
-        Debug.LogFormat("NPCManager:DoTaskInteractive::NPC: [{0} : {1}] : Task: {2} : {3}", npcDefine.ID, npcDefine.Name, npcDefine.Type, npcDefine.Function);
-        MessageBox.Show("触发任务NPC:" + npcDefine.Name, "NPC对话");
-        return true;
+		var status = QuestManager.Instance.GetNpcQuestStatus(npcDefine.ID);
+		if (status == NpcQuestStatus.None)
+			return false;
+        return QuestManager.Instance.OpenNpcQuest(npcDefine.ID);
     }
 
     private bool DoFunctionalactive(NpcDefine npcDefine)

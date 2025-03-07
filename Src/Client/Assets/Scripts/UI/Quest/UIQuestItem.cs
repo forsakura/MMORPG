@@ -1,40 +1,30 @@
 ﻿using Common.Data;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.UI.Quest
 {
-    public class UIQuestItem : MonoBehaviour
+    public class UIQuestItem : ListView.ListView.ListViewItem
     {
         public Image backGround;
         public Text title;
         public Sprite selectedSprite;
         public Sprite normalSprite;
 
-        bool selected;
-        public bool Selected
+        public override void OnSelected(bool selected)
         {
-            get { return selected; }
-            set
+            backGround.overrideSprite = selected ? selectedSprite : normalSprite; 
+        }
+
+        public Models.Quest quest;
+        
+        public void SetQuestInfo(Models.Quest quest)
+        {
+            this.quest = quest;
+            if (title != null)
             {
-                selected = value;
-                backGround.overrideSprite = selected ? selectedSprite : normalSprite;
+                title.text = quest.Define.Name;
             }
-        }
-
-        public QuestDefine questDefine;
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
     }

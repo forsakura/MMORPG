@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Models;
 using Assets.Scripts.UI;
 using Assets.Scripts.UI.CharEquip;
+using Assets.Scripts.UI.Quest;
 using Services;
 using System.Collections;
 using System.Collections.Generic;
@@ -54,6 +55,11 @@ namespace Assets.Scripts.UI
         public void OnClickChar()
         {
             UIManager.Instance.Show<UICharEquip>();
+        }
+
+        public void OnClickQuest()
+        {
+            UIManager.Instance.Show<UIQuestSystem>();
         }
     }
 }

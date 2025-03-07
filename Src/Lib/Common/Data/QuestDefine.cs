@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SkillBridge.Message;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,14 +22,15 @@ namespace Common.Data
         public int ID { get; set; }
         public string Name { get; set; }
         public int LimitLevel { get; set; }
-        public int LimitClass { get; set; }
+        public CharacterClass LimitClass { get; set; }
         public int PreQuset { get; set; }
         public int PostQuest { get; set; }
         public QuestType Type { get; set; }
-        public int AceptNPC { get; set; }
+        public int AcceptNPC { get; set; }
         public int SubmitNPC { get; set; }
         public string Overview { get; set; }
         public string Dialog {  get; set; }
+        public string DialogAccept { get; set; }
         public string DialogDeny { get; set; }
         public string DialogIncomplete { get; set; }
         public string DialogFinish { get; set; }
