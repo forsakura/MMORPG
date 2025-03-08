@@ -25,8 +25,8 @@ namespace Assets.Scripts.UI.Quest
             {
                 if(this.quest.Info.Status == SkillBridge.Message.QuestStatus.Complated)
                 {
-                    openBtns.SetActive(true);
-                    submitBtns.SetActive(false);
+                    openBtns.SetActive(false);
+                    submitBtns.SetActive(true);
                 }
                 else
                 {
