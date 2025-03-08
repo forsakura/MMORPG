@@ -445,6 +445,7 @@ message QuestAcceptResponse
 {
 	RESULT result = 1;
 	string errormsg = 2;
+	NQuestInfo quest  = 3;
 }
 
 message QuestSubmitRequest
@@ -456,6 +457,7 @@ message QuestSubmitResponse
 {
 	RESULT result = 1;
 	string errormsg = 2;
+	NQuestInfo quest  = 3;
 }
 
 message QuestAbandonRequest
@@ -467,4 +469,5 @@ message QuestAbandonResponse
 {
 	RESULT result = 1;
 	string errormsg = 2;
+	NQuestInfo quest = 3;
 }

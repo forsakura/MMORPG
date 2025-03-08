@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Models;
+using Assets.Scripts.Services;
 using Assets.Scripts.UI;
 using Assets.Scripts.UI.Quest;
 using Common.Data;
@@ -9,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.Scripts.Managers
 {
@@ -21,7 +23,7 @@ namespace Assets.Scripts.Managers
     }
     public class QuestManager : Singleton<QuestManager>
     {
-
+        public UnityAction<Quest> onQuestStatusChanged;
         public List<NQuestInfo> questInfos;
         public Dictionary<int, Quest> allQuests = new Dictionary<int, Quest>();
         public Dictionary<int, Dictionary<NpcQuestStatus, List<Quest>>> npcQuests = new Dictionary<int, Dictionary<NpcQuestStatus, List<Quest>>>();
@@ -43,6 +45,11 @@ namespace Assets.Scripts.Managers
                 AddNpcQuest(quest.Define.SubmitNPC, quest);
                 allQuests[quest.Info.QuestId] = quest;
             }
+            CheckAvailableQuests();
+        }
+
+        void CheckAvailableQuests()
+        {
             foreach (var kv in DataManager.Instance.Quests)
             {
                 if (kv.Value.LimitClass != CharacterClass.None && kv.Value.LimitClass != User.Instance.currentCharacter.Class)
@@ -52,7 +59,7 @@ namespace Assets.Scripts.Managers
                 if (allQuests.ContainsKey(kv.Key))
                     continue;
 
-                if(kv.Value.PreQuset > 0)
+                if (kv.Value.PreQuset > 0)
                 {
                     Quest preQuest;
                     if (allQuests.TryGetValue(kv.Value.PreQuset, out preQuest))
@@ -168,8 +175,14 @@ namespace Assets.Scripts.Managers
             UIQuestDialog uIQuestDialog = sender as UIQuestDialog;
             if(result == UIWindow.WindowResult.Yes)
             {
-
-                MessageBox.Show(uIQuestDialog.quest.Define.DialogAccept);
+                if (uIQuestDialog.quest.Info == null)
+                {
+                    QuestService.Instance.SendQuestAccept(uIQuestDialog.quest);
+                }
+                else if (uIQuestDialog.quest.Info.Status == QuestStatus.Complated)
+                {
+                    QuestService.Instance.SendQuestSubmit(uIQuestDialog.quest);
+                }
             }
             else if(result == UIWindow.WindowResult.No)
             {
@@ -177,9 +190,48 @@ namespace Assets.Scripts.Managers
             }
         }
 
-        public void OnQuestAccepted(Quest quest)
+        Quest RefreshQuestStatus(NQuestInfo quest)
         {
+            npcQuests.Clear();
+            Quest result;
+            if(allQuests.ContainsKey(quest.QuestId))
+            {
+                allQuests[quest.QuestId].Info = quest;
+                result = allQuests[quest.QuestId];
+            }
+            else
+            {
+                result = new Quest(quest);
+                allQuests[quest.QuestId] = result;
+            }
 
+            CheckAvailableQuests();
+            foreach (var item in allQuests)
+            {
+                AddNpcQuest(item.Value.Define.AcceptNPC, item.Value);
+                AddNpcQuest(item.Value.Define.SubmitNPC, item.Value);
+            }
+
+            if(onQuestStatusChanged != null)
+                onQuestStatusChanged(result);
+            return result;
+        }
+
+        public void OnQuestAccepted(NQuestInfo quest)
+        {
+             var result = RefreshQuestStatus(quest);
+            MessageBox.Show(result.Define.DialogAccept);
+        }
+
+        internal void OnQuestSubmited(NQuestInfo quest)
+        {
+            var result = RefreshQuestStatus(quest);
+            MessageBox.Show(result.Define.DialogFinish);
+        }
+
+        internal void OnQuestAbandoned(NQuestInfo quest)
+        {
+            
         }
     }
 }
