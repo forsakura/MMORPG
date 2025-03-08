@@ -37,10 +37,5 @@ namespace Assets.Scripts.UI
         {
             Close(WindowResult.Yes);
         }
-
-        public virtual void OnNoClick()
-        {
-            Close(WindowResult.No);
-        }
     }
 }

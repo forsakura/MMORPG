@@ -25,7 +25,7 @@ namespace GameServer.Entities
 
         public ItemManager ItemManager;
         public StatusManager StatusManager;
-        public QuestManager QuestManager;
+        //public QuestManager QuestManager;
         //public FriendManager FriendManager;
 
         //public Team Team;
@@ -62,7 +62,7 @@ namespace GameServer.Entities
             Info.Bag.Unlocked = this.Data.Bag.Unlocked;
             Info.Bag.Items = this.Data.Bag.Items;
             Info.Equips = this.Data.Equips;
-            this.QuestManager = new QuestManager(this);
+            //this.QuestManager = new QuestManager(this);
             //this.QuestManager.GetQuestInfos(this.Info.Quests);
             //this.FriendManager = new FriendManager(this);
             //this.FriendManager.GetFriendInfos(this.Info.Friends);

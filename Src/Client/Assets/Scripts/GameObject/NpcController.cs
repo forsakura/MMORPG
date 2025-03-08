@@ -1,6 +1,4 @@
-﻿using Assets.Scripts.Managers;
-using Assets.Scripts.Models;
-using Assets.Scripts.UI;
+﻿using Assets.Scripts.Models;
 using Common.Data;
 using GameServer.Managers;
 using System;
@@ -19,8 +17,6 @@ public class NpcController : MonoBehaviour {
     Animator animator;
     SkinnedMeshRenderer skinnedMeshRenderer;
     Color originColor;
-
-    NpcQuestStatus questStatus;
     private void Start()
     {
         npcDefine = NpcManager.Instance.GetNPCDefine(npcID);
@@ -28,26 +24,6 @@ public class NpcController : MonoBehaviour {
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         originColor =skinnedMeshRenderer.sharedMaterial.color;
         StartCoroutine(Actions());
-        RefreshQuestStatus();
-        QuestManager.Instance.onQuestStatusChanged += QuestStatusChanged;
-    }
-
-    private void OnDestroy()
-    {
-        QuestManager.Instance.onQuestStatusChanged -= QuestStatusChanged;
-        if(UIWorldElementManager.Instance != null )
-            UIWorldElementManager.Instance.RemoveNpcQuestStatus(transform);
-    }
-
-    private void RefreshQuestStatus()
-    {
-        questStatus = QuestManager.Instance.GetNpcQuestStatus(npcID);
-        UIWorldElementManager.Instance.AddNpcQuestStatus(transform, questStatus);
-    }
-
-    void QuestStatusChanged(Quest quest)
-    {
-        RefreshQuestStatus();
     }
 
     IEnumerator Actions()
