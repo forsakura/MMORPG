@@ -1,7 +1,6 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.UI.Quest;
 using Entities;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,17 +8,17 @@ namespace Assets.Scripts.UI
 {
     public class UIWorldElementManager : MonoSingleton<UIWorldElementManager>
     {
-        Dictionary<Transform, GameObject> elements = new Dictionary<Transform, GameObject>();
+        Dictionary<Transform, UnityEngine.GameObject> elements = new Dictionary<Transform, UnityEngine.GameObject>();
 
-        public GameObject uiNameBarPrefab;
+        public UnityEngine.GameObject uiNameBarPrefab;
 
-        Dictionary<Transform, GameObject> elementsQuest = new Dictionary<Transform, GameObject>();
+        Dictionary<Transform, UnityEngine.GameObject> elementsQuest = new Dictionary<Transform, UnityEngine.GameObject>();
 
-        public GameObject uiQuestBarPrefab;
+        public UnityEngine.GameObject uiQuestBarPrefab;
 
         public void AddCharacterElement(Transform owner, Character character)
         {
-            GameObject gameObject = Instantiate(uiNameBarPrefab, transform);
+            UnityEngine.GameObject gameObject = Instantiate(uiNameBarPrefab, transform);
             gameObject.name = "UIWorldName" + character.Id;
             gameObject.GetComponent<UINameBar>().character = character;
             gameObject.GetComponent<UIWorldElement>().owner = owner;
@@ -44,7 +43,7 @@ namespace Assets.Scripts.UI
             }
             else
             {
-                GameObject go = Instantiate(uiQuestBarPrefab, transform);
+                UnityEngine.GameObject go = Instantiate(uiQuestBarPrefab, transform);
                 go.name = "UIWorldName" + status;
                 go.GetComponent<UIWorldElement>().owner = owner;
                 go.GetComponent<UIQuestStatus>().SetQuestStatus(status);

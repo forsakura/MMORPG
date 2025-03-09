@@ -14,7 +14,7 @@ namespace Assets.Scripts.UI
         {
             public string resource;
             public bool cache;
-            public GameObject instance;
+            public UnityEngine.GameObject instance;
         }
 
         Dictionary<Type, UIElement> UIResources = new Dictionary<Type, UIElement>();
@@ -42,7 +42,7 @@ namespace Assets.Scripts.UI
                 {
                     UnityEngine.Object obj = Resloader.Load<UnityEngine.Object>(res.resource);
                     if (obj == null) return default(T);
-                    res.instance = (GameObject)UnityEngine.Object.Instantiate(obj, UIMain.Instance.transform);
+                    res.instance = (UnityEngine.GameObject)UnityEngine.Object.Instantiate(obj, UIMain.Instance.transform);
                 }
                 return res.instance.GetComponent<T>();
             }

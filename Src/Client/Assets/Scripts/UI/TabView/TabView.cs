@@ -10,7 +10,7 @@ namespace Assets.Scripts.UI.TabView
     public class TabView : MonoBehaviour
     {
         public UnityAction<int> OnTabSelected;
-        public GameObject[] bagViews;
+        public UnityEngine.GameObject[] bagViews;
         public TabButton[] btnPages;
         public int index = -1;
         IEnumerator Start()

@@ -12,7 +12,7 @@ namespace Assets.Scripts.UI.UIBag
     {
         public Text money;
         public Transform[] pages;
-        public GameObject bagItem;
+        public UnityEngine.GameObject bagItem;
         List<Image> slots;
         // Use this for initialization
         void Start()
@@ -35,7 +35,7 @@ namespace Assets.Scripts.UI.UIBag
                 var item = BagManager.Instance.items[i];
                 if(item.itemID > 0)
                 {
-                    GameObject go = Instantiate(bagItem, slots[i].transform);
+                    UnityEngine.GameObject go = Instantiate(bagItem, slots[i].transform);
                     var ui = go.GetComponent<UIIconItem>();
                     var def = ItemManager.Instance.items[item.itemID].itemDefine;
                     ui.SetMain(def.Icon, item.count.ToString());

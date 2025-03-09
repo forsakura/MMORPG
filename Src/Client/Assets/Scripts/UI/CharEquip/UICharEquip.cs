@@ -11,8 +11,8 @@ namespace Assets.Scripts.UI.CharEquip
     {
         public Text title;
         public Text money;
-        public GameObject ItemPrefab;
-        public GameObject ItemEquipedPrefab;
+        public UnityEngine.GameObject ItemPrefab;
+        public UnityEngine.GameObject ItemEquipedPrefab;
         public Transform EquipListRoot;
         public Transform[] Slots;
 

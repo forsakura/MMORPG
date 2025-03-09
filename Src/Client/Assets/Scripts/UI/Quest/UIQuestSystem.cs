@@ -10,7 +10,7 @@ namespace Assets.Scripts.UI.Quest
 {
     public class UIQuestSystem : UIWindow
     {
-        public GameObject questObject;
+        public UnityEngine.GameObject questObject;
         public ListView.ListView mainList;
         public ListView.ListView branchList;
         public Text title;
@@ -44,7 +44,7 @@ namespace Assets.Scripts.UI.Quest
                     if(kv.Value.Info == null) continue;
                 }
 
-                GameObject go = Instantiate(questObject, kv.Value.Define.Type == Common.Data.QuestType.MAIN ? mainList.gameObject.transform : branchList.gameObject.transform);
+                UnityEngine.GameObject go = Instantiate(questObject, kv.Value.Define.Type == Common.Data.QuestType.MAIN ? mainList.gameObject.transform : branchList.gameObject.transform);
                 UIQuestItem ui = go.GetComponent<UIQuestItem>();
                 ui.SetQuestInfo(kv.Value);
                 if (kv.Value.Define.Type == Common.Data.QuestType.MAIN)

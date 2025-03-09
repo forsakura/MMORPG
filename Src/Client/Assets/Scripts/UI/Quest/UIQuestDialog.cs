@@ -9,8 +9,8 @@ namespace Assets.Scripts.UI.Quest
     public class UIQuestDialog : UIWindow
     {
         public UIQuestInfo questInfo;
-        public GameObject openBtns;
-        public GameObject submitBtns;
+        public UnityEngine.GameObject openBtns;
+        public UnityEngine.GameObject submitBtns;
         public Models.Quest quest;
         public void SetQuest(Models.Quest quest)
         {
