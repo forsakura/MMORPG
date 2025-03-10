@@ -41,11 +41,15 @@ namespace Assets.Scripts.Managers
             foreach (var item in questInfos)
             {
                 Quest quest = new Quest(item);
-                AddNpcQuest(quest.Define.AcceptNPC, quest);
-                AddNpcQuest(quest.Define.SubmitNPC, quest);
                 allQuests[quest.Info.QuestId] = quest;
             }
             CheckAvailableQuests();
+
+            foreach (var quest in allQuests)
+            {
+                AddNpcQuest(quest.Value.Define.AcceptNPC, quest.Value);
+                AddNpcQuest(quest.Value.Define.SubmitNPC, quest.Value);                
+            }
         }
 
         void CheckAvailableQuests()
@@ -80,7 +84,7 @@ namespace Assets.Scripts.Managers
 
         private void AddNpcQuest(int npcId, Quest quest)
         {
-            if(npcQuests.ContainsKey(npcId))
+            if(!npcQuests.ContainsKey(npcId))
                 npcQuests[npcId] = new Dictionary<NpcQuestStatus, List<Quest>>();
             List<Quest> availables;
             List<Quest> completes;
@@ -108,18 +112,18 @@ namespace Assets.Scripts.Managers
                 {
                     npcQuests[npcId][NpcQuestStatus.Available].Add(quest);
                 }
-                else
+            }
+            else
+            {
+                if(quest.Define.AcceptNPC == npcId && quest.Info.Status == QuestStatus.Complated)
                 {
-                    if(quest.Define.AcceptNPC == npcId && quest.Info.Status == QuestStatus.Complated)
-                    {
-                        if (!npcQuests[npcId][NpcQuestStatus.complete].Contains(quest))
-                            npcQuests[npcId][NpcQuestStatus.complete].Add(quest);
-                    }
-                    if(quest.Define.AcceptNPC == npcId && quest.Info.Status == QuestStatus.InProgress)
-                    {
-                        if (!npcQuests[npcId][NpcQuestStatus.Incomplete].Contains(quest))
-                            npcQuests[npcId][NpcQuestStatus.Incomplete].Add(quest);
-                    }
+                    if (!npcQuests[npcId][NpcQuestStatus.complete].Contains(quest))
+                        npcQuests[npcId][NpcQuestStatus.complete].Add(quest);
+                }
+                if(quest.Define.AcceptNPC == npcId && quest.Info.Status == QuestStatus.InProgress)
+                {
+                    if (!npcQuests[npcId][NpcQuestStatus.Incomplete].Contains(quest))
+                        npcQuests[npcId][NpcQuestStatus.Incomplete].Add(quest);
                 }
             }
         }

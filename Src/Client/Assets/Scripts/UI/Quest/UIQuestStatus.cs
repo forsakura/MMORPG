@@ -19,7 +19,7 @@ namespace Assets.Scripts.UI.Quest
             {
                 if(questImages[i] != null)
                 {
-                    questImages[i].gameObject.SetActive(i == ((int)status - 1));
+                    questImages[i].gameObject.SetActive(i == (int)status);
                 }
             }
         }

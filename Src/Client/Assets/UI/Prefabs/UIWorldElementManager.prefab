@@ -39,6 +39,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224549690218391368}
   - component: {fileID: 222689413580377518}
+  - component: {fileID: 114928828651552250}
+  - component: {fileID: 114750489444951652}
   m_Layer: 5
   m_Name: UIQuestStatus
   m_TagString: Untagged
@@ -368,6 +370,23 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114750489444951652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105973922745536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf99e23c96daf0543b7323d7cd006fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questImages:
+  - {fileID: 0}
+  - {fileID: 114191789972826490}
+  - {fileID: 114726225560558716}
+  - {fileID: 114069675535595906}
+  questStatus: 0
 --- !u!114 &114755837936003394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -381,6 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   global: 1
   uiNameBarPrefab: {fileID: 1836021834122326}
+  uiQuestBarPrefab: {fileID: 1105973922745536}
 --- !u!114 &114874987222356074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,6 +428,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114928828651552250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105973922745536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b4c2c2c993ceb47b49d9d0b429c8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  height: 2.5
 --- !u!222 &222351921148331040
 CanvasRenderer:
   m_ObjectHideFlags: 1

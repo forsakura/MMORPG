@@ -54304,23 +54304,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114755837936003394, guid: 50d6a7ba7e384ae41a1dfd672de10640,
-        type: 2}
-      propertyPath: uiQuestBarPrefab
-      value: 
-      objectReference: {fileID: 1793284900}
-    - target: {fileID: 1105973922745536, guid: 50d6a7ba7e384ae41a1dfd672de10640, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50d6a7ba7e384ae41a1dfd672de10640, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1793284900 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1105973922745536, guid: 50d6a7ba7e384ae41a1dfd672de10640,
-    type: 2}
-  m_PrefabInternal: {fileID: 1793284899}
 --- !u!1001 &1794979965
 Prefab:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ namespace Assets.Scripts.UI.Quest
             title.text = string.Format("[{0}]{1}", quest.Define.Type, quest.Define.Name);
             questGoldCount.text = quest.Define.RewardGold.ToString();
             questEXPCount.text = quest.Define.RewardExp.ToString();
+            
 
             if(quest.Info ==null)
             {
@@ -30,6 +31,10 @@ namespace Assets.Scripts.UI.Quest
                 if(quest.Info.Status == SkillBridge.Message.QuestStatus.Complated)
                 {
                     questDiscribution.text = quest.Define.DialogFinish;
+                }
+                else if(quest.Info.Status == SkillBridge.Message.QuestStatus.InProgress)
+                {
+                    questDiscribution.text = quest.Define.DialogAccept;
                 }
             }
 

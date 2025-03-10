@@ -115,7 +115,7 @@ namespace GameServer.Managers
 
         NQuestInfo GetQuestInfo(TCharacterQuest quest)
         {
-            NQuestInfo info = new NQuestInfo() { QuestId = quest.Id, Status = (QuestStatus)quest.Status };
+            NQuestInfo info = new NQuestInfo() { QuestId = quest.QuestID, Status = (QuestStatus)quest.Status };
             info.Targets = new int[3];
             info.Targets[0] = quest.Target1;
             info.Targets[1] = quest.Target2;

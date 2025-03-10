@@ -40,10 +40,7 @@ namespace Assets.Scripts.UI.Quest
         {
             if(this.quest != null)
             {
-                if(this.quest.Info != null)
-                {
-                    questInfo.SetQuestInfo(quest);
-                }
+                questInfo.SetQuestInfo(quest);
             }
         }
     }
