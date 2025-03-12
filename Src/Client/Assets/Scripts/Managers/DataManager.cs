@@ -6,6 +6,7 @@ using Common.Data;
 
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.Networking.NetworkSystem;
 namespace GameServer.Managers
 {
     public class DataManager : Singleton<DataManager>
@@ -14,14 +15,14 @@ namespace GameServer.Managers
         public Dictionary<int, MapDefine> Maps = null;
         public Dictionary<int, CharacterDefine> Characters = null;
         public Dictionary<int, TeleporterDefine> Teleporters = null;
-        public Dictionary<int, Dictionary<int, SpawnPointDefine>> SpawnPoints = null;
-        public Dictionary<int, Dictionary<int,SpawnRuleDefine>> SpawnRules = null;
 		public Dictionary<int, NpcDefine> Npcs = null;
         public Dictionary<int, ItemDefine> Items = null;
         public Dictionary<int, ShopDefine> Shops = null;
         public Dictionary<int, Dictionary<int, ShopItemDefine>> ShopItems = null;
         public Dictionary<int, EquipDefine> Equips = null;
         public Dictionary<int, QuestDefine> Quests = null;
+        public Dictionary<int, Dictionary<int, SpawnPointDefine>> SpawnPoints = null;
+        public Dictionary<int, Dictionary<int, SpawnRuleDefine>> SpawnRules = null;
         public DataManager()
         {
             this.DataPath = "Data/";
@@ -38,12 +39,6 @@ namespace GameServer.Managers
 
             json = File.ReadAllText(this.DataPath + "TeleporterDefine.txt");
             this.Teleporters = JsonConvert.DeserializeObject<Dictionary<int, TeleporterDefine>>(json);
-
-            //json = File.ReadAllText(this.DataPath + "SpawnPointDefine.txt");
-            //this.SpawnPoints = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnPointDefine>>>(json);
-
-            //json = File.ReadAllText(this.DataPath + "SpawnRuleDefine.txt");
-            //this.SpawnRules = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnRuleDefine>>>(json);
 
             json = File.ReadAllText(this.DataPath + "NpcDefine.txt");
             this.Npcs = JsonConvert.DeserializeObject<Dictionary<int, NpcDefine>>(json);
@@ -62,6 +57,12 @@ namespace GameServer.Managers
 
             json = File.ReadAllText(DataPath + "QuestDefine.txt");
             Quests = JsonConvert.DeserializeObject<Dictionary<int, QuestDefine>>(json);
+
+            json = File.ReadAllText(DataPath + "SpawnPointDefine.txt");
+            this.SpawnPoints = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnPointDefine>>>(json);
+
+            json = File.ReadAllText(DataPath + "SpawnRuleDefine.txt");
+            this.SpawnRules = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnRuleDefine>>>(json);
         }
 
         public IEnumerator LoadData()
@@ -110,15 +111,16 @@ namespace GameServer.Managers
             Quests = JsonConvert.DeserializeObject<Dictionary<int, QuestDefine>>(json);
 
             yield return null;
-            /*json = File.ReadAllText(this.DataPath + "SpawnPointDefine.txt");
+
+            json = File.ReadAllText(DataPath + "SpawnPointDefine.txt");
             this.SpawnPoints = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnPointDefine>>>(json);
 
             yield return null;
-            
-            json = File.ReadAllText(this.DataPath + "SpawnRuleDefine.txt");
+
+            json = File.ReadAllText(DataPath + "SpawnRuleDefine.txt");
             this.SpawnRules = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnRuleDefine>>>(json);
-            
-            yield return null;*/
+
+            yield return null;
         }
 
 #if UNITY_EDITOR

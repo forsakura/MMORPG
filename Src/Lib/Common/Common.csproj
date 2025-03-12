@@ -59,9 +59,8 @@
     <Compile Include="Data\QuestDefine.cs" />
     <Compile Include="Data\ShopDefine.cs" />
     <Compile Include="Data\ShopItemDefine.cs" />
-    <Compile Include="Data\SpawnRuleDefine.cs" />
     <Compile Include="Data\SpawnPointDefine.cs" />
-    <Compile Include="Data\SpawnType.cs" />
+    <Compile Include="Data\SpawnRuleDefine.cs" />
     <Compile Include="Data\TeleporterDefine.cs" />
     <Compile Include="Data\MapDefine.cs" />
     <Compile Include="MessageExtend.cs" />

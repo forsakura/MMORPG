@@ -55,4 +55,17 @@ public class MapTools : MonoBehaviour {
         EditorSceneManager.OpenScene("Assets/Levels/" + currentScene + ".unity");
         EditorUtility.DisplayDialog("提示", "传送点导出完成", "确定");
     }
+
+    [MenuItem("Map Tools/Export SpawnPointData")]
+    public void SpawnPointDataInit()
+    {
+        DataManager.Instance.Load();
+        Scene current = EditorSceneManager.GetActiveScene();
+        string currentScene = current.name;
+        if(current.isDirty)
+        {
+            EditorUtility.DisplayDialog("提示", "请先保存场景", "确定");
+            return;
+        }
+    }
 }

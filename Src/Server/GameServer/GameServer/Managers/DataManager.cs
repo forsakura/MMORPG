@@ -16,15 +16,14 @@ namespace GameServer.Managers
         internal Dictionary<int, MapDefine> Maps = null;
         internal Dictionary<int, CharacterDefine> Characters = null;
         internal Dictionary<int, TeleporterDefine> Teleporters = null;
-        public Dictionary<int, Dictionary<int, SpawnPointDefine>> SpawnPoints = null;
-        public Dictionary<int, Dictionary<int,SpawnRuleDefine>> SpawnRules = null;
 		public Dictionary<int, NpcDefine> Npcs = null;
         public Dictionary<int, ItemDefine> Items = null;
         public Dictionary<int, ShopDefine> Shops = null;
         public Dictionary<int, Dictionary<int, ShopItemDefine>> ShopItems = null;
         public Dictionary<int, EquipDefine> Equips = null;
         public Dictionary<int, QuestDefine> Quests = null;
-        //public Dictionary<int, QuestDefine> Quests = null; 
+        public Dictionary<int, Dictionary<int, SpawnPointDefine>> SpawnPoints = null;
+        public Dictionary<int, Dictionary<int, SpawnRuleDefine>> SpawnRules = null;
         public DataManager()
         {
             this.DataPath = "Data/";
@@ -60,14 +59,11 @@ namespace GameServer.Managers
             json = File.ReadAllText(DataPath + "QuestDefine.txt");
             Quests = JsonConvert.DeserializeObject<Dictionary<int, QuestDefine>>(json);
 
-            /*json = File.ReadAllText(this.DataPath + "SpawnPointDefine.txt");
+            json = File.ReadAllText(DataPath + "SpawnPointDefine.txt");
             this.SpawnPoints = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnPointDefine>>>(json);
 
-            json = File.ReadAllText(this.DataPath + "SpawnRuleDefine.txt");
+            json = File.ReadAllText(DataPath + "SpawnRuleDefine.txt");
             this.SpawnRules = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnRuleDefine>>>(json);
-
-            json = File.ReadAllText(this.DataPath + "QuestDefine.txt");
-            this.Quests = JsonConvert.DeserializeObject<Dictionary<int, QuestDefine>>(json);*/
         }
     }
 }
