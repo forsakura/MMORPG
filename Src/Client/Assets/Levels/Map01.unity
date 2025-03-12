@@ -9922,7 +9922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d918f7959254ec843a03c033ef675973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 1
   mesh: {fileID: 0}
 --- !u!135 &1153071697
 SphereCollider:
@@ -13367,7 +13367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d918f7959254ec843a03c033ef675973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 6
   mesh: {fileID: 0}
 --- !u!135 &1583917074
 SphereCollider:
@@ -15198,7 +15198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d918f7959254ec843a03c033ef675973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 2
   mesh: {fileID: 0}
 --- !u!135 &1719572895
 SphereCollider:
@@ -17278,7 +17278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d918f7959254ec843a03c033ef675973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 4
   mesh: {fileID: 0}
 --- !u!135 &1923025547
 SphereCollider:
@@ -18166,7 +18166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d918f7959254ec843a03c033ef675973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 5
   mesh: {fileID: 0}
 --- !u!135 &2007677319
 SphereCollider:
@@ -19253,7 +19253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d918f7959254ec843a03c033ef675973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 3
   mesh: {fileID: 0}
 --- !u!135 &2110615293
 SphereCollider:

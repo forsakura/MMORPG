@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -58,11 +59,11 @@ namespace GameServer.Managers
             json = File.ReadAllText(DataPath + "QuestDefine.txt");
             Quests = JsonConvert.DeserializeObject<Dictionary<int, QuestDefine>>(json);
 
-            json = File.ReadAllText(DataPath + "SpawnPointDefine.txt");
-            this.SpawnPoints = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnPointDefine>>>(json);
-
             json = File.ReadAllText(DataPath + "SpawnRuleDefine.txt");
             this.SpawnRules = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnRuleDefine>>>(json);
+
+            json = File.ReadAllText(DataPath + "SpawnPointDefine.txt");
+            this.SpawnPoints = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnPointDefine>>>(json);
         }
 
         public IEnumerator LoadData()
@@ -123,11 +124,17 @@ namespace GameServer.Managers
             yield return null;
         }
 
+
 #if UNITY_EDITOR
         public void SaveTeleporters()
         {
             string json = JsonConvert.SerializeObject(Teleporters, Formatting.Indented);
             File.WriteAllText(DataPath + "TeleporterDefine.txt", json);
+        }
+        public void SaveSpawnPoints()
+        {
+            string json = JsonConvert.SerializeObject(SpawnPoints, Formatting.Indented);
+            File.WriteAllText(DataPath + "SpawnPointDefine.txt", json);
         }
 #endif
     }
