@@ -78,6 +78,10 @@ namespace GameServer.Models
                 if (item.Value.character != character)
                     this.AddCharacterEnterMap(item.Value.connection, character.Info);
             }
+            foreach (var item in monsterManager.monsters)
+            {
+                conn.Session.Response.mapCharacterEnter.Characters.Add(item.Value.Info);
+            }
             MapCharacters[character.EntityData.Id] = new MapCharacter(conn, character);
 
             conn.SendResponse();

@@ -13,7 +13,7 @@ namespace GameServer.Managers
     {
         Map map;
 
-        Dictionary<int, Monster> monsters = new Dictionary<int, Monster>();
+        public Dictionary<int, Monster> monsters = new Dictionary<int, Monster>();
 
         public void Init(Map map)
         {
