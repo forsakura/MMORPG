@@ -12,10 +12,11 @@ using Network;
 using GameServer.Managers;
 using GameServer.Entities;
 using GameServer.Services;
+using System.Diagnostics;
 
 namespace GameServer.Models
 {
-    class Map
+    public class Map
     {
         internal class MapCharacter
         {
@@ -44,20 +45,19 @@ namespace GameServer.Models
         /// <summary>
         /// 刷怪管理器
         /// </summary>
-        //SpawnManager SpawnManager = new SpawnManager();
-
-        //public MonsterManager MonsterManager = new MonsterManager();
+        public SpawnManager spawnManager = new SpawnManager();
+        public MonsterManager monsterManager = new MonsterManager();
 
         internal Map(MapDefine define)
         {
             this.Define = define;
-            //this.SpawnManager.Init(this);
-            //this.MonsterManager.Init(this);
+            this.spawnManager.Init(this);
+            this.monsterManager.Init(this);
         }
 
         internal void Update()
         {
-            //SpawnManager.Update();
+            spawnManager.Update();
         }
 
         /// <summary>
@@ -91,7 +91,6 @@ namespace GameServer.Models
                 conn.Session.Response.mapCharacterEnter.mapId = this.Define.ID;
             }
             conn.Session.Response.mapCharacterEnter.Characters.Add(character);
-            conn.SendResponse();
         }
 
 
@@ -114,16 +113,12 @@ namespace GameServer.Models
         }
 
 
-        /// <summary>
-        /// 怪物进入地图
-        /// </summary>
-        /// <param name="character"></param>
         internal void MonsterEnter(Monster monster)
         {
-            Log.InfoFormat("MonsterEnter: Map:{0} monsterId:{1}", this.Define.ID, monster.Id);
-            foreach (var kv in this.MapCharacters)
+            Log.InfoFormat("怪物进入地图:Map: {0} , Monster: {1}", this.Define.ID, monster.Id);
+            foreach (var item in MapCharacters)
             {
-                this.AddCharacterEnterMap(kv.Value.connection, monster.Info);
+                AddCharacterEnterMap(item.Value.connection, monster.Info);
             }
         }
 

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameServer.Entities
+namespace GameServer.Models
 {
     public class Item
     {
@@ -16,7 +16,7 @@ namespace GameServer.Entities
         public int CharacterID;
         public Item(TCharacterItem item)
         {
-            this.tCharacterItem = item;
+            tCharacterItem = item;
             itemID = item.ItemID;
             itemCount = item.ItemCount;
         }
