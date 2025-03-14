@@ -4,8 +4,6 @@ using GameServer.Managers;
 using Network;
 using SkillBridge.Message;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Services
@@ -38,7 +36,7 @@ namespace Assets.Scripts.Services
             Debug.LogFormat("OnMapCharacterEnter:Map:{0} Count:{1}", message.mapId, message.Characters.Count);
             foreach (var cha in message.Characters)
             {
-                if(User.Instance.currentCharacter == null || User.Instance.currentCharacter.Entity.Id == cha.Entity.Id)
+                if(User.Instance.currentCharacter == null || (cha.Type == CharacterType.Player && User.Instance.currentCharacter.Id == cha.Id))
                 {
                     User.Instance.currentCharacter = cha;
                 }
@@ -54,7 +52,7 @@ namespace Assets.Scripts.Services
         private void OnMapCharacterLeave(object sender, MapCharacterLeaveResponse message)
         {
             Debug.LogFormat("OnMapCharacterLeave::EntityID:{0}", message.entityId);
-            if (message.entityId != User.Instance.currentCharacter.Id)
+            if (message.entityId != User.Instance.currentCharacter.EntityId)
             {
                 CharacterManager.Instance.RemoveCharacter(message.entityId);
             }

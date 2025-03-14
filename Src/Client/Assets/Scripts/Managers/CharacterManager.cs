@@ -41,7 +41,7 @@ public class CharacterManager : Singleton<CharacterManager>, IDisposable
         Debug.LogFormat("AddCharacter:chaID:{0} chaName:{1} Map:{2} Entity:{3}", cha.Id, cha.Name, cha.mapId, cha.EntityId);
         var character = new Character(cha);
         EntityManager.Instance.AddEntity(character);
-        Characters[cha.Entity.Id] = character;
+        Characters[cha.EntityId] = character;
         if (OnCharacterEnter != null)
         {
             OnCharacterEnter(character);

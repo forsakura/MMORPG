@@ -86,6 +86,9 @@ namespace SkillBridge.Message
         [global::ProtoBuf.ProtoMember(14, Name = @"quests")]
         public global::System.Collections.Generic.List<NQuestInfo> Quests { get; } = new global::System.Collections.Generic.List<NQuestInfo>();
 
+        [global::ProtoBuf.ProtoMember(15, Name = @"friends")]
+        public global::System.Collections.Generic.List<NFriendInfo> Friends { get; } = new global::System.Collections.Generic.List<NFriendInfo>();
+
     }
 
     [global::ProtoBuf.ProtoContract()]
@@ -275,6 +278,18 @@ namespace SkillBridge.Message
         [global::ProtoBuf.ProtoMember(15)]
         public QuestAbandonRequest questAbandon { get; set; }
 
+        [global::ProtoBuf.ProtoMember(16)]
+        public FriendAddRequest friendAddReq { get; set; }
+
+        [global::ProtoBuf.ProtoMember(17)]
+        public FriendAddResponse friendAddRes { get; set; }
+
+        [global::ProtoBuf.ProtoMember(18)]
+        public FriendListRequest friendList { get; set; }
+
+        [global::ProtoBuf.ProtoMember(19)]
+        public FriendRemoveRequest friendRemove { get; set; }
+
     }
 
     [global::ProtoBuf.ProtoContract()]
@@ -325,6 +340,18 @@ namespace SkillBridge.Message
 
         [global::ProtoBuf.ProtoMember(15)]
         public QuestAbandonResponse questAbandon { get; set; }
+
+        [global::ProtoBuf.ProtoMember(16)]
+        public FriendAddRequest friendAddReq { get; set; }
+
+        [global::ProtoBuf.ProtoMember(17)]
+        public FriendAddResponse friendAddRes { get; set; }
+
+        [global::ProtoBuf.ProtoMember(18)]
+        public FriendListResponse friendList { get; set; }
+
+        [global::ProtoBuf.ProtoMember(19)]
+        public FriendRemoveResponse friendRemove { get; set; }
 
         [global::ProtoBuf.ProtoMember(100)]
         public StatusNotify statusNotify { get; set; }
@@ -801,6 +828,128 @@ namespace SkillBridge.Message
 
         [global::ProtoBuf.ProtoMember(3, Name = @"quest")]
         public NQuestInfo Quest { get; set; }
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class NFriendInfo : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1, Name = @"id")]
+        public int Id { get; set; }
+
+        [global::ProtoBuf.ProtoMember(2)]
+        public NCharacterInfo friendInfo { get; set; }
+
+        [global::ProtoBuf.ProtoMember(3, Name = @"status")]
+        public int Status { get; set; }
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class FriendAddRequest : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1, Name = @"from_id")]
+        public int FromId { get; set; }
+
+        [global::ProtoBuf.ProtoMember(2, Name = @"from_name")]
+        [global::System.ComponentModel.DefaultValue("")]
+        public string FromName { get; set; } = "";
+
+        [global::ProtoBuf.ProtoMember(3, Name = @"to_id")]
+        public int ToId { get; set; }
+
+        [global::ProtoBuf.ProtoMember(4, Name = @"to_name")]
+        [global::System.ComponentModel.DefaultValue("")]
+        public string ToName { get; set; } = "";
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class FriendAddResponse : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1, Name = @"result")]
+        public Result Result { get; set; }
+
+        [global::ProtoBuf.ProtoMember(2, Name = @"errormsg")]
+        [global::System.ComponentModel.DefaultValue("")]
+        public string Errormsg { get; set; } = "";
+
+        [global::ProtoBuf.ProtoMember(3, Name = @"request")]
+        public FriendAddRequest Request { get; set; }
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class FriendListRequest : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class FriendListResponse : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1, Name = @"result")]
+        public Result Result { get; set; }
+
+        [global::ProtoBuf.ProtoMember(2, Name = @"errormsg")]
+        [global::System.ComponentModel.DefaultValue("")]
+        public string Errormsg { get; set; } = "";
+
+        [global::ProtoBuf.ProtoMember(3, Name = @"friends")]
+        public global::System.Collections.Generic.List<NFriendInfo> Friends { get; } = new global::System.Collections.Generic.List<NFriendInfo>();
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class FriendRemoveRequest : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1)]
+        public int Id { get; set; }
+
+        [global::ProtoBuf.ProtoMember(2, Name = @"friend_id")]
+        public int FriendId { get; set; }
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class FriendRemoveResponse : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1, Name = @"result")]
+        public Result Result { get; set; }
+
+        [global::ProtoBuf.ProtoMember(2, Name = @"errormsg")]
+        [global::System.ComponentModel.DefaultValue("")]
+        public string Errormsg { get; set; } = "";
+
+        [global::ProtoBuf.ProtoMember(3, Name = @"id")]
+        public int Id { get; set; }
 
     }
 

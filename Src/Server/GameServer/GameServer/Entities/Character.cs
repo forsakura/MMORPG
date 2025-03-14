@@ -29,10 +29,10 @@ namespace GameServer.Entities
         //public FriendManager FriendManager;
 
         //public Team Team;
-        public double TeamUpdateTS;
+        //public double TeamUpdateTS;
 
         //public Guild Guild;
-        public double GuildUpdateTS;
+        //public double GuildUpdateTS;
 
         //public Chat Chat;
 
@@ -46,7 +46,7 @@ namespace GameServer.Entities
             this.Info.Id = cha.ID; 
             this.Info.EntityId = this.entityId;
             this.Info.Name = cha.Name;
-            this.Info.Level = 10;//cha.Level;
+            this.Info.Level = cha.Level;
             this.Info.ConfigId = cha.TID;
             this.Info.Class = (CharacterClass)cha.Class;
             this.Info.mapId = cha.MapID;
@@ -64,7 +64,6 @@ namespace GameServer.Entities
             Info.Equips = this.Data.Equips;
             this.QuestManager = new QuestManager(this);
             this.QuestManager.GetQuestInfos(this.Info.Quests);
-            //this.QuestManager.GetQuestInfos(this.Info.Quests);
             //this.FriendManager = new FriendManager(this);
             //this.FriendManager.GetFriendInfos(this.Info.Friends);
 

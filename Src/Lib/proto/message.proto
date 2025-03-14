@@ -96,7 +96,7 @@ message NCharacterInfo {
 	NBagInfo Bag = 12;
 	bytes Equips = 13;
 	repeated NQuestInfo quests = 14;
-	//repeated NFriendInfo friends = 15;
+	repeated NFriendInfo friends = 15;
 	//NGuildInfo guild = 16;
 	//int32 ride = 17;
 }
@@ -208,10 +208,10 @@ message NetMessageRequest{
 	QuestSubmitRequest questSubmit = 14;
 	QuestAbandonRequest questAbandon = 15;
 
-//	FriendAddRequest friendAddReq = 15;
-//	FriendAddResponse friendAddRes = 16;
-//	FriendListRequest friendList = 17; 
-//	FriendRemoveRequest friendRemove = 18;
+	FriendAddRequest friendAddReq = 16;
+	FriendAddResponse friendAddRes = 17;
+	FriendListRequest friendList = 18;
+	FriendRemoveRequest friendRemove = 19;
 
 //	TeamInviteRequest teamInviteReq = 19;
 //	TeamInviteResponse teamInviteRes = 20;
@@ -249,10 +249,10 @@ message NetMessageResponse{
 	QuestSubmitResponse questSubmit = 14;
 	QuestAbandonResponse questAbandon = 15;
 
-//	FriendAddRequest friendAddReq = 15;
-//	FriendAddResponse friendAddRes = 16;
-//	FriendListResponse friendList = 17;
-//	FriendRemoveResponse friendRemove = 18;
+	FriendAddRequest friendAddReq = 16;
+	FriendAddResponse friendAddRes = 17;
+	FriendListResponse friendList = 18;
+	FriendRemoveResponse friendRemove = 19;
 
 //	TeamInviteRequest teamInviteReq = 19;
 //	TeamInviteResponse teamInviteRes = 20;
@@ -470,4 +470,52 @@ message QuestAbandonResponse
 	RESULT result = 1;
 	string errormsg = 2;
 	NQuestInfo quest = 3;
+}
+
+//Friend System
+message NFriendInfo
+{
+	int32 id = 1;
+	NCharacterInfo friendInfo = 2;
+	int32 status = 3;
+}
+
+message FriendAddRequest
+{
+	int32 from_id = 1;
+	string from_name = 2;
+	int32 to_id = 3;
+	string to_name = 4;
+}
+
+message FriendAddResponse
+{
+	RESULT result = 1;
+	string errormsg = 2;
+	FriendAddRequest request = 3;
+}
+
+message FriendListRequest
+{
+	
+}
+
+message FriendListResponse
+{
+	RESULT result = 1;
+	string errormsg = 2;
+	repeated NFriendInfo friends = 3;
+}
+
+message FriendRemoveRequest
+{
+	int32 Id = 1;
+	int32 friend_id = 2;
+}
+
+message FriendRemoveResponse
+{
+	RESULT result = 1;
+	string errormsg = 2;
+	int32 id = 3;
 }

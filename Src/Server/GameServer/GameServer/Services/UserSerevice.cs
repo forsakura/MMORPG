@@ -70,6 +70,7 @@ namespace GameServer.Services
                     characterInfo.Type = CharacterType.Player;
                     characterInfo.Class = (CharacterClass)val.Class;
                     characterInfo.ConfigId = val.ID;
+                    characterInfo.Level = val.Level;
                     sender.Session.Response.userLogin.Userinfo.Player.Characters.Add(characterInfo);
                 }
             }
