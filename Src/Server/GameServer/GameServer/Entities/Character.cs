@@ -18,7 +18,7 @@ namespace GameServer.Entities
     /// Character
     /// 玩家角色类
     /// </summary>
-    public class Character : CharacterBase,IPostResponser
+    public class Character : CharacterBase, IPostResponser
     {
         public TCharacter Data;
 
@@ -26,7 +26,7 @@ namespace GameServer.Entities
         public ItemManager ItemManager;
         public StatusManager StatusManager;
         public QuestManager QuestManager;
-        //public FriendManager FriendManager;
+        public FriendManager FriendManager;
 
         //public Team Team;
         //public double TeamUpdateTS;
@@ -64,8 +64,8 @@ namespace GameServer.Entities
             Info.Equips = this.Data.Equips;
             this.QuestManager = new QuestManager(this);
             this.QuestManager.GetQuestInfos(this.Info.Quests);
-            //this.FriendManager = new FriendManager(this);
-            //this.FriendManager.GetFriendInfos(this.Info.Friends);
+            this.FriendManager = new FriendManager(this);
+            this.FriendManager.GetFriendInfos(this.Info.Friends);
 
             //this.Guild = GuildManager.Instance.GetGuild(this.Data.GuildId);
 
@@ -97,6 +97,12 @@ namespace GameServer.Entities
 
         public void PostProcess(NetMessageResponse message)
         {
+            Log.InfoFormat("PostProcess : characterId: {0} : {1}", this.Id, this.Info.Name);
+            this.FriendManager.PostProcess(message);
+            if(this.StatusManager.HasStatus)
+            {
+                this.StatusManager.PostProcess(message);
+            }
             /*Log.InfoFormat("PostProcess > Character: characterID:{0}:{1}", this.Id, this.Info.Name);
             this.FriendManager.PostProcess(message);
 
@@ -139,6 +145,7 @@ namespace GameServer.Entities
         /// </summary>
         public void Clear()
         {
+            this.FriendManager.UpdateInfo(this.Info, 0);
             //this.FriendManager.OfflineNotify();
         }
 

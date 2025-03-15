@@ -164,6 +164,7 @@ namespace GameServer.Services
             Character character = sender.Session.Character;
             Log.InfoFormat("UserGameLeaveRequest::{0}", character.Name);
             CharacterLeave(character);
+            SessionManager.Instance.RemoveSession(character.Id);
             sender.Session.Response.gameLeave = new UserGameLeaveResponse();
             sender.Session.Response.gameLeave.Result = Result.Success;
             sender.Session.Response.gameLeave.Errormsg = "None";
@@ -182,6 +183,7 @@ namespace GameServer.Services
             TCharacter dbchar = sender.Session.User.Player.Characters.ElementAt(message.characterIdx);
             Log.InfoFormat("UserGameEnterRequest:: CharacterName:{0} CharacterID:{1} CharacterMapID:{2}", dbchar.Name, dbchar.ID, dbchar.MapID);
             Character cha = CharacterManager.Instance.AddCharacter(dbchar);
+            SessionManager.Instance.AddSession(cha.Id, sender);
             sender.Session.Response.gameEnter = new UserGameEnterResponse();
             sender.Session.Response.gameEnter.Result = Result.Success;
             sender.Session.Response.gameEnter.Errormsg = "None";
