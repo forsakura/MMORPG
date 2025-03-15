@@ -12,6 +12,7 @@ namespace Assets.Scripts.Models
         public MapDefine curentMiniMap { get; set; }
 
         public UnityEngine.GameObject currentCharacterObject { get; set; }
+        public NTeamInfo TeamInfo { get; set; }
         public NUserInfo Info
         {
             get { return userInfo; }

@@ -213,10 +213,10 @@ message NetMessageRequest{
 	FriendListRequest friendList = 18;
 	FriendRemoveRequest friendRemove = 19;
 
-//	TeamInviteRequest teamInviteReq = 19;
-//	TeamInviteResponse teamInviteRes = 20;
-//	TeamInfoRequest teamInfo = 21; 
-//	TeamLeaveRequest teamLeave = 22;
+	TeamInviteRequest teamInviteReq = 20;
+	TeamInviteResponse teamInviteRes = 21;
+	TeamInfoRequest teamInfoReq = 22;
+	TeamLeaveRequest teamLeaveReq = 23;
 
 //	GuildCreateRequest guildCreate = 23;
 //	GuildJoinRequest guildJoinReq = 24;
@@ -254,10 +254,10 @@ message NetMessageResponse{
 	FriendListResponse friendList = 18;
 	FriendRemoveResponse friendRemove = 19;
 
-//	TeamInviteRequest teamInviteReq = 19;
-//	TeamInviteResponse teamInviteRes = 20;
-//	TeamInfoResponse teamInfo = 21; 
-//	TeamLeaveResponse teamLeave = 22;
+	TeamInviteRequest teamInviteReq = 20;
+	TeamInviteResponse teamInviteRes = 21;
+	TeamInfoResponse teamInfoRes = 22;
+	TeamLeaveResponse teamLeaveRes = 23;
 
 //	GuildCreateResponse guildCreate = 23;
 //	GuildJoinRequest guildJoinReq = 24;
@@ -518,4 +518,53 @@ message FriendRemoveResponse
 	RESULT result = 1;
 	string errormsg = 2;
 	int32 id = 3;
+}
+
+//Team System
+message NTeamInfo
+{
+	int32 team_id = 1;
+	int32 leader = 2;
+	repeated NCharacterInfo teamMembers = 3;
+}
+
+message TeamInviteRequest
+{
+	int32 team_id = 1;
+	int32 from_id = 2;
+	string from_name = 3;
+	int32 to_id = 4;
+	string to_name = 5;
+}
+
+message TeamInviteResponse
+{
+	RESULT result = 1;
+	string errormsg = 2;
+	TeamInviteRequest request = 3;
+}
+
+message TeamInfoRequest
+{
+	
+}
+
+message TeamInfoResponse
+{
+	RESULT result = 1;
+	string errormsg = 2;
+	TeamInfoRequest request = 3;
+}
+
+message TeamLeaveRequest
+{
+	int32 team_id = 1;
+	int32 characterId = 2;
+}
+
+message TeamLeaveResponse
+{
+	RESULT result = 1;
+	string errormsg = 2;
+	int32 characterId = 3;
 }
