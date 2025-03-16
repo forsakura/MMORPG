@@ -3,6 +3,7 @@ using Assets.Scripts.UI;
 using Assets.Scripts.UI.CharEquip;
 using Assets.Scripts.UI.Friend;
 using Assets.Scripts.UI.Quest;
+using Assets.Scripts.UI.Team;
 using Services;
 using System.Collections;
 using System.Collections.Generic;
@@ -70,9 +71,9 @@ namespace Assets.Scripts.UI
             UIManager.Instance.Show<UIFriend>();
         }
 
-        public void OnClickTeam(bool show)
+        public void ShowTeamUI(bool show)
         {
-
+            UITeam.Show(show);
         }
     }
 }

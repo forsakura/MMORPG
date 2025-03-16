@@ -1063,7 +1063,10 @@ namespace SkillBridge.Message
         [global::System.ComponentModel.DefaultValue("")]
         public string Errormsg { get; set; } = "";
 
-        [global::ProtoBuf.ProtoMember(3, Name = @"request")]
+        [global::ProtoBuf.ProtoMember(3, Name = @"team")]
+        public NTeamInfo Team { get; set; }
+
+        [global::ProtoBuf.ProtoMember(4, Name = @"request")]
         public TeamInfoRequest Request { get; set; }
 
     }

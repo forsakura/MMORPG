@@ -553,7 +553,8 @@ message TeamInfoResponse
 {
 	RESULT result = 1;
 	string errormsg = 2;
-	TeamInfoRequest request = 3;
+	NTeamInfo team = 3;
+	TeamInfoRequest request = 4;
 }
 
 message TeamLeaveRequest

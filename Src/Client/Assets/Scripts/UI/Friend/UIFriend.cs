@@ -88,5 +88,22 @@ namespace Assets.Scripts.UI.Friend
             MessageBox.Show(string.Format("确认删除好友[{0}]吗？", selectedItem.NfriendInfo.friendInfo.Name), "删除好友", MessageBoxType.Confirm, "删除", "取消").OnYes += () =>
                 FriendService.Instance.SendFriendRemoveRequest(selectedItem.NfriendInfo.Id, selectedItem.NfriendInfo.friendInfo.Id);
         }
+
+        public void OnClickFriendTeamInvite()
+        {
+            if (selectedItem == null)
+            {
+                MessageBox.Show("请选择要邀请的好友");
+                return;
+            }
+            if(selectedItem.NfriendInfo.Status == 0)
+            {
+                MessageBox.Show("请选择在线的好友");
+            }
+            MessageBox.Show(string.Format("确定要邀请好友[{0}]加入队伍吗？", selectedItem.NfriendInfo.friendInfo.Name), "邀请好友组队", MessageBoxType.Confirm, "邀请", "取消").OnYes = () =>
+            {
+                TeamService.Instance.SendTeamInviteRequest(this.selectedItem.NfriendInfo.friendInfo.Id, this.selectedItem.NfriendInfo.friendInfo.Name);
+            };
+        }
     }
 }

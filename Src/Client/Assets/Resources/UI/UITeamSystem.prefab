@@ -1132,6 +1132,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  classImage: {fileID: 0}
+  levelText: {fileID: 0}
+  nameText: {fileID: 0}
+  leaderImage: {fileID: 0}
+  background: {fileID: 0}
+  index: 0
 --- !u!114 &114504955379640048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1285,6 +1291,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  classImage: {fileID: 114522645446369444}
+  levelText: {fileID: 114042806952158110}
+  nameText: {fileID: 114054154408043566}
+  leaderImage: {fileID: 114988874636453792}
+  background: {fileID: 114012190140862182}
+  index: 0
 --- !u!114 &114630458565324442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1297,6 +1309,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  classImage: {fileID: 0}
+  levelText: {fileID: 0}
+  nameText: {fileID: 0}
+  leaderImage: {fileID: 0}
+  background: {fileID: 0}
+  index: 0
 --- !u!114 &114642875876350156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1467,6 +1485,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  classImage: {fileID: 0}
+  levelText: {fileID: 0}
+  nameText: {fileID: 0}
+  leaderImage: {fileID: 0}
+  background: {fileID: 0}
+  index: 0
 --- !u!114 &114786166576810408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1765,6 +1789,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  classImage: {fileID: 0}
+  levelText: {fileID: 0}
+  nameText: {fileID: 0}
+  leaderImage: {fileID: 0}
+  background: {fileID: 0}
+  index: 0
 --- !u!114 &114988874636453792
 MonoBehaviour:
   m_ObjectHideFlags: 1
