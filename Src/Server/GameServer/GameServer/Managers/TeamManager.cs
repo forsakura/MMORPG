@@ -11,8 +11,8 @@ namespace GameServer.Managers
 {
     internal class TeamManager : Singleton<TeamManager>
     {
-        public List<Team> Teams = new List<Team>();
-        public Dictionary<int, Team> CharacterTeams = new Dictionary<int, Team>();
+        private List<Team> Teams = new List<Team>();
+        private Dictionary<int, Team> CharacterTeams = new Dictionary<int, Team>();
         public void Init()
         {
 

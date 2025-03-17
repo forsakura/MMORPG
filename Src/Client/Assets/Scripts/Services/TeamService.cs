@@ -1,11 +1,8 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Models;
-using Entities;
 using Network;
 using SkillBridge.Message;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Services

@@ -1,8 +1,5 @@
 ﻿using Assets.Scripts.Managers;
-using Assets.Scripts.UI.ListView;
 using SkillBridge.Message;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 

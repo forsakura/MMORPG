@@ -1,8 +1,5 @@
 ﻿using Assets.Scripts.Models;
 using Assets.Scripts.Services;
-using SkillBridge.Message;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

@@ -1,12 +1,9 @@
 ﻿using Assets.Scripts.Models;
-using Assets.Scripts.UI;
 using Assets.Scripts.UI.CharEquip;
 using Assets.Scripts.UI.Friend;
 using Assets.Scripts.UI.Quest;
 using Assets.Scripts.UI.Team;
 using Services;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
