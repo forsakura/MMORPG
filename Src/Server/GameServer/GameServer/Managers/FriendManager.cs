@@ -1,4 +1,5 @@
-﻿using GameServer.Entities;
+﻿using Common;
+using GameServer.Entities;
 using GameServer.Services;
 using Network;
 using SkillBridge.Message;
@@ -48,8 +49,29 @@ namespace GameServer.Managers
             friendInfo.friendInfo = new NCharacterInfo();
             friendInfo.Id = item.Id;
 
+            if (cha == null)
+            {
+                friendInfo.friendInfo.Id = item.FriendID;
+                friendInfo.friendInfo.Name = item.FriendName;
+                friendInfo.friendInfo.Class = (CharacterClass)item.Class;
+                friendInfo.friendInfo.Level = item.Level;
+                friendInfo.Status = 0;
+            }
+            else
+            {
+                friendInfo.friendInfo = cha.GetBasicInfo();
+                friendInfo.friendInfo.Name = cha.Name;
+                friendInfo.friendInfo.Class = cha.Info.Class;
+                friendInfo.friendInfo.Level = cha.Info.Level;
+                if(item.Level != cha.Info.Level)
+                    item.Level = cha.Info.Level;
+                cha.FriendManager.UpdateInfo(cha.Info, 1);
+                friendInfo.Status = 1;
+            }
+            Log.InfoFormat("{0} {1} GetFriendInfo :{2}:{3} Status: {4}", this.owner.Id, this.owner.Info.Name, friendInfo.friendInfo.Id, friendInfo.friendInfo.Name, friendInfo.Status);
             return friendInfo;
         }
+
 
         public NFriendInfo GetFriendInfo(int id)
         {
@@ -106,6 +128,16 @@ namespace GameServer.Managers
             }
         }
 
+        public void OfflineNotify()
+        {
+            foreach (var item in friends)
+            {
+                var cha = CharacterManager.Instance.GetCharacter(item.friendInfo.Id);
+                if (cha != null)
+                    cha.FriendManager.UpdateInfo(this.owner.Info, 0);
+            }
+        }
+
         internal void UpdateInfo(NCharacterInfo info, int v)
         {
             foreach (var item in friends)
@@ -116,6 +148,7 @@ namespace GameServer.Managers
                     break;
                 }
             }
+            this.friendChanged = true;
         }
 
         /// <summary>
