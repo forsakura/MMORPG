@@ -17,10 +17,6 @@ namespace GameServer.Managers
         {
         }
 
-        public void Dispose()
-        {
-        }
-
         public void Init()
         {
 

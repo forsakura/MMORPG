@@ -68,6 +68,26 @@ namespace Assets.Scripts.UI
             UIManager.Instance.Show<UIFriend>();
         }
 
+        public void OnClickGuild()
+        {
+            
+        }
+
+        public void OnClickRide()
+        {
+
+        }
+
+        public void OnClickSetting()
+        {
+
+        }
+
+        public void OnClickSkill()
+        {
+
+        }
+
         public void ShowTeamUI(bool show)
         {
             UITeam.Show(show);
