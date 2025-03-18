@@ -29,6 +29,7 @@ namespace Assets.Scripts.UI
             UIResources.Add(typeof(UIQuestSystem), new UIElement() { resource = "UI/UIQuest", cache = false });
             UIResources.Add(typeof(UIQuestDialog), new UIElement() { resource = "UI/UIQuestDialog", cache = false });
             UIResources.Add(typeof(UIFriend), new UIElement() { resource = "UI/UIFriend", cache = false });
+            UIResources.Add(typeof(UIGuild), new UIElement() { resource = "UI/UIGuild", cache = false });
             UIResources.Add(typeof(UIGuildList), new UIElement() { resource = "UI/UIGuildList", cache = false });
             UIResources.Add(typeof(UIGuildPopNoGuild), new UIElement() { resource = "UI/UIGuildPopNoGuild", cache = false });
             UIResources.Add(typeof(UIGuildPopCreate), new UIElement() { resource = "UI/UIGuildPopCreate", cache = false });

@@ -718,7 +718,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114891050730818644}
         m_MethodName: OnCloseClick
         m_Mode: 1
         m_Arguments:
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114891050730818644}
         m_MethodName: OnYesClick
         m_Mode: 1
         m_Arguments:
@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputName: {fileID: 114267402930777856}
-  InputTitle: {fileID: 114624538351652512}
+  InputNotice: {fileID: 114624538351652512}
 --- !u!114 &114968141681931272
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,16 +1,49 @@
-﻿using System.Collections;
+﻿using SkillBridge.Message;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIGuildInfo : MonoBehaviour {
+namespace Assets.Scripts.UI.Guild
+{
+    public class UIGuildInfo : MonoBehaviour
+    {
+        public Text guildName;
+        public Text ID;
+        public Text notice;
+        public Text memberCount;
+        public Text leader;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        private NGuildInfo info;
+        public NGuildInfo Info
+        {
+            get { return info; }
+            set
+            {
+                info = value;
+                this.RefreshUI();
+            }
+        }
+
+        private void RefreshUI()
+        {
+            if(this.info == null)
+            {
+                this.guildName.text = "无";
+                this.ID.text = "0";
+                this.notice.text = "";
+                this.leader.text = "会长：无";
+                this.memberCount.text = string.Format("成员数量：0/{0}", GameDefine.GuildMaxMemberCount);
+            }
+            else
+            {
+                this.guildName.text = this.info.GuildName;
+                this.ID.text = this.info.Id.ToString();
+                this.notice.text = this.info.Notice.ToString();
+                this.leader.text = this.info.LeaderName.ToString();
+                this.memberCount.text = string.Format("成员数量：{0}/{1}", this.info.Members.Count, GameDefine.GuildMaxMemberCount);
+            }
+        }
+    }
 }
