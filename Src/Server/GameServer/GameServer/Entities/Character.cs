@@ -31,9 +31,6 @@ namespace GameServer.Entities
         public Team team;
         public double TeamUpdateTS;
 
-        //public Team Team;
-        //public double TeamUpdateTS;
-
         //public Guild Guild;
         //public double GuildUpdateTS;
 

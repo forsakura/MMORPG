@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Models;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Models;
 using Assets.Scripts.UI.CharEquip;
 using Assets.Scripts.UI.Friend;
 using Assets.Scripts.UI.Quest;
@@ -70,7 +71,7 @@ namespace Assets.Scripts.UI
 
         public void OnClickGuild()
         {
-            
+            GuildManager.Instance.ShowGuild();
         }
 
         public void OnClickRide()
