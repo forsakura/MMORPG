@@ -31,7 +31,7 @@ namespace GameServer.Managers
             {
                 this.friends.Add(GetFriendInfo(item));
             }
-            SortFriendByStatus();
+            //SortFriendByStatus();
         }
 
         internal void GetFriendInfos(List<NFriendInfo> friends)
@@ -45,7 +45,7 @@ namespace GameServer.Managers
         private NFriendInfo GetFriendInfo(TCharacterFriend item)
         {
             NFriendInfo friendInfo = new NFriendInfo();
-            Character cha = CharacterManager.Instance.GetCharacter(item.Id);
+            Character cha = CharacterManager.Instance.GetCharacter(item.CharacterID);
             friendInfo.friendInfo = new NCharacterInfo();
             friendInfo.Id = item.Id;
 
@@ -75,10 +75,13 @@ namespace GameServer.Managers
 
         public NFriendInfo GetFriendInfo(int id)
         {
-            NFriendInfo nFriendInfo = new NFriendInfo();
-            Character cha = CharacterManager.Instance.GetCharacter(id);
-            nFriendInfo.friendInfo = cha.Info;
-            return nFriendInfo;
+            NFriendInfo info = null;
+            foreach (var item in friends)
+            {
+                if (item.Id == id)
+                    info = item;
+            }
+            return info;
         }
 
         internal void AddFriend(Character character)

@@ -92,8 +92,17 @@ namespace GameServer.Services
                     requester.Session.Response.friendAddRes.Errormsg = "添加好友成功";
                     requester.SendResponse();
                 }
+                sender.SendResponse();
             }
-            sender.SendResponse();
+            else
+            {
+                var requester = SessionManager.Instance.GetSession(message.Request.FromId);
+                if (requester != null)
+                {
+                    requester.Session.Response.friendAddRes = message;
+                    requester.SendResponse();
+                }
+            }
         }
 
         private void OnFriendRemove(NetConnection<NetSession> sender, FriendRemoveRequest message)

@@ -45,7 +45,7 @@ namespace Assets.Scripts.Services
         {
             if (message.Result == Result.Success)
             {
-                MessageBox.Show(message.Request.ToName + "接受了你的请求", "添加好友成功");
+                MessageBox.Show(message.Errormsg, "添加好友成功");
             }
             else
                 MessageBox.Show(message.Errormsg, "添加好友失败");
