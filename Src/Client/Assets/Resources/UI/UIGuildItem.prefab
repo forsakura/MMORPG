@@ -269,6 +269,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  Name: {fileID: 114979899998850394}
+  Level: {fileID: 114175018117987966}
+  Class: {fileID: 114566785232295838}
+  Title: {fileID: 114343827524158000}
+  JoinTime: {fileID: 114526932587919726}
+  Status: {fileID: 114611637317863778}
 --- !u!114 &114566785232295838
 MonoBehaviour:
   m_ObjectHideFlags: 1

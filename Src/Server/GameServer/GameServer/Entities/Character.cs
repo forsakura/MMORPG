@@ -31,8 +31,8 @@ namespace GameServer.Entities
         public Team team;
         public double TeamUpdateTS;
 
-        //public Guild Guild;
-        //public double GuildUpdateTS;
+        public Guild Guild;
+        public double GuildUpdateTS;
 
         //public Chat Chat;
 
@@ -67,7 +67,7 @@ namespace GameServer.Entities
             this.FriendManager = new FriendManager(this);
             this.FriendManager.GetFriendInfos(this.Info.Friends);
 
-            //this.Guild = GuildManager.Instance.GetGuild(this.Data.GuildId);
+            this.Guild = GuildManager.Instance.GetGuild(this.Data.GuildId);
 
             //this.Chat = new Chat(this);
         }
@@ -113,29 +113,22 @@ namespace GameServer.Entities
                     this.team.PostProcess(message);
                 }
             }
-            /*
+
             if (this.Guild != null)
             {
-                Log.InfoFormat("PostProcess > Guild: characterID:{0}:{1}  {2}<{3}", this.Id, this.Info.Name, GuildUpdateTS, this.Guild.timestamp);
-                if (this.Info.Guild == null)
+                Log.InfoFormat("PostProcess > Guild: CharacterID:{0}:{1} {2}<{3}", this.Id, this.Info.Name, GuildUpdateTS, this.Guild.timestamp);
+                if(this.Info.Guild == null)
                 {
                     this.Info.Guild = this.Guild.GuildInfo(this);
                     if (message.mapCharacterEnter != null)
                         GuildUpdateTS = Guild.timestamp;
                 }
-                if (GuildUpdateTS < this.Guild.timestamp && message.mapCharacterEnter == null)
+                if (GuildUpdateTS < this.Guild.timestamp && message.mapCharacterEnter != null)
                 {
-                    GuildUpdateTS = Guild.timestamp;
+                    GuildUpdateTS = this.Guild.timestamp;
                     this.Guild.PostProcess(this, message);
                 }
             }
-
-            if (this.StatusManager.HasStatus)
-            {
-                this.StatusManager.PostProcess(message);
-            }
-
-            this.Chat.PostProcess(message);*/
         }
 
         /// <summary>

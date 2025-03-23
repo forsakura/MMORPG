@@ -61,6 +61,7 @@ namespace Assets.Scripts.UI
 
         public void OnClickQuest()
         {
+            Debug.Log("ClickQuest");
             UIManager.Instance.Show<UIQuestSystem>();
         }
 

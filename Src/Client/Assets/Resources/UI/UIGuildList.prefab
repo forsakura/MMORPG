@@ -727,7 +727,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114926655079834286}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114941515962614812}
+        m_MethodName: OnClickJoin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114206914326312230
@@ -1217,7 +1228,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114987948165915050}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114941515962614812}
+        m_MethodName: OnCloseClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114846097600665196
@@ -1451,11 +1473,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87a32f668d54b848bdc08ebb100f13c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIInfo: {fileID: 0}
-  uiPrefab: {fileID: 0}
+  UIInfo: {fileID: 114163428839137604}
+  uiPrefab: {fileID: 1742149629450820, guid: 476eb9a1caa890943baa2904f4cd1aa2, type: 2}
   selectedItem: {fileID: 0}
-  mainView: {fileID: 0}
-  ItemRoot: {fileID: 0}
+  mainView: {fileID: 114810756617230774}
 --- !u!114 &114957582179159706
 MonoBehaviour:
   m_ObjectHideFlags: 1

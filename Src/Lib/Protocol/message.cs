@@ -1169,13 +1169,16 @@ namespace SkillBridge.Message
         [global::System.ComponentModel.DefaultValue("")]
         public string Notice { get; set; } = "";
 
-        [global::ProtoBuf.ProtoMember(6, Name = @"members")]
+        [global::ProtoBuf.ProtoMember(6)]
+        public int memberCount { get; set; }
+
+        [global::ProtoBuf.ProtoMember(7, Name = @"members")]
         public global::System.Collections.Generic.List<NGuildMember> Members { get; } = new global::System.Collections.Generic.List<NGuildMember>();
 
-        [global::ProtoBuf.ProtoMember(7, Name = @"applies")]
+        [global::ProtoBuf.ProtoMember(8, Name = @"applies")]
         public global::System.Collections.Generic.List<NGuildApplyInfo> Applies { get; } = new global::System.Collections.Generic.List<NGuildApplyInfo>();
 
-        [global::ProtoBuf.ProtoMember(8)]
+        [global::ProtoBuf.ProtoMember(9)]
         public long createTime { get; set; }
 
     }

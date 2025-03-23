@@ -31,7 +31,7 @@ namespace Assets.Scripts.UI.Guild
             if(this.info == null)
             {
                 this.guildName.text = "无";
-                this.ID.text = "0";
+                this.ID.text = "ID:0";
                 this.notice.text = "";
                 this.leader.text = "会长：无";
                 this.memberCount.text = string.Format("成员数量：0/{0}", GameDefine.GuildMaxMemberCount);
@@ -39,9 +39,9 @@ namespace Assets.Scripts.UI.Guild
             else
             {
                 this.guildName.text = this.info.GuildName;
-                this.ID.text = this.info.Id.ToString();
+                this.ID.text = "ID:" + this.info.Id.ToString();
                 this.notice.text = this.info.Notice.ToString();
-                this.leader.text = this.info.LeaderName.ToString();
+                this.leader.text = "会长" + this.info.LeaderName.ToString();
                 this.memberCount.text = string.Format("成员数量：{0}/{1}", this.info.Members.Count, GameDefine.GuildMaxMemberCount);
             }
         }

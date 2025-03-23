@@ -23,7 +23,6 @@ namespace Assets.Scripts.UI.Guild
 
         public override void OnYesClick()
         {
-            base.OnYesClick();
             if(string.IsNullOrEmpty(InputName.text))
             {
                 MessageBox.Show("请输入公会名称", "错误", MessageBoxType.Error);
@@ -39,7 +38,7 @@ namespace Assets.Scripts.UI.Guild
                 MessageBox.Show("请输入公会宣言", "错误", MessageBoxType.Error);
                 return;
             }
-            if(InputNotice.text.Length < 6 || InputNotice.text.Length > 100)
+            if(InputNotice.text.Length < 3 || InputNotice.text.Length > 50)
             {
                 MessageBox.Show("公会宣言为3-50个汉字", "错误", MessageBoxType.Error);
                 return;

@@ -40,6 +40,7 @@ namespace Assets.Scripts.Services
         {
             Debug.LogFormat("SendGuildCreateRequest:: guildName: {0} guildNotice: {1}", name, notice);
             NetMessage message = new NetMessage();
+            message.Request = new NetMessageRequest();
             message.Request.guildCreateReq = new GuildCreateRequest();
             message.Request.guildCreateReq.GuildName = name;
             message.Request.guildCreateReq.GuildNotice = notice;
@@ -144,13 +145,13 @@ namespace Assets.Scripts.Services
             Debug.LogFormat("SendGuildListRequest");
             NetMessage message = new NetMessage();
             message.Request = new NetMessageRequest();
-            message.Request.guildJoinReq = new GuildJoinRequest();
+            message.Request.guildList = new GuildListRequest();
             NetClient.Instance.SendMessage(message);
         }
 
         private void OnGuildList(object sender, GuildListResponse message)
         {
-            Debug.LogFormat("OnGuildList::Count: {1}", message.Guilds.Count);
+            Debug.LogFormat("OnGuildList::Count: {0}", message.Guilds.Count);
             if (OnGuildListResult != null)
                 OnGuildListResult(message.Guilds);
         }

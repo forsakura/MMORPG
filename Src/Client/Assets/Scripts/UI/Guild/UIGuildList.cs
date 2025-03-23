@@ -13,7 +13,6 @@ namespace Assets.Scripts.UI.Guild
         public UnityEngine.GameObject uiPrefab;
         public UIGuildListItem selectedItem;
         public ListView.ListView mainView;
-        public Transform ItemRoot;
 
 
         // Use this for initialization

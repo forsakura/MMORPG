@@ -594,9 +594,10 @@ message NGuildInfo
 	int32 leader_id = 3;
 	string leader_name = 4;
 	string notice = 5;
-	repeated NGuildMember members = 6;
-	repeated NGuildApplyInfo applies = 7;
-	int64 createTime = 8;
+	int32 memberCount = 6;
+	repeated NGuildMember members = 7;
+	repeated NGuildApplyInfo applies = 8;
+	int64 createTime = 9;
 }
 
 //公会成员

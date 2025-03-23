@@ -287,7 +287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1433138428598244
 GameObject:
   m_ObjectHideFlags: 1
@@ -898,7 +898,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114411966135625442}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114306739066162094}
+        m_MethodName: OnClickUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114129537538722890
@@ -1065,7 +1076,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114129537538722890}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114306739066162094}
+        m_MethodName: OnClickDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114196823467937912
@@ -1106,7 +1128,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114449271596575612}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114306739066162094}
+        m_MethodName: OnClickKick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114241237967101260
@@ -1174,7 +1207,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u52A0\u5165\u516C\u4F1A"
+  m_Text: "\u516C\u4F1A"
 --- !u!114 &114300267051924796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1213,6 +1246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6de422a9c26d4fa2dd04ab15a68ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info: {fileID: 114600759577379008}
+  mainView: {fileID: 114725841892223520}
+  selectedItem: {fileID: 0}
+  uiPrefab: {fileID: 1584050851352920, guid: d5c34e0f1c364dc4bb1c56c253455b76, type: 2}
 --- !u!114 &114326645866374008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1338,7 +1375,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114473685022382996}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114306739066162094}
+        m_MethodName: OnCloseClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114362036955350766
@@ -1657,7 +1705,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114077959634364544}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114306739066162094}
+        m_MethodName: OnClickLeave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114536268541357936
@@ -1837,11 +1896,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ba7405c9594ec4aab29826855bdd2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guildName: {fileID: 0}
-  ID: {fileID: 0}
-  notice: {fileID: 0}
-  memberCount: {fileID: 0}
-  leader: {fileID: 0}
+  guildName: {fileID: 114580716463756336}
+  ID: {fileID: 114865349121102950}
+  notice: {fileID: 114915363084655352}
+  memberCount: {fileID: 114630502317434362}
+  leader: {fileID: 114573147870847712}
 --- !u!114 &114630502317434362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2012,7 +2071,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114326645866374008}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114306739066162094}
+        m_MethodName: OnClickChat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114725841892223520
@@ -2163,7 +2233,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114793749760400116}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114306739066162094}
+        m_MethodName: OnClickApplyList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114843085442275166
@@ -2204,7 +2285,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114881748790279012}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114306739066162094}
+        m_MethodName: OnClickTransfer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114849525277008826
@@ -3157,7 +3249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015722793, y: -0.000053963828}
+  m_AnchoredPosition: {x: -0.000015722793, y: -0.000012106476}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224420219880605682
@@ -3177,7 +3269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -17.500061}
+  m_AnchoredPosition: {x: 0, y: -17.5}
   m_SizeDelta: {x: -692.40015, y: -299.20013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224438508186096386
