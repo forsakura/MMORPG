@@ -15,6 +15,7 @@ namespace GameServer.Models
         public Team(Character leader)
         {
             this.leader = leader;
+            members.Add(leader);
         }
 
         public void AddMember(Character member)

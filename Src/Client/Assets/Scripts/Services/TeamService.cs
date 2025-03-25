@@ -89,7 +89,7 @@ namespace Assets.Scripts.Services
         {
             if (message.Result == Result.Success)
             {
-                MessageBox.Show(message.Request.ToName + "加入您的队伍", "邀请组队成功");
+                MessageBox.Show(message.Request.ToName + "加入队伍", "邀请组队成功");
             }
             else
             {
