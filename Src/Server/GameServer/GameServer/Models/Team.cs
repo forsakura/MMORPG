@@ -1,11 +1,7 @@
 ﻿using Common;
 using GameServer.Entities;
 using SkillBridge.Message;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameServer.Models
 {
@@ -13,7 +9,7 @@ namespace GameServer.Models
     {
         public int Id;
         public Character leader;
-        public List<Character> members;
+        public List<Character> members = new List<Character>();
         public int timestamp;
 
         public Team(Character leader)

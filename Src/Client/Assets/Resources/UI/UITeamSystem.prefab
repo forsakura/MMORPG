@@ -1132,11 +1132,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  classImage: {fileID: 0}
-  levelText: {fileID: 0}
-  nameText: {fileID: 0}
-  leaderImage: {fileID: 0}
-  background: {fileID: 0}
+  classImage: {fileID: 114398998842136644}
+  levelText: {fileID: 114779460931802232}
+  nameText: {fileID: 114676093441020812}
+  leaderImage: {fileID: 114819855346876954}
+  background: {fileID: 114690751719310974}
+  originSprite: {fileID: 21300000, guid: f2c26ba28b4d05643ba74996bb40967b, type: 3}
+  selectedSprite: {fileID: 21300000, guid: bb799af4d1f965c4a93f16cb08f26925, type: 3}
   index: 0
 --- !u!114 &114504955379640048
 MonoBehaviour:
@@ -1296,6 +1298,8 @@ MonoBehaviour:
   nameText: {fileID: 114054154408043566}
   leaderImage: {fileID: 114988874636453792}
   background: {fileID: 114012190140862182}
+  originSprite: {fileID: 21300000, guid: f2c26ba28b4d05643ba74996bb40967b, type: 3}
+  selectedSprite: {fileID: 21300000, guid: bb799af4d1f965c4a93f16cb08f26925, type: 3}
   index: 0
 --- !u!114 &114630458565324442
 MonoBehaviour:
@@ -1309,11 +1313,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  classImage: {fileID: 0}
-  levelText: {fileID: 0}
-  nameText: {fileID: 0}
-  leaderImage: {fileID: 0}
-  background: {fileID: 0}
+  classImage: {fileID: 114062181159207144}
+  levelText: {fileID: 114549598470575316}
+  nameText: {fileID: 114054994304057594}
+  leaderImage: {fileID: 114493788017272706}
+  background: {fileID: 114311407302614208}
+  originSprite: {fileID: 21300000, guid: f2c26ba28b4d05643ba74996bb40967b, type: 3}
+  selectedSprite: {fileID: 21300000, guid: bb799af4d1f965c4a93f16cb08f26925, type: 3}
   index: 0
 --- !u!114 &114642875876350156
 MonoBehaviour:
@@ -1485,11 +1491,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  classImage: {fileID: 0}
-  levelText: {fileID: 0}
-  nameText: {fileID: 0}
-  leaderImage: {fileID: 0}
-  background: {fileID: 0}
+  classImage: {fileID: 114642875876350156}
+  levelText: {fileID: 114458742227045502}
+  nameText: {fileID: 114982185834372622}
+  leaderImage: {fileID: 114343917958526322}
+  background: {fileID: 114031453365997782}
+  originSprite: {fileID: 21300000, guid: f2c26ba28b4d05643ba74996bb40967b, type: 3}
+  selectedSprite: {fileID: 21300000, guid: bb799af4d1f965c4a93f16cb08f26925, type: 3}
   index: 0
 --- !u!114 &114786166576810408
 MonoBehaviour:
@@ -1616,6 +1624,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2799d94e06d3b17489384322d33c2804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleText: {fileID: 114123930483965276}
+  Members: []
+  list: {fileID: 0}
 --- !u!114 &114842692226101870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1654,7 +1665,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114186827756150572}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114834553871325538}
+        m_MethodName: OnClickTeamLeave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114886516837566554
@@ -1789,11 +1811,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  classImage: {fileID: 0}
-  levelText: {fileID: 0}
-  nameText: {fileID: 0}
-  leaderImage: {fileID: 0}
-  background: {fileID: 0}
+  classImage: {fileID: 114804910738668316}
+  levelText: {fileID: 114300440566272078}
+  nameText: {fileID: 114957401839486960}
+  leaderImage: {fileID: 114393959652533536}
+  background: {fileID: 114957767642751066}
+  originSprite: {fileID: 21300000, guid: f2c26ba28b4d05643ba74996bb40967b, type: 3}
+  selectedSprite: {fileID: 21300000, guid: bb799af4d1f965c4a93f16cb08f26925, type: 3}
   index: 0
 --- !u!114 &114988874636453792
 MonoBehaviour:
