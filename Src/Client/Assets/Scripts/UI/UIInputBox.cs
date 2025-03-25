@@ -66,6 +66,7 @@ namespace Assets.Scripts.UI
                 if(!OnSubmit(input.text, out tips))
                 {
                     this.messageBottom.text = tips;
+                    return;
                 }
             }
             Destroy(this.gameObject);

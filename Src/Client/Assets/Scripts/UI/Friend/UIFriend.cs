@@ -24,6 +24,11 @@ namespace Assets.Scripts.UI.Friend
             RefreshUI();
         }
 
+        private void OnDestroy()
+        {
+            FriendService.Instance.OnFriendUpdate -= RefreshUI;
+        }
+
         private void RefreshUI()
         {
             ClearFriendList();

@@ -72,7 +72,7 @@ namespace Assets.Scripts.Services
 
         internal void SendMapEntitySync(EntityEvent entityEvent, NEntity entity)
         {
-            Debug.LogFormat("MapEntitySyncRequest::ID: {0} POS: {1} DIR: {2} SPD: {3}", entity.Id, entity.Position, entity.Direction, entity.Speed);
+            //Debug.LogFormat("MapEntitySyncRequest::ID: {0} POS: {1} DIR: {2} SPD: {3}", entity.Id, entity.Position, entity.Direction, entity.Speed);
             NetMessage message = new NetMessage();
             message.Request = new NetMessageRequest();
             message.Request.mapEntitySync = new MapEntitySyncRequest();

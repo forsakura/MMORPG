@@ -3,11 +3,8 @@ using GameServer.Entities;
 using GameServer.Services;
 using Network;
 using SkillBridge.Message;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameServer.Managers
 {
@@ -45,7 +42,7 @@ namespace GameServer.Managers
         private NFriendInfo GetFriendInfo(TCharacterFriend item)
         {
             NFriendInfo friendInfo = new NFriendInfo();
-            Character cha = CharacterManager.Instance.GetCharacter(item.CharacterID);
+            Character cha = CharacterManager.Instance.GetCharacter(item.FriendID);
             friendInfo.friendInfo = new NCharacterInfo();
             friendInfo.Id = item.Id;
 
@@ -63,9 +60,7 @@ namespace GameServer.Managers
                 friendInfo.friendInfo.Name = cha.Name;
                 friendInfo.friendInfo.Class = cha.Info.Class;
                 friendInfo.friendInfo.Level = cha.Info.Level;
-                if(item.Level != cha.Info.Level)
-                    item.Level = cha.Info.Level;
-                cha.FriendManager.UpdateInfo(cha.Info, 1);
+                cha.FriendManager.UpdateInfo(this.owner.Info, 1);
                 friendInfo.Status = 1;
             }
             Log.InfoFormat("{0} {1} GetFriendInfo :{2}:{3} Status: {4}", this.owner.Id, this.owner.Info.Name, friendInfo.friendInfo.Id, friendInfo.friendInfo.Name, friendInfo.Status);
@@ -97,7 +92,7 @@ namespace GameServer.Managers
 
         internal bool RemoveFriendByFriendId(int friendId)
         {
-            var removeItem =  this.owner.Data.Friends.FirstOrDefault(v => v.Id == friendId);
+            var removeItem =  this.owner.Data.Friends.FirstOrDefault(v => v.FriendID == friendId);
             if (removeItem != null)
             {
                 DBService.Instance.Entities.CharacterFriends.Remove(removeItem);
@@ -108,7 +103,7 @@ namespace GameServer.Managers
 
         public bool RemoveFriendByID(int id)
         {
-            var removeItem = this.owner.Data.Friends.FirstOrDefault(v => v.Id == id);
+            var removeItem = this.owner.Data.Friends.FirstOrDefault(v => v.CharacterID == id);
             if(removeItem != null)
             {
                 DBService.Instance.Entities.CharacterFriends.Remove(removeItem);
