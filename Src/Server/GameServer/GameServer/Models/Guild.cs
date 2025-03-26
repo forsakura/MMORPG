@@ -44,7 +44,7 @@ namespace GameServer.Models
         public NGuildInfo GuildInfo(Character character)
         {
             NGuildInfo info = new NGuildInfo();
-            info.Id = character.Guild.Id;
+            info.Id = this.Id;
             info.GuildName = this.Name;
             info.Notice = this.Data.Notice;
             info.LeaderId = this.Data.LeaderID;
