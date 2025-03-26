@@ -58,8 +58,6 @@ namespace GameServer.Managers
             Team team = null;
             CharacterTeams.TryGetValue(member.team.Id, out team);
             team.Leave(member);
-            if (team.members.Count == 0)
-                CharacterTeams.Remove(team.Id);
             return true;
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Models;
+using Assets.Scripts.UI;
 using Network;
 using SkillBridge.Message;
 using System;
@@ -128,6 +129,7 @@ namespace Assets.Scripts.Services
             if (message.Result == Result.Success)
             {
                 MessageBox.Show("离开成功", "离开队伍");
+                UIMain.Instance.ShowTeamUI(false);
             }
             else if(message.Result == Result.Failed)
             {
