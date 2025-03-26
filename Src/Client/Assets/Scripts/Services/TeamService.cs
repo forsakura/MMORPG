@@ -110,7 +110,7 @@ namespace Assets.Scripts.Services
         public void SendTeamLeaveRequest(int id)
         {
             NetMessage message = new NetMessage();
-            message.Response = new NetMessageResponse();
+            message.Request = new NetMessageRequest();
             message.Request.teamLeaveReq = new TeamLeaveRequest();
             message.Request.teamLeaveReq.TeamId = User.Instance.TeamInfo.TeamId;
             message.Request.teamLeaveReq.characterId = id;

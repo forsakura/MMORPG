@@ -48,18 +48,18 @@ namespace GameServer.Managers
             }
             team = new Team(leader);
             this.Teams.Add(team);
-            CharacterTeams[leader.Id] = team;
             team.Id = this.Teams.Count;
+            CharacterTeams[team.Id] = team;
             return team;
         }
 
         public bool RemoveTeamMember(Character member)
         {
             Team team = null;
-            CharacterTeams.TryGetValue(member.team.leader.Id, out team);
+            CharacterTeams.TryGetValue(member.team.Id, out team);
             team.Leave(member);
             if (team.members.Count == 0)
-                CharacterTeams.Remove(team.leader.Id);
+                CharacterTeams.Remove(team.Id);
             return true;
         }
     }
