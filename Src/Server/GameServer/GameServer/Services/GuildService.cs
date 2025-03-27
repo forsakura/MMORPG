@@ -59,7 +59,7 @@ namespace GameServer.Services
                 sender.Session.Response.guildJoinRes.Errormsg = "公会不存在";
                 sender.SendResponse();
             }
-            message.Apply.GuildId = guild.Id;
+            message.Apply.characterId = character.Id;
             message.Apply.Name = character.Data.Name;
             message.Apply.Class = character.Data.Class;
             message.Apply.Level = character.Data.Level;

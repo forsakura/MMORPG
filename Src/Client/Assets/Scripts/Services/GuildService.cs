@@ -69,6 +69,7 @@ namespace Assets.Scripts.Services
         {
             Debug.LogFormat("SendGuildJoinRequest::guildID: {0}", id);
             NetMessage message = new NetMessage();
+            message.Request = new NetMessageRequest();
             message.Request.guildJoinReq = new GuildJoinRequest();
             message.Request.guildJoinReq.Apply = new NGuildApplyInfo();
             message.Request.guildJoinReq.Apply.GuildId = id;
@@ -77,7 +78,7 @@ namespace Assets.Scripts.Services
         private void OnGuildJoinReq(object sender, GuildJoinRequest message)
         {
             Debug.Log("OnGuildJoinReq");
-            var box = MessageBox.Show(string.Format("玩家{0}请求加入公会，是否同意", message.Apply), "公会申请", MessageBoxType.Confirm, "同意", "拒绝");
+            var box = MessageBox.Show(string.Format("玩家{0}请求加入公会，是否同意", message.Apply.Name), "公会申请", MessageBoxType.Confirm, "同意", "拒绝");
             box.OnYes = () =>
             {
                 SendGuildJoinResponse(true, message);

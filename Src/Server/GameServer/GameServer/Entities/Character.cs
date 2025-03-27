@@ -118,7 +118,7 @@ namespace GameServer.Entities
                     if (message.mapCharacterEnter != null)
                         GuildUpdateTS = Guild.timestamp;
                 }
-                if (GuildUpdateTS < this.Guild.timestamp && message.mapCharacterEnter != null)
+                if (GuildUpdateTS < this.Guild.timestamp && message.mapCharacterEnter == null)
                 {
                     GuildUpdateTS = this.Guild.timestamp;
                     this.Guild.PostProcess(this, message);
