@@ -1,4 +1,5 @@
-﻿using SkillBridge.Message;
+﻿using Assets.Scripts.UI.ListView;
+using SkillBridge.Message;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,11 @@ namespace Assets.Scripts.UI.Friend
 
         bool isEquiped = false;
 
+        private void Start()
+        {
+            backGround.overrideSprite = normalSprite;
+        }
+
         public void SetInfo(NFriendInfo friendInfo)
         {
             this.NfriendInfo = friendInfo;
@@ -32,6 +38,11 @@ namespace Assets.Scripts.UI.Friend
         {
             base.OnSelected(selected);
             backGround.overrideSprite = selected ? selectedSprite : normalSprite;
+        }
+
+        public void OnItemSelected(ListView.ListView.ListViewItem item)
+        {
+            Selected = item == this ? true : false;
         }
     }
 }

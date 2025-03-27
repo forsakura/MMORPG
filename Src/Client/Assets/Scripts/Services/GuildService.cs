@@ -49,19 +49,20 @@ namespace Assets.Scripts.Services
 
         private void OnGuildCreate(object sender, GuildCreateResponse message)
         {
-            Debug.LogFormat("OnGuildCreate:: guild: {0} name : {1}", message.guildInfo.Id, message.guildInfo.GuildName);
+            Debug.LogFormat("OnGuildCreate:: Result: {0} Errormsg: {1}", message.Result, message.Errormsg);
             if(message.guildInfo != null)
             {
+                Debug.LogFormat("OnGuildCreate:: guild: {0} leader : {1}", message.guildInfo.GuildName, message.guildInfo.LeaderName);
                 this.OnGuildCreateResult(message.Result == Result.Success);
             }
             if(message.Result == Result.Success)
             {
                 GuildManager.Instance.Init(message.guildInfo);
-                MessageBox.Show(string.Format("{0}公会创建成功", message.guildInfo.GuildName), "公会");
+                MessageBox.Show(string.Format("公会创建成功\n[{0}]", message.guildInfo.GuildName), "公会");
             }
             else
             {
-                MessageBox.Show(string.Format("{0}公会创建失败", message.guildInfo.GuildName), "公会");
+                MessageBox.Show(string.Format("公会创建失败\n[{0}]", message.Errormsg), "公会");
             }
         }
 

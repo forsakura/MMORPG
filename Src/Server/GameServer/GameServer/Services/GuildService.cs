@@ -41,7 +41,13 @@ namespace GameServer.Services
                 sender.SendResponse();
                 return;
             }
-            GuildManager.Instance.CreateGuild(message.GuildName, message.GuildNotice, character);
+            if(!GuildManager.Instance.CreateGuild(message.GuildName, message.GuildNotice, character))
+            {
+                sender.Session.Response.guildCreate.Result = Result.Failed;
+                sender.Session.Response.guildCreate.Errormsg = "金币不足,创建公会需要5000金币";
+                sender.SendResponse();
+                return;
+            }
             sender.Session.Response.guildCreate.guildInfo = character.Guild.GuildInfo(character);
             sender.Session.Response.guildCreate.Result = Result.Success;
             sender.SendResponse();

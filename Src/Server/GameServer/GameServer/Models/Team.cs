@@ -1,5 +1,7 @@
 ﻿using Common;
 using GameServer.Entities;
+using GameServer.Managers;
+using GameServer.Services;
 using SkillBridge.Message;
 using System.Collections.Generic;
 
@@ -34,11 +36,17 @@ namespace GameServer.Models
             if(member == this.leader)
             {
                 if(this.members.Count > 0)
-                    this.leader = this.members[0];
-                else
+                {
+                    RemoveAllMembers();
+                    //this.leader = this.members[0];
+                }
+                /*else
+                {
                     this.leader = null;
+                }*/
+                this.leader = null;
+                member.team = null;
             }
-            member.team = null;
             timestamp = Time.timestamp;
         }
 
@@ -51,10 +59,15 @@ namespace GameServer.Models
             for (int i = 0; i < this.members.Count; i++)
             {
                 this.members[i].team = null;
+                var memberSession = SessionManager.Instance.GetSession(members[i].Id);
+                if (memberSession != null)
+                {
+                    memberSession.Session.Response.teamLeaveRes = new TeamLeaveResponse();
+                    memberSession.Session.Response.teamLeaveRes.Result = Result.Success;
+                    memberSession.SendResponse();
+                }
             }
             this.members.Clear();
-            this.leader = null;
-            this.timestamp = Time.timestamp;
         }
 
         public void PostProcess(NetMessageResponse message)
@@ -64,7 +77,7 @@ namespace GameServer.Models
                 message.teamInfoRes = new TeamInfoResponse();
                 message.teamInfoRes.Team = new NTeamInfo();
                 message.teamInfoRes.Team.TeamId = this.Id;
-                message.teamInfoRes.Team.Leader = this.leader.Id;
+                if(this.leader != null) message.teamInfoRes.Team.Leader = this.leader.Id;
                 foreach (var item in members)
                 {
                     message.teamInfoRes.Team.teamMembers.Add(item.GetBasicInfo());

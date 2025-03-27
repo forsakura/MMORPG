@@ -28,7 +28,7 @@ namespace GameServer.Managers
             {
                 this.friends.Add(GetFriendInfo(item));
             }
-            //SortFriendByStatus();
+            SortFriendByStatus();
         }
 
         internal void GetFriendInfos(List<NFriendInfo> friends)
@@ -159,7 +159,10 @@ namespace GameServer.Managers
             for (; fastIndex < friends.Count; fastIndex++)
             {
                 if (friends[fastIndex].Status == 1)
+                {
                     friends.Insert(slowIndex++, friends[fastIndex]);
+                    friends.RemoveAt(fastIndex + 1);
+                }
             }
         }
 

@@ -46,7 +46,7 @@ namespace Assets.Scripts.UI.ListView
             }
         }
 
-        List<ListViewItem> items = new List<ListViewItem>();
+        public List<ListViewItem> items = new List<ListViewItem>();
         ListViewItem selectedItem = null;
         public ListViewItem SelectedItem
         {
@@ -60,6 +60,7 @@ namespace Assets.Scripts.UI.ListView
                 }
             }
         }
+
         public void AddItem(ListViewItem item)
         {
             item.owner = this;

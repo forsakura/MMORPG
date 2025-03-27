@@ -54,6 +54,10 @@ namespace Assets.Scripts.UI.Friend
         private void OnFriendSelected(ListView.ListView.ListViewItem arg0)
         {
             selectedItem = arg0 as UIFriendItem;
+            foreach (var item in this.MainView.items)
+            {
+                item.Selected = item == selectedItem;
+            }
         }
 
         public void OnClickFriendAdd()

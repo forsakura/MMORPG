@@ -15,6 +15,20 @@ namespace Assets.Scripts.UI.Guild
         public Text Title;
         public Text JoinTime;
         public Text Status;
+        public Image background;
+        public Sprite originSprite;
+        public Sprite selectedSprite;
+
+        private void Start()
+        {
+            background.overrideSprite = originSprite;
+        }
+
+        public override void OnSelected(bool selected)
+        {
+            base.OnSelected(selected);
+            background.overrideSprite = selected ? selectedSprite : originSprite;
+        }
 
         public NGuildMember member;
 

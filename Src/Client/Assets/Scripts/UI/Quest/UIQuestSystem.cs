@@ -70,6 +70,10 @@ namespace Assets.Scripts.UI.Quest
         private void OnQuestItemSelected(ListView.ListView.ListViewItem arg0)
         {
             UIQuestItem questItem = (UIQuestItem)arg0;
+            foreach (var item in this.mainList.items)
+            {
+                item.Selected = item == questItem;
+            }
             questInfo.SetQuestInfo(questItem.quest);
         }
     }

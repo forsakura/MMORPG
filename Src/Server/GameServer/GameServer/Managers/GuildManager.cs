@@ -14,6 +14,7 @@ namespace GameServer.Managers
 {
     internal class GuildManager : Singleton<GuildManager>
     {
+        int createCost = 5000;
         public HashSet<string> GuildNames = new HashSet<string>();
         public Dictionary<int, Guild> IDGuilds = new Dictionary<int, Guild>();
 
@@ -40,6 +41,9 @@ namespace GameServer.Managers
 
         internal bool CreateGuild(string guildName, string guildNotice, Character character)
         {
+            if(character.Gold < createCost)
+                return false;
+            character.Gold -= createCost;
             DateTime now = DateTime.Now;
             TGuild dbGuild = DBService.Instance.Entities.Guilds.Create();
             dbGuild.Name = guildName;
