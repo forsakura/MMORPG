@@ -95,6 +95,8 @@ namespace GameServer.Services
             if (requester != null)
             {
                 requester.Session.Character.Guild = guild;
+                requester.Session.Character.Data.GuildId = guild.Id;
+                DBService.Instance.Save();
                 requester.Session.Response.guildJoinRes = message;
                 requester.Session.Response.guildJoinRes.Result = Result.Success;
                 requester.Session.Response.guildJoinRes.Errormsg = "加入公会成功";

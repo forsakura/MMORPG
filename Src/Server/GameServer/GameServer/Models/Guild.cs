@@ -107,7 +107,7 @@ namespace GameServer.Models
                 {
                     member.Status = 0;
                     member.Info = this.GetMemberInfo(item);
-                    if (item.CharacterId == this.Leader.Id)
+                    if (item.CharacterId == this.Data.LeaderID)
                         this.Leader = null;
                 }
                 nGuildMembers.Add(member);
