@@ -24,6 +24,7 @@ namespace Assets.Scripts.Services
             MessageDistributer.Instance.Subscribe<GuildJoinResponse>(OnGuildJoinRes);
             MessageDistributer.Instance.Subscribe<GuildLeaveResponse>(OnGuildLeave);
             MessageDistributer.Instance.Subscribe<GuildResponse>(OnGuild);
+            MessageDistributer.Instance.Subscribe<GuildSearchResponse>(OnGuildSearch);
         }
 
         public void Dispose()
@@ -34,6 +35,7 @@ namespace Assets.Scripts.Services
             MessageDistributer.Instance.Unsubscribe<GuildJoinResponse>(OnGuildJoinRes);
             MessageDistributer.Instance.Unsubscribe<GuildLeaveResponse>(OnGuildLeave);
             MessageDistributer.Instance.Unsubscribe<GuildResponse>(OnGuild);
+            MessageDistributer.Instance.Unsubscribe<GuildSearchResponse>(OnGuildSearch);
         }
 
         internal void SendGuildCreateRequest(string name, string notice)
@@ -156,6 +158,30 @@ namespace Assets.Scripts.Services
             Debug.LogFormat("OnGuildList::Count: {0}", message.Guilds.Count);
             if (OnGuildListResult != null)
                 OnGuildListResult(message.Guilds);
+        }
+
+        internal void SendGuildSearchRequest(int guildId)
+        {
+            Debug.LogFormat("SendGuildSearchRequest:: guild: {0}", guildId);
+            NetMessage message = new NetMessage();
+            message.Request = new NetMessageRequest();
+            message.Request.guildSearch = new GuildSearchRequest();
+            message.Request.guildSearch.guildId = guildId;
+            NetClient.Instance.SendMessage(message);
+        }
+
+        private void OnGuildSearch(object sender, GuildSearchResponse message)
+        {
+            Debug.LogFormat("OnGuildSearch");
+            if(message.Result == Result.Success)
+            {
+                if (OnGuildListResult != null)
+                    OnGuildListResult(message.Guilds);
+            }
+            else if(message.Result == Result.Failed)
+            {
+                MessageBox.Show(string.Format("搜索失败\n{0}", message.Errormsg), "公会", MessageBoxType.Information);
+            }
         }
     }
 }

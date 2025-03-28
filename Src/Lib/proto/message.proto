@@ -224,6 +224,7 @@ message NetMessageRequest{
 	GuildRequest guild = 27;
 	GuildLeaveRequest guildLeave = 28;
 	GuildListRequest guildList = 29;
+	GuildSearchRequest guildSearch = 30;
 
 //	ChatRequest chat = 30;
 }
@@ -264,6 +265,7 @@ message NetMessageResponse{
 	GuildResponse guild = 27;
 	GuildLeaveResponse guildLeave = 28;
 	GuildListResponse guildList = 29;
+	GuildSearchResponse guildSearch = 30;
 
 //	ChatResponse chat = 30;
 
@@ -669,7 +671,7 @@ message GuildListResponse
 //公会请求
 message GuildRequest
 {
-
+	
 }
 
 //公会响应
@@ -691,4 +693,17 @@ message GuildLeaveResponse
 {
 	RESULT result = 1;
 	string errormsg = 2;
+}
+
+//公会搜索
+message GuildSearchRequest
+{
+	int32 guildId = 1;
+}
+
+message GuildSearchResponse
+{
+	RESULT result = 1;
+	string errormsg = 2;
+	repeated NGuildInfo guilds = 3;
 }

@@ -61,7 +61,7 @@ namespace Assets.Scripts.UI.Guild
 
         public void OnClickJoin()
         {
-            if(this.selectedItem == null)
+            if (this.selectedItem == null)
             {
                 MessageBox.Show("请选择要加入的公会");
                 return;
@@ -70,6 +70,24 @@ namespace Assets.Scripts.UI.Guild
             {
                 GuildService.Instance.SendGuildJoinRequest(this.selectedItem.info.Id);
             };
+        }
+
+        public void OnClickSearch()
+        {
+            InputBox.Show("请输入公会ID", "公会", "搜索", "取消").OnSubmit += UIGuildList_OnSubmit;
+        }
+
+        private bool UIGuildList_OnSubmit(string inputText, out string tips)
+        {
+            tips = "";
+            int guildId = 0;
+            if(!int.TryParse(inputText, out guildId))
+            {
+                tips = "请输入公会ID";
+                return false;
+            }
+            GuildService.Instance.SendGuildSearchRequest(guildId);
+            return true;
         }
     }
 }

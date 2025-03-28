@@ -4,6 +4,7 @@ using GameServer.Managers;
 using Network;
 using SkillBridge.Message;
 using System;
+using System.Diagnostics;
 
 namespace GameServer.Services
 {
@@ -20,6 +21,7 @@ namespace GameServer.Services
             MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<GuildJoinResponse>(OnGuildJoinRes);
             MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<GuildListRequest>(OnGuildList);
             MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<GuildLeaveRequest>(OnGuildLeave);
+            MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<GuildSearchRequest>(OnGuildSearch);
         }
 
         private void OnGuildCreate(NetConnection<NetSession> sender, GuildCreateRequest message)
@@ -136,6 +138,25 @@ namespace GameServer.Services
                 return;
             }
             sender.Session.Response.guildLeave.Result = Result.Success;
+            sender.SendResponse();
+        }
+
+        private void OnGuildSearch(NetConnection<NetSession> sender, GuildSearchRequest message)
+        {
+            Character character = sender.Session.Character;
+            Log.InfoFormat("OnGuildSearch:: guildId: {0} character: {1}", message.guildId, character.Id);
+            var guild = GuildManager.Instance.GetGuild(message.guildId);
+            sender.Session.Response.guildSearch = new GuildSearchResponse();
+            if(guild == null)
+            {
+                sender.Session.Response.guildSearch.Result = Result.Failed;
+                sender.Session.Response.guildSearch.Errormsg = "公会不存在";
+                sender.SendResponse();
+                return;
+            }
+            sender.Session.Response.guildSearch.Result = Result.Success;
+            sender.Session.Response.guildSearch.Guilds.Add(guild.GuildInfo(null));
+            sender.Session.Response.guildSearch.Errormsg = "None";
             sender.SendResponse();
         }
     }
