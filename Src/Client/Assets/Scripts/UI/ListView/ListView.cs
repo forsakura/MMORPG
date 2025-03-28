@@ -13,6 +13,9 @@ namespace Assets.Scripts.UI.ListView
         public class ListViewItem : MonoBehaviour, IPointerClickHandler
         {
             bool selected;
+
+            bool innerSelected;
+
             public bool Selected
             {
                 get { return selected; }
@@ -32,9 +35,9 @@ namespace Assets.Scripts.UI.ListView
 
             public void OnPointerClick(PointerEventData eventData)
             {
-                if(!selected)
+                if(!innerSelected)
                 {
-                    Selected = true;
+                    innerSelected = true;
                 }
                 else
                 {
@@ -42,6 +45,7 @@ namespace Assets.Scripts.UI.ListView
                     {
                         owner.SelectedItem = this;
                     }
+                    innerSelected = false;
                 }
             }
         }
@@ -54,7 +58,7 @@ namespace Assets.Scripts.UI.ListView
             set
             {
                 selectedItem = value;
-                if (onItemSelected != null)
+                if (onItemSelected != null && value != null)
                 {
                     onItemSelected.Invoke(value);
                 }

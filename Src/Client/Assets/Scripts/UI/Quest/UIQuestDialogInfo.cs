@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.UI.Quest
 {
-    public class UIQuestInfo : MonoBehaviour
+    public class UIQuestDialogInfo : MonoBehaviour
     {
         public Text title;
         public Text questDiscribution;

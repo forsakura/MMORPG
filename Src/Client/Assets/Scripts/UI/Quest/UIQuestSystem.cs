@@ -15,7 +15,7 @@ namespace Assets.Scripts.UI.Quest
         public ListView.ListView branchList;
         public Text title;
         public TabView.TabView tabs;
-        public UIQuestInfo questInfo;
+        public UIQuestSystemInfo questInfo;
         // Use this for initialization
         void Start()
         {
@@ -70,7 +70,19 @@ namespace Assets.Scripts.UI.Quest
         private void OnQuestItemSelected(ListView.ListView.ListViewItem arg0)
         {
             UIQuestItem questItem = (UIQuestItem)arg0;
+            if(questItem.owner == mainList)
+            {
+                branchList.SelectedItem = null;
+            }
+            else if(questItem.owner == branchList)
+            {
+                mainList.SelectedItem = null;
+            }
             foreach (var item in this.mainList.items)
+            {
+                item.Selected = item == questItem;
+            }
+            foreach (var item in this.branchList.items)
             {
                 item.Selected = item == questItem;
             }

@@ -30,7 +30,7 @@ namespace Assets.Scripts.UI.Guild
             this.info = info;
             if (ID != null) ID.text = this.info.Id.ToString();
             if (Name != null) Name.text = this.info.GuildName.ToString();
-            if (MembersCount != null) MembersCount.text = this.info.Members.Count.ToString();
+            if (MembersCount != null) MembersCount.text = this.info.memberCount.ToString();
             if (Leader != null) Leader.text = this.info.LeaderName.ToString();
         }
     }

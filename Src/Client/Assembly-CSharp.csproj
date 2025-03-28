@@ -126,10 +126,11 @@
     <Compile Include="Assets\Scripts\UI\ListView\ListView.cs" />
     <Compile Include="Assets\Scripts\UI\MessageBox.cs" />
     <Compile Include="Assets\Scripts\UI\Quest\UIQuestDialog.cs" />
-    <Compile Include="Assets\Scripts\UI\Quest\UIQuestInfo.cs" />
+    <Compile Include="Assets\Scripts\UI\Quest\UIQuestDialogInfo.cs" />
     <Compile Include="Assets\Scripts\UI\Quest\UIQuestItem.cs" />
     <Compile Include="Assets\Scripts\UI\Quest\UIQuestStatus.cs" />
     <Compile Include="Assets\Scripts\UI\Quest\UIQuestSystem.cs" />
+    <Compile Include="Assets\Scripts\UI\Quest\UIQuestSystemInfo.cs" />
     <Compile Include="Assets\Scripts\UI\Shop\UIShop.cs" />
     <Compile Include="Assets\Scripts\UI\Shop\UIShopItem.cs" />
     <Compile Include="Assets\Scripts\UI\TabView\TabButton.cs" />
