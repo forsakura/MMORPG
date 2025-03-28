@@ -138,7 +138,7 @@ namespace GameServer.Models
 
         internal bool JoinApply(NGuildApplyInfo apply)
         {
-            var oldApply = this.Data.Applies.FirstOrDefault(v => v.CharacterId == apply.characterId);
+            var oldApply = this.Data.Applies.FirstOrDefault(v => v.CharacterId == apply.characterId && v.Result == 0);
             if (oldApply != null)
             {
                 return false;
@@ -179,9 +179,28 @@ namespace GameServer.Models
             return true;
         }
 
-        internal void Leave(Character charcater)
+        internal bool Leave(Character character)
         {
-            
+            var tGuildMember = this.Data.Members.FirstOrDefault(v => v.CharacterId == character.Id);
+            if(tGuildMember.Title == (int)GuildTitle.President)
+            {
+                var viceMember = this.Data.Members.FirstOrDefault(v => v.Title == (int)GuildTitle.VicePresident);
+                if (viceMember != null)
+                {
+                    viceMember.Title = (int)GuildTitle.President;
+                    this.Data.LeaderName = viceMember.Name;
+                    this.Data.LeaderID = viceMember.Id;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            character.Data.GuildId = 0;
+            DBService.Instance.Entities.GuildMembers.Remove(tGuildMember);
+            DBService.Instance.Save();
+            this.timestamp = Time.timestamp;
+            return true;
         }
     }
 }

@@ -109,7 +109,7 @@ namespace Assets.Scripts.Services
                 MessageBox.Show("加入公会成功", "公会");
             }
             else
-                MessageBox.Show("加入公会失败", "公会");
+                MessageBox.Show(string.Format("加入公会失败\n{0}", message.Errormsg), "公会");
         }
 
         public void SendGuildLeaveRequest()
@@ -130,7 +130,7 @@ namespace Assets.Scripts.Services
             }
             else if (message.Result == Result.Failed)
             {
-                MessageBox.Show("离开公会失败", "公会");
+                MessageBox.Show(string.Format("离开公会失败\n{0}", message.Errormsg), "公会");
             }
         }
 

@@ -103,7 +103,10 @@ namespace Assets.Scripts.UI.Guild
 
         public void OnClickLeave()
         {
-            Debug.Log("ClickLeave");
+            MessageBox.Show(string.Format("确定要离开公会{0}吗？", GuildManager.Instance.Info.GuildName), "离开公会", MessageBoxType.Confirm, "离开", "取消").OnYes = () =>
+            {
+                GuildService.Instance.SendGuildLeaveRequest();
+            };
         }
     }
 }

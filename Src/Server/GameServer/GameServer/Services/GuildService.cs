@@ -128,9 +128,14 @@ namespace GameServer.Services
             sender.Session.Response.guildLeave = new GuildLeaveResponse();
 
 
-            character.Guild.Leave(character);
+            if(!character.Guild.Leave(character))
+            {
+                sender.Session.Response.guildLeave.Result = Result.Failed;
+                sender.Session.Response.guildLeave.Errormsg = "由于您是会长，不能直接离开公会，需要转让会长职务";
+                sender.SendResponse();
+                return;
+            }
             sender.Session.Response.guildLeave.Result = Result.Success;
-            DBService.Instance.Save();
             sender.SendResponse();
         }
     }
