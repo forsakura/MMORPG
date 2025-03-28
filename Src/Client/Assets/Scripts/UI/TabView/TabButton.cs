@@ -26,6 +26,6 @@ public class TabButton : MonoBehaviour {
 	
 	public void OnClick()
 	{
-		bagView.SelectTab(tabIndex);
+		if(bagView != null) bagView.SelectTab(tabIndex);
 	}
 }

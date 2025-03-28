@@ -30,10 +30,15 @@ namespace Assets.Scripts.UI.TabView
                 for (int i = 0; i < btnPages.Length; i++)
                 {
                     btnPages[i].Selected(i == tabIndex);
+                }
+                for (int i = 0; i < bagViews.Length; i++)
+                {
                     bagViews[i].SetActive(i == tabIndex);
                 }
             }
             index = tabIndex;
+            if(OnTabSelected != null)
+                OnTabSelected.Invoke(index);
         }
     }
 }
