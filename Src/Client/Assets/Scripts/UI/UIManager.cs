@@ -33,6 +33,7 @@ namespace Assets.Scripts.UI
             UIResources.Add(typeof(UIGuildList), new UIElement() { resource = "UI/UIGuildList", cache = false });
             UIResources.Add(typeof(UIGuildPopNoGuild), new UIElement() { resource = "UI/UIGuildPopNoGuild", cache = false });
             UIResources.Add(typeof(UIGuildPopCreate), new UIElement() { resource = "UI/UIGuildPopCreate", cache = false });
+            UIResources.Add(typeof(UIGuildApplyList), new UIElement() { resource = "UI/UIGuildApplyList", cache = false });
         }
 
         public T Show<T>()

@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.UI;
+﻿using Assets.Scripts.Models;
+using Assets.Scripts.UI;
 using Assets.Scripts.UI.Guild;
 using SkillBridge.Message;
 using System;
@@ -14,10 +15,26 @@ namespace Assets.Scripts.Managers
 
         public bool HasGuild { get { return Info != null; } }
 
+        public NGuildMember MyGuildMemberInfo;
+
         public void Init(NGuildInfo info)
         {
             this.Info = info;
+            if(this.Info == null)
+            {
+                MyGuildMemberInfo = null;
+                return;
+            }
+            foreach (var member in Info.Members)
+            {
+                if(member.characterId == User.Instance.currentCharacter.Id)
+                {
+                    MyGuildMemberInfo = member;
+                    break;
+                }
+            }
         }
+
 
         public void ShowGuild()
         {
@@ -42,6 +59,11 @@ namespace Assets.Scripts.Managers
             {
                 UIManager.Instance.Show<UIGuildList>();
             }
+        }
+
+        internal void ShowApplyList()
+        {
+            
         }
     }
 }

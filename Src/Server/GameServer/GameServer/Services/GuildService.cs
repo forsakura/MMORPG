@@ -22,6 +22,7 @@ namespace GameServer.Services
             MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<GuildListRequest>(OnGuildList);
             MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<GuildLeaveRequest>(OnGuildLeave);
             MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<GuildSearchRequest>(OnGuildSearch);
+            MessageDistributer<NetConnection<NetSession>>.Instance.Subscribe<GuildAdminRequest>(OnGuildAdmin);
         }
 
         private void OnGuildCreate(NetConnection<NetSession> sender, GuildCreateRequest message)
@@ -103,8 +104,6 @@ namespace GameServer.Services
             if (requester != null)
             {
                 requester.Session.Character.Guild = guild;
-                requester.Session.Character.Data.GuildId = guild.Id;
-                DBService.Instance.Save();
                 requester.Session.Response.guildJoinRes = message;
                 requester.Session.Response.guildJoinRes.Result = Result.Success;
                 requester.Session.Response.guildJoinRes.Errormsg = "加入公会成功";
@@ -157,6 +156,34 @@ namespace GameServer.Services
             sender.Session.Response.guildSearch.Result = Result.Success;
             sender.Session.Response.guildSearch.Guilds.Add(guild.GuildInfo(null));
             sender.Session.Response.guildSearch.Errormsg = "None";
+            sender.SendResponse();
+        }
+
+        private void OnGuildAdmin(NetConnection<NetSession> sender, GuildAdminRequest message)
+        {
+            Character character = sender.Session.Character;
+            Log.InfoFormat("OnGuildAdminRequest:: command: {0} targetId: {1}", message.Command, message.Target);
+            sender.Session.Response.guildAdmin = new GuildAdminResponse();
+            if(character.Guild == null)
+            {
+                sender.Session.Response.guildAdmin.Result = Result.Failed;
+                sender.Session.Response.guildAdmin.Errormsg = "你没公会";
+                sender.SendResponse();
+                return;
+            }
+            character.Guild.ExcuteAdmin(message.Command, message.Target, character.Id);
+
+            var target = SessionManager.Instance.GetSession(message.Target);
+            if (target != null)
+            {
+                target.Session.Response.guildAdmin = new GuildAdminResponse();
+                target.Session.Response.guildAdmin.Result = Result.Success;
+                target.Session.Response.guildAdmin.Command = message;
+                target.SendResponse();
+            }
+
+            sender.Session.Response.guildAdmin.Result = Result.Success;
+            sender.Session.Response.guildAdmin.Command = message;
             sender.SendResponse();
         }
     }

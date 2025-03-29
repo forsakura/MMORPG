@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.UI.Guild
 {
-    public class UIGuildItem : ListView.ListView.ListViewItem
+    public class UIGuildMemberItem : ListView.ListView.ListViewItem
     {
         public Text Name;
         public Text Level;
