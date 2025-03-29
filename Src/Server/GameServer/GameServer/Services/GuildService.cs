@@ -171,7 +171,15 @@ namespace GameServer.Services
                 sender.SendResponse();
                 return;
             }
-            character.Guild.ExcuteAdmin(message.Command, message.Target, character.Id);
+
+            if(!character.Guild.ExcuteAdmin(message.Command, message.Target, character.Id))
+            {
+                sender.Session.Response.guildAdmin.Result = Result.Failed;
+                sender.Session.Response.guildAdmin.Command = message;
+                sender.Session.Response.guildAdmin.Errormsg = "执行失败";
+                sender.SendResponse();
+                return;
+            }
 
             var target = SessionManager.Instance.GetSession(message.Target);
             if (target != null)

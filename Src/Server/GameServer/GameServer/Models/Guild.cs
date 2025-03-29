@@ -188,7 +188,7 @@ namespace GameServer.Models
 
         internal bool Leave(Character character)
         {
-            var tGuildMember = this.Data.Members.FirstOrDefault(v => v.CharacterId == character.Id);
+            var tGuildMember = GetDBMember(character.Id);
             if(tGuildMember.Title == (int)GuildTitle.President)
             {
                 var viceMember = this.Data.Members.FirstOrDefault(v => v.Title == (int)GuildTitle.VicePresident);
@@ -224,14 +224,15 @@ namespace GameServer.Models
             return dbMember;
         }
 
-        internal void ExcuteAdmin(GuildAdminCommand command, int targetId, int id)
+        internal bool ExcuteAdmin(GuildAdminCommand command, int targetId, int id)
         {
             var target = GetDBMember(targetId);
             var source = GetDBMember(id);
             switch (command)
             {
                 case GuildAdminCommand.Kickout:
-
+                    target.GuildId = 0;
+                    DBService.Instance.Entities.GuildMembers.Remove(target);
                     break;
                 case GuildAdminCommand.Promote:
                     target.Title = (int)GuildTitle.VicePresident;
@@ -250,6 +251,7 @@ namespace GameServer.Models
             }
             DBService.Instance.Save();
             this.timestamp = Time.timestamp;
+            return true;
         }
     }
 }
