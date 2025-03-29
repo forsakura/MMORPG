@@ -231,7 +231,7 @@ namespace GameServer.Models
             switch (command)
             {
                 case GuildAdminCommand.Kickout:
-                    target.GuildId = 0;
+                    CharacterManager.Instance.GetCharacter(targetId).Data.GuildId = 0;
                     DBService.Instance.Entities.GuildMembers.Remove(target);
                     break;
                 case GuildAdminCommand.Promote:

@@ -30,7 +30,23 @@ namespace Assets.Scripts.UI.Friend
             this.NfriendInfo = friendInfo;
             if (NickName != null) NickName.text = NfriendInfo.friendInfo.Name;
             if (Level != null) Level.text = NfriendInfo.friendInfo.Level.ToString();
-            if (@class != null) @class.text = NfriendInfo.friendInfo.Class.ToString();
+            if (@class != null)
+            {
+                switch (this.NfriendInfo.friendInfo.Class)
+                {
+                    case CharacterClass.Warrior:
+                        this.@class.text = "战士";
+                        break;
+                    case CharacterClass.Wizard:
+                        this.@class.text = "法师";
+                        break;
+                    case CharacterClass.Archer:
+                        this.@class.text = "射手";
+                        break;
+                    default:
+                        break;
+                }
+            }
             if (Status != null) Status.text = NfriendInfo.Status == 1 ? "在线" : "离线";
         }
 

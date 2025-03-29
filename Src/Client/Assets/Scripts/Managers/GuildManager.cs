@@ -63,7 +63,7 @@ namespace Assets.Scripts.Managers
 
         internal void ShowApplyList()
         {
-            
+            UIManager.Instance.Show<UIGuildApplyList>();
         }
     }
 }

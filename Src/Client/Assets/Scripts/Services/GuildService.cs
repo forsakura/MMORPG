@@ -212,7 +212,7 @@ namespace Assets.Scripts.Services
         private void OnGuildAdmin(object sender, GuildAdminResponse message)
         {
             Debug.LogFormat("OnGuildAdmin:: {0} {1}", message.Command, message.Result);
-            MessageBox.Show(string.Format("执行操作：{0} 结果： {1} {2}", message.Command, message.Result, message.Errormsg));
+            MessageBox.Show(string.Format("执行操作：{0} 结果： {1} {2}", message.Command.Command.ToString(), message.Result, message.Errormsg));
         }
     }
 }

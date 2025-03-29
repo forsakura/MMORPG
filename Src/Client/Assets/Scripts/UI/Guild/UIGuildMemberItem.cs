@@ -37,8 +37,40 @@ namespace Assets.Scripts.UI.Guild
             this.member = member;
             if (Name != null) Name.text = this.member.Info.Name;
             if (Level != null) Level.text = this.member.Info.Level.ToString();
-            if (Class != null) Class.text = this.member.Info.Class.ToString();
-            if (Title != null) Title.text = this.member.Title.ToString();
+            if (Class != null)
+            {
+                switch (this.member.Info.Class)
+                {
+                    case CharacterClass.Warrior:
+                        this.Class.text = "战士";
+                        break;
+                    case CharacterClass.Wizard:
+                        this.Class.text = "法师";
+                        break;
+                    case CharacterClass.Archer:
+                        this.Class.text = "射手";
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (Title != null)
+            {
+                switch (this.member.Title)
+                {
+                    case GuildTitle.None:
+                        this.Title.text = "会员";
+                        break;
+                    case GuildTitle.President:
+                        this.Title.text = "会长";
+                        break;
+                    case GuildTitle.VicePresident:
+                        this.Title.text = "副会长";
+                        break;
+                    default:
+                        break;
+                }
+            }
             if (JoinTime != null) JoinTime.text = TimeUtil.GetTime(this.member.joinTime).ToString();
             if (Status != null) Status.text = this.member.Status == 1 ? "在线" : "离线";
         }

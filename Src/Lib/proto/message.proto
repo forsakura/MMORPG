@@ -577,17 +577,17 @@ message TeamLeaveResponse
 //公会职务
 enum GUILD_TITLE
 {
-	NONE = 1;
-	PRESIDENT = 2;
-	VICE_PRESIDENT = 3;
+	NONE = 0;
+	PRESIDENT = 1;
+	VICE_PRESIDENT = 2;
 }
 
 //公会申请结果
 enum APPLY_RESULT
 {
-	NONE = 1;
-	ACEPT = 2;
-	REJECT = 3;
+	NONE = 0;
+	ACEPT = 1;
+	REJECT = 2;
 }
 
 //公会信息

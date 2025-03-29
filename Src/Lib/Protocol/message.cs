@@ -1616,22 +1616,22 @@ namespace SkillBridge.Message
     public enum GuildTitle
     {
         [global::ProtoBuf.ProtoEnum(Name = @"NONE")]
-        None = 1,
+        None = 0,
         [global::ProtoBuf.ProtoEnum(Name = @"PRESIDENT")]
-        President = 2,
+        President = 1,
         [global::ProtoBuf.ProtoEnum(Name = @"VICE_PRESIDENT")]
-        VicePresident = 3,
+        VicePresident = 2,
     }
 
     [global::ProtoBuf.ProtoContract(Name = @"APPLY_RESULT")]
     public enum ApplyResult
     {
         [global::ProtoBuf.ProtoEnum(Name = @"NONE")]
-        None = 1,
+        None = 0,
         [global::ProtoBuf.ProtoEnum(Name = @"ACEPT")]
-        Acept = 2,
+        Acept = 1,
         [global::ProtoBuf.ProtoEnum(Name = @"REJECT")]
-        Reject = 3,
+        Reject = 2,
     }
 
     [global::ProtoBuf.ProtoContract(Name = @"GUILD_ADMIN_COMMAND")]

@@ -17,7 +17,20 @@ namespace Assets.Scripts.UI.Guild
             this.member = member;
             this.Name.text = this.member.Name;
             this.Level.text = this.member.Level.ToString();
-            this.Class.text = this.member.Class.ToString();
+            switch (this.member.Class)
+            {
+                case 1 :
+                    this.Class.text = "战士";
+                    break;
+                case 2 :
+                    this.Class.text = "法师";
+                    break;
+                case 3 :
+                    this.Class.text = "射手";
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void OnYes()
