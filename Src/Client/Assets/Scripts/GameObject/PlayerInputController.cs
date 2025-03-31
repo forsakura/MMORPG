@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Services;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Services;
 using Entities;
 using GameServer.Managers;
 using SkillBridge.Message;
@@ -39,7 +40,7 @@ public class PlayerInputController : MonoBehaviour {
     private void FixedUpdate()
     {
 		if (character == null) return;
-		//if (InputManager.Instance != null && InputManager.Instance.IsInputMode) retunr;
+		if (InputManager.Instance.isInputMode) return;
 		float v = Input.GetAxis("Vertical");
 		if(v > 0.1f)
 		{

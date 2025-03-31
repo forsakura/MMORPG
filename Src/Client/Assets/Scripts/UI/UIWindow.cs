@@ -19,6 +19,8 @@ namespace Assets.Scripts.UI
         {
             get { return this.GetType(); }
         }
+
+        public UnityEngine.GameObject Root;
         public void Close(WindowResult result = WindowResult.None)
         {
             UIManager.Instance.Close(Type);

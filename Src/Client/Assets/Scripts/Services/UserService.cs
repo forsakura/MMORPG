@@ -310,22 +310,7 @@ namespace Services
             MapService.Instance.currentMapId = 0;
             User.Instance.currentCharacter = null;
             Debug.LogFormat("UserGameLeaveResponse::{0} {1}", message.Result, message.Errormsg);
-            /*if (this.isQuitGame)
-            {
-#if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-#else
-                Application.Quit();
-#endif
-            }*/
-        }
-
-        /*void OnGameLeave(object sender, UserGameLeaveResponse response)
-        {
-            //MapService.Instance.CurrentMapId = 0;
-            //User.Instance.CurrentCharacter = null;
-            Debug.LogFormat("OnGameLeave:{0} [{1}]", response.Result, response.Errormsg);
-            if(this.isQuitGame)
+            if (this.isQuitGame)
             {
 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
@@ -333,6 +318,6 @@ namespace Services
                 Application.Quit();
 #endif
             }
-        }*/
+        }
     }
 }

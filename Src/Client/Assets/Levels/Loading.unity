@@ -4806,9 +4806,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2089207828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 507b0446c29383c48a8bccd89985a5af, type: 3}
+  m_Script: {fileID: 11500000, guid: 883dad0f4125d7a458a77584516b6c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  global: 1
+  isInputMode: 0
 --- !u!4 &2089207830
 Transform:
   m_ObjectHideFlags: 0

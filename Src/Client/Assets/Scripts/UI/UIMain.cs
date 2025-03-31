@@ -3,8 +3,8 @@ using Assets.Scripts.Models;
 using Assets.Scripts.UI.CharEquip;
 using Assets.Scripts.UI.Friend;
 using Assets.Scripts.UI.Quest;
+using Assets.Scripts.UI.Setting;
 using Assets.Scripts.UI.Team;
-using Services;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,11 +42,6 @@ namespace Assets.Scripts.UI
                 avaterLevel.text = level;
             }
         }
-        public void BackToSelect()
-        {
-            SceneManager.Instance.LoadScene("CharacterSelect");
-            UserService.Instance.SendGameLeave(true);
-        }
 
         public void OnClickBag()
         {
@@ -82,7 +77,7 @@ namespace Assets.Scripts.UI
 
         public void OnClickSetting()
         {
-
+            UIManager.Instance.Show<UISetting>();
         }
 
         public void OnClickSkill()

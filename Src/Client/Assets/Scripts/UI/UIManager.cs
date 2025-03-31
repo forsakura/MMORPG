@@ -1,12 +1,11 @@
 ﻿using Assets.Scripts.UI.CharEquip;
+using Assets.Scripts.UI.Chat;
 using Assets.Scripts.UI.Friend;
 using Assets.Scripts.UI.Guild;
 using Assets.Scripts.UI.Quest;
-using Assets.Scripts.UI.TabView;
+using Assets.Scripts.UI.Setting;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Assets.Scripts.UI
 {
@@ -34,6 +33,8 @@ namespace Assets.Scripts.UI
             UIResources.Add(typeof(UIGuildPopNoGuild), new UIElement() { resource = "UI/UIGuildPopNoGuild", cache = false });
             UIResources.Add(typeof(UIGuildPopCreate), new UIElement() { resource = "UI/UIGuildPopCreate", cache = false });
             UIResources.Add(typeof(UIGuildApplyList), new UIElement() { resource = "UI/UIGuildApplyList", cache = false });
+            UIResources.Add(typeof(UISetting), new UIElement() { resource = "UI/UISetting", cache = false });
+            UIResources.Add(typeof(UIChatPopMenu), new UIElement() { resource = "UI/UIChatPopMenu", cache = false });
         }
 
         public T Show<T>()
