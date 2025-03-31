@@ -41,7 +41,7 @@ namespace Assets.Scripts.UI.Chat
             this.Close(WindowResult.None);
         }
 
-        public void OnClickInvite()
+        public void OnClickTeamInvite()
         {
             Debug.Log("ClickInvite");
             MessageBox.Show(string.Format("确定与玩家{0}组队吗？", targetName), "组队", MessageBoxType.Information, "确定", "取消").OnYes = () =>

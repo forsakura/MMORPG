@@ -1534,23 +1534,23 @@ namespace SkillBridge.Message
         [global::System.ComponentModel.DefaultValue("")]
         public string Errormsg { get; set; } = "";
 
-        [global::ProtoBuf.ProtoMember(3)]
-        public ChatMessage AllMessage { get; set; }
+        [global::ProtoBuf.ProtoMember(3, Name = @"SystemMessage")]
+        public global::System.Collections.Generic.List<ChatMessage> SystemMessages { get; } = new global::System.Collections.Generic.List<ChatMessage>();
 
-        [global::ProtoBuf.ProtoMember(4)]
-        public ChatMessage LocalMessage { get; set; }
+        [global::ProtoBuf.ProtoMember(4, Name = @"LocalMessage")]
+        public global::System.Collections.Generic.List<ChatMessage> LocalMessages { get; } = new global::System.Collections.Generic.List<ChatMessage>();
 
-        [global::ProtoBuf.ProtoMember(5)]
-        public ChatMessage WorldMessage { get; set; }
+        [global::ProtoBuf.ProtoMember(5, Name = @"WorldMessage")]
+        public global::System.Collections.Generic.List<ChatMessage> WorldMessages { get; } = new global::System.Collections.Generic.List<ChatMessage>();
 
-        [global::ProtoBuf.ProtoMember(6)]
-        public ChatMessage TeamMessage { get; set; }
+        [global::ProtoBuf.ProtoMember(6, Name = @"TeamMessage")]
+        public global::System.Collections.Generic.List<ChatMessage> TeamMessages { get; } = new global::System.Collections.Generic.List<ChatMessage>();
 
-        [global::ProtoBuf.ProtoMember(7)]
-        public ChatMessage GuildMessage { get; set; }
+        [global::ProtoBuf.ProtoMember(7, Name = @"GuildMessage")]
+        public global::System.Collections.Generic.List<ChatMessage> GuildMessages { get; } = new global::System.Collections.Generic.List<ChatMessage>();
 
-        [global::ProtoBuf.ProtoMember(8)]
-        public ChatMessage PrivateMessage { get; set; }
+        [global::ProtoBuf.ProtoMember(8, Name = @"PrivateMessage")]
+        public global::System.Collections.Generic.List<ChatMessage> PrivateMessages { get; } = new global::System.Collections.Generic.List<ChatMessage>();
 
     }
 
@@ -1743,6 +1743,7 @@ namespace SkillBridge.Message
         Local = 1,
         [global::ProtoBuf.ProtoEnum(Name = @"WORLD")]
         World = 2,
+        [global::ProtoBuf.ProtoEnum(Name = @"SYSTEM")]
         System = 4,
         [global::ProtoBuf.ProtoEnum(Name = @"PRIVATE")]
         Private = 8,

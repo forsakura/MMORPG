@@ -1,7 +1,5 @@
-﻿using SkillBridge.Message;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Common;
+using SkillBridge.Message;
 using UnityEngine;
 using UnityEngine.UI;
 

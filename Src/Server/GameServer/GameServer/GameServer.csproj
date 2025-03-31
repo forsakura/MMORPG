@@ -108,11 +108,13 @@
     <Compile Include="Entities\Character.cs" />
     <Compile Include="Entities\CharacterBase.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Managers\ChatManager.cs" />
     <Compile Include="Managers\FriendManager.cs" />
     <Compile Include="Managers\GuildManager.cs" />
     <Compile Include="Managers\SessionManager.cs" />
     <Compile Include="Managers\Spawner.cs" />
     <Compile Include="Managers\TeamManager.cs" />
+    <Compile Include="Models\Chat.cs" />
     <Compile Include="Models\Guild.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Entities\Monster.cs" />
@@ -137,6 +139,7 @@
     <Compile Include="Network\NetConnection.cs" />
     <Compile Include="Network\NetService.cs" />
     <Compile Include="Services\BagService.cs" />
+    <Compile Include="Services\ChatService.cs" />
     <Compile Include="Services\FriendService.cs" />
     <Compile Include="Services\GuildService.cs" />
     <Compile Include="Services\ItemService.cs" />

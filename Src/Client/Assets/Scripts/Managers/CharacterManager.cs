@@ -61,4 +61,11 @@ public class CharacterManager : Singleton<CharacterManager>, IDisposable
             else Characters.Remove(characterId);
         }
     }
+
+    public Character GetCharacter(int characterId)
+    {
+        Character character = null;
+        Characters.TryGetValue(characterId, out character);
+        return character;
+    }
 }

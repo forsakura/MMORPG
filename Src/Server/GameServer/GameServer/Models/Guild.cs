@@ -164,7 +164,7 @@ namespace GameServer.Models
 
             DBService.Instance.Save();
 
-            this.timestamp = Time.timestamp;
+            this.timestamp = TimeUtil.timestamp;
             return true;
         }
 
@@ -182,7 +182,7 @@ namespace GameServer.Models
                 this.AddMember(apply.characterId, apply.Name, apply.Level, apply.Class, GuildTitle.None);
 
             DBService.Instance.Save();
-            this.timestamp = Time.timestamp;
+            this.timestamp = TimeUtil.timestamp;
             return true;
         }
 
@@ -206,7 +206,7 @@ namespace GameServer.Models
             character.Data.GuildId = 0;
             DBService.Instance.Entities.GuildMembers.Remove(tGuildMember);
             DBService.Instance.Save();
-            this.timestamp = Time.timestamp;
+            this.timestamp = TimeUtil.timestamp;
             return true;
         }
 
@@ -250,7 +250,7 @@ namespace GameServer.Models
                     break;
             }
             DBService.Instance.Save();
-            this.timestamp = Time.timestamp;
+            this.timestamp = TimeUtil.timestamp;
             return true;
         }
     }

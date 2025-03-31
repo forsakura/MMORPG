@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Models;
+using Assets.Scripts.Services;
 using Candlelight.UI;
 using SkillBridge.Message;
 using System;
@@ -11,6 +12,15 @@ namespace Assets.Scripts.Managers
 {
     public class ChatManager : Singleton<ChatManager>
     {
+
+        public void Init()
+        {
+            foreach (var message in messages)
+            {
+                message.Clear();
+            }
+        }
+
         public enum CHAT_CHANNEL
         {
             ALL = 0,
@@ -62,12 +72,20 @@ namespace Assets.Scripts.Managers
 
         public string PrivateName = "";
 
-        public List<ChatMessage> messages = new List<ChatMessage>();
+        public List<ChatMessage>[] messages = new List<ChatMessage>[6]
+        {
+            new List<ChatMessage>(),
+            new List<ChatMessage>(),
+            new List<ChatMessage>(),
+            new List<ChatMessage>(),
+            new List<ChatMessage>(),
+            new List<ChatMessage>(),
+        };
 
         public string GetCurrentMessages()
         {
             StringBuilder sb = new StringBuilder();
-            foreach (var message in messages)
+            foreach (var message in messages[(int)displayChannel])
             {
                 sb.AppendLine(FormMessage(message));
             }
@@ -118,13 +136,7 @@ namespace Assets.Scripts.Managers
 
         public void SendChat(string text)
         {
-            messages.Add(new ChatMessage()
-            {
-                Channel = ChatChannel.Local,
-                Message = text,
-                FromId = User.Instance.currentCharacter.Id,
-                FromName = User.Instance.currentCharacter.Name,
-            });
+            ChatService.Instance.SendChatMessage(this.SendChannel, text, this.PrivateName, this.PrivateID);
         }
 
         public bool SetSendChannel(CHAT_CHANNEL channel)
@@ -149,9 +161,21 @@ namespace Assets.Scripts.Managers
             return true;
         }
 
+        public void AddMessages(ChatChannel channel, List<ChatMessage> messages)
+        {
+            for(int i = 0; i <6; i ++)
+            {
+                if ((this.ChannelFilter[i] & channel) == channel)
+                {
+                    this.messages[i].AddRange(messages);
+                }
+            }
+            if(OnChat != null) OnChat();
+        }
+
         public void AddSystemMessage(string message, string from = "")
         {
-            this.messages.Add(new ChatMessage()
+            this.messages[(int)CHAT_CHANNEL.ALL].Add(new ChatMessage()
             {
                 Channel = ChatChannel.System,
                 Message = message,

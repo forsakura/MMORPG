@@ -257,20 +257,14 @@ namespace Services
         public void SendGameEnter(int charIndex)
         {
             Debug.LogFormat("UserGameEnterRequest::charIndex:{0}", charIndex);
+
+            ChatManager.Instance.Init();
+
             NetMessage message = new NetMessage();
             message.Request = new NetMessageRequest();
             message.Request.gameEnter = new UserGameEnterRequest();
             message.Request.gameEnter.characterIdx = charIndex;
-            if(connected && NetClient.Instance.Connected)
-            {
-                this.pendingMessage = null;
-                NetClient.Instance.SendMessage(message);
-            }
-            else
-            {
-                this.pendingMessage = message;
-                this.ConnectToServer();
-            }
+            NetClient.Instance.SendMessage(message);
         }
 
         /// <summary>

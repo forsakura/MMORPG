@@ -164,7 +164,6 @@ namespace GameServer.Services
             Character character = sender.Session.Character;
             Log.InfoFormat("UserGameLeaveRequest::{0}", character.Name);
             CharacterLeave(character);
-            SessionManager.Instance.RemoveSession(character.Id);
             sender.Session.Response.gameLeave = new UserGameLeaveResponse();
             sender.Session.Response.gameLeave.Result = Result.Success;
             sender.Session.Response.gameLeave.Errormsg = "None";
@@ -172,6 +171,7 @@ namespace GameServer.Services
         }
         public void CharacterLeave(Character character)
         {
+            SessionManager.Instance.RemoveSession(character.Id);
             CharacterManager.Instance.RemoveCharacter(character.Id);
             character.Clear();
             MapManager.Instance[character.Info.mapId].CharacterLeave(character);

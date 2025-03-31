@@ -738,7 +738,7 @@ enum CHAT_CHANNEL
 	All = -1;
 	LOCAL = 1;
 	WORLD = 2;
-	System = 4;
+	SYSTEM = 4;
 	PRIVATE = 8;
 	TEAM = 16;
 	GUILD = 32;
@@ -765,10 +765,10 @@ message ChatResponse
 {
 	RESULT result = 1;
 	string errormsg = 2;
-	ChatMessage AllMessage = 3;
-	ChatMessage LocalMessage= 4;
-	ChatMessage WorldMessage= 5;
-	ChatMessage TeamMessage = 6;
-	ChatMessage GuildMessage = 7;
-	ChatMessage PrivateMessage = 8;
+	repeated ChatMessage SystemMessage = 3;
+	repeated ChatMessage LocalMessage= 4;
+	repeated ChatMessage WorldMessage= 5;
+	repeated ChatMessage TeamMessage = 6;
+	repeated ChatMessage GuildMessage = 7;
+	repeated ChatMessage PrivateMessage = 8;
 }
