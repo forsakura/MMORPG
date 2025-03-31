@@ -1738,17 +1738,18 @@ namespace SkillBridge.Message
     [global::ProtoBuf.ProtoContract(Name = @"CHAT_CHANNEL")]
     public enum ChatChannel
     {
-        All = 0,
+        All = -1,
         [global::ProtoBuf.ProtoEnum(Name = @"LOCAL")]
         Local = 1,
         [global::ProtoBuf.ProtoEnum(Name = @"WORLD")]
         World = 2,
-        [global::ProtoBuf.ProtoEnum(Name = @"TEAM")]
-        Team = 3,
-        [global::ProtoBuf.ProtoEnum(Name = @"GUILD")]
-        Guild = 4,
+        System = 4,
         [global::ProtoBuf.ProtoEnum(Name = @"PRIVATE")]
-        Private = 5,
+        Private = 8,
+        [global::ProtoBuf.ProtoEnum(Name = @"TEAM")]
+        Team = 16,
+        [global::ProtoBuf.ProtoEnum(Name = @"GUILD")]
+        Guild = 32,
     }
 
 }

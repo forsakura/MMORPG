@@ -735,12 +735,13 @@ message GuildAdminResponse
 
 enum CHAT_CHANNEL
 {
-	All = 0;
+	All = -1;
 	LOCAL = 1;
 	WORLD = 2;
-	TEAM = 3;
-	GUILD = 4;
-	PRIVATE = 5;
+	System = 4;
+	PRIVATE = 8;
+	TEAM = 16;
+	GUILD = 32;
 }
 
 message ChatMessage

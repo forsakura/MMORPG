@@ -67802,7 +67802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 538392937}
-  hyperText: {fileID: 1586785590}
+  textArea: {fileID: 0}
   chatTarget: {fileID: 1081774081}
   channelSelect: {fileID: 2048758067}
   channelTab: {fileID: 1076405739}
