@@ -138,9 +138,9 @@ namespace GameServer.Models
             if (message.Guild == null)
             {
                 message.Guild = new GuildResponse();
-                message.Guild.Result = Result.Success;
-                message.Guild.Guild = this.GuildInfo(character);
             }
+            message.Guild.Result = Result.Success;
+            message.Guild.Guild = this.GuildInfo(character);
         }
 
         internal bool JoinApply(NGuildApplyInfo apply)

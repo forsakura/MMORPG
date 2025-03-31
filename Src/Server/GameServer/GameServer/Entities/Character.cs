@@ -123,8 +123,8 @@ namespace GameServer.Entities
                     GuildUpdateTS = this.Guild.timestamp;
                     this.Guild.PostProcess(this, message);
                 }
-                Chat.PostProcess(message);
             }
+            Chat.PostProcess(message);
         }
 
         /// <summary>

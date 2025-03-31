@@ -28,7 +28,6 @@ namespace GameServer.Models
         {
             if (message.Chat == null)
             {
-                message = new NetMessageResponse();
                 message.Chat = new ChatResponse();
             }
             this.localIndex = ChatManager.Instance.GetLocalMessages(owner.Info.mapId, localIndex, message.Chat.LocalMessages);
