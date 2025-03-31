@@ -23856,13 +23856,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 692480848}
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 4.3, z: -4.3}
+  m_LocalRotation: {x: 0.18223555, y: 0, z: 0, w: 0.9832549}
+  m_LocalPosition: {x: 0, y: 3.3, z: -4.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1057877723}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 21, y: 0, z: 0}
 --- !u!1001 &693334339
 Prefab:
   m_ObjectHideFlags: 0
@@ -29160,7 +29160,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_FontSize: 27
     m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 2
@@ -29171,7 +29171,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter text...
+  m_Text: 
 --- !u!222 &881580037
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38256,7 +38256,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1152685864}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2102300251}
+        m_MethodName: OnClickSend
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1152685864
@@ -48755,7 +48766,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -49521,7 +49532,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 755445748}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -51352,8 +51363,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.000030517578, y: -0.000030517578}
-  m_SizeDelta: {x: 0, y: 31.88612}
+  m_AnchoredPosition: {x: -0.000030517578, y: -0.00004272689}
+  m_SizeDelta: {x: 0, y: 22.7758}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1586785588
 MonoBehaviour:
@@ -51388,7 +51399,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 0}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -51412,12 +51423,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 2102300251}
+        m_MethodName: OnClickChatLink
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -51457,9 +51468,9 @@ MonoBehaviour:
     m_IsRichTextDesired: 1
     m_OutputText: 
     m_QuadKeywordCollections: []
-    m_ReferenceFontSize: 28
+    m_ReferenceFontSize: 20
     m_ShouldOverrideStylesFontSize: 0
-    m_Styles: {fileID: 0}
+    m_Styles: {fileID: 11400000, guid: 0a8435c7d7d2cf9449e615eff7aadec6, type: 2}
     m_TagKeywordCollections: []
 --- !u!222 &1586785591
 CanvasRenderer:
@@ -66218,12 +66229,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2102300247}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 2102300251}
+        m_MethodName: OnSendChannelChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -67802,7 +67813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 538392937}
-  textArea: {fileID: 0}
+  textArea: {fileID: 1586785590}
   chatTarget: {fileID: 1081774081}
   channelSelect: {fileID: 2048758067}
   channelTab: {fileID: 1076405739}

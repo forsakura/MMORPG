@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Services;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Services;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -26,6 +27,7 @@ namespace Assets.Scripts.UI.Chat
         public void OnClickChat()
         {
             Debug.Log("ClickChat");
+            ChatManager.Instance.StartPrivateChat(targteId, targetName);
             this.Close(WindowResult.None);
         }
 

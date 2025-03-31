@@ -76,19 +76,19 @@ namespace Assets.Scripts.UI.Chat
 
         public void OnClickSend()
         {
-
+            OnEndInput(input.text);
         }
 
-        public void OnEndInput(string text)
+        void OnEndInput(string text)
         {
             if (!string.IsNullOrEmpty(text.Trim()))
             {
                 this.SendChat(text);
             }
-            this.textArea.text = "";
+            this.input.text = "";
         }
 
-        public void SendChat(string text)
+        void SendChat(string text)
         {
             ChatManager.Instance.SendChat(text);
         }
