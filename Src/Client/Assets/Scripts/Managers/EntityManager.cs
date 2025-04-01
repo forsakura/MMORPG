@@ -11,7 +11,7 @@ namespace Assets.Scripts.Managers
     {
         void OnEntityRemoved();
         void OnEntityChanged(Entity entity);
-        void OnEntityEvent(EntityEvent @event);
+        void OnEntityEvent(EntityEvent @event, int param);
     }
     class EntityManager : Singleton<EntityManager>
     {
@@ -52,7 +52,7 @@ namespace Assets.Scripts.Managers
                 if (notifiers.ContainsKey(item.Id))
                 {
                     notifiers[entity.entityId].OnEntityChanged(entity);
-                    notifiers[entity.entityId].OnEntityEvent(item.Event);
+                    notifiers[entity.entityId].OnEntityEvent(item.Event, item.Param);
                 }
             }
         }

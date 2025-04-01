@@ -9,6 +9,7 @@ namespace Assets.Scripts.UI.Quest
     {
         public Text title;
         public Text questDiscribution;
+        public Text overView;
         public Text[] questTarget;
         public Image[] questRewards;
         public Text questGoldCount;
@@ -19,7 +20,21 @@ namespace Assets.Scripts.UI.Quest
             title.text = string.Format("[{0}]{1}", quest.Define.Type, quest.Define.Name);
             questGoldCount.text = quest.Define.RewardGold.ToString();
             questEXPCount.text = quest.Define.RewardExp.ToString();
-            questDiscribution.text = quest.Define.Dialog;
+            if (overView != null) overView.text = quest.Define.Overview;
+            if (this.questDiscribution != null)
+            {
+                if(quest.Info != null)
+                {
+                    this.questDiscribution.text = quest.Define.Dialog;
+                }
+                else
+                {
+                    if(quest.Info.Status == SkillBridge.Message.QuestStatus.Complated)
+                    {
+                        this.questDiscribution.text = quest.Define.DialogFinish;
+                    }
+                }
+            }
             foreach (var fitter in GetComponentsInChildren<ContentSizeFitter>())
             {
                 fitter.SetLayoutVertical();

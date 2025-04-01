@@ -11,11 +11,26 @@ namespace Assets.Scripts.Models
 
         public MapDefine curentMiniMap { get; set; }
 
-        public UnityEngine.GameObject currentCharacterObject { get; set; }
+        public PlayerInputController currentCharacterObject { get; set; }
         public NTeamInfo TeamInfo { get; set; }
         public NUserInfo Info
         {
             get { return userInfo; }
+        }
+
+        public int CurrentRide = 0;
+        public void Ride(int id)
+        {
+            if(CurrentRide != 0)
+            {
+                CurrentRide = id;
+                currentCharacterObject.SendEntityEvent(EntityEvent.Ride, CurrentRide);
+            }
+            else
+            {
+                CurrentRide = 0;
+                currentCharacterObject.SendEntityEvent(EntityEvent.Ride, 0);
+            }
         }
 
         public void SetUserInfo(NUserInfo info)

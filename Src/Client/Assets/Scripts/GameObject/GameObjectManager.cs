@@ -1,6 +1,8 @@
-﻿using Assets.Scripts.Models;
+﻿using Assets.Scripts.GameObject;
+using Assets.Scripts.Models;
 using Assets.Scripts.UI;
 using Entities;
+using GameServer.Managers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -81,13 +83,14 @@ public class GameObjectManager : MonoSingleton<GameObjectManager> {
         {
             ec.entity = cha;
             ec.isPlayer = cha.IsCurrentPlayer;
+            ec.Ride(cha.Info.Ride);
         }
         PlayerInputController playerInputController = gameObject.GetComponent<PlayerInputController>();
         if (playerInputController != null)
         {
             if(cha.IsCurrentPlayer)
             {
-                User.Instance.currentCharacterObject = gameObject;
+                User.Instance.currentCharacterObject = playerInputController;
                 MainPlayerCamera.Instance.player = gameObject;
                 playerInputController.enabled = true;
                 playerInputController.character = cha;
@@ -95,5 +98,18 @@ public class GameObjectManager : MonoSingleton<GameObjectManager> {
             }
             else playerInputController.enabled = false;
         }
+    }
+
+    public RideController LoadRide(int rideId, Transform parent)
+    {
+        var rideDefine = DataManager.Instance.Rides[rideId];
+        Object obj = Resloader.Load<Object>(rideDefine.Resource);
+        if (obj == null)
+        {
+            return null;
+        }
+        var go = (GameObject)Instantiate(obj, parent);
+        go.name = "Ride_" + rideDefine.ID +  "_" + rideDefine.Name;
+        return go.GetComponent<RideController>();
     }
 }

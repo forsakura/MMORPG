@@ -96,7 +96,6 @@ namespace Assets.Scripts.GameObject
 
         IEnumerator FaceToPlayer()
         {
-            Vector3 faceTo = (User.Instance.currentCharacterObject.transform.position - transform.position).normalized;
             while (Mathf.Abs(Vector3.Angle(transform.forward, faceTo)) > 5f)
             {
                 transform.forward = Vector3.Lerp(transform.forward, faceTo, Time.deltaTime * 5f);

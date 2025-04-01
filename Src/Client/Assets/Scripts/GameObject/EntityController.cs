@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Managers;
+﻿using Assets.Scripts.GameObject;
+using Assets.Scripts.Managers;
 using Assets.Scripts.UI;
 using Entities;
 using SkillBridge.Message;
@@ -27,7 +28,7 @@ public class EntityController : MonoBehaviour , IEntityNotify {
 
     public bool isPlayer = false;
 
-    //public RideController rideController;
+    public RideController rideController;
 
     private int currentRide = 0;
 
@@ -97,7 +98,7 @@ public class EntityController : MonoBehaviour , IEntityNotify {
         Destroy(this.gameObject);
     }
 
-    public void OnEntityEvent(EntityEvent entityEvent)
+    public void OnEntityEvent(EntityEvent entityEvent, int param)
     {
         switch (entityEvent)
         {
@@ -116,35 +117,15 @@ public class EntityController : MonoBehaviour , IEntityNotify {
             case EntityEvent.Jump:
                 anim.SetTrigger("Jump");
                 break;
-            default:
+            case EntityEvent.Ride:
+                this.Ride(param);
                 break;
         }
-        /*switch (entityEvent)
-        {
-            case EntityEvent.Idle:
-                anim.SetBool("Move", false);
-                anim.SetTrigger("Idle");
-                break;
-            case EntityEvent.MoveFwd:
-                anim.SetBool("Move", true);
-                break;
-            case EntityEvent.MoveBack:
-                anim.SetBool("Move", true);
-                break;
-            case EntityEvent.Jump:
-                anim.SetTrigger("Jump");
-                break;
-            case EntityEvent.Ride:
-                {
-                    this.Ride(param);
-                }
-                break;
-        }*/
-        //if (this.rideController != null) this.rideController.OnEntityEvent(entityEvent, param);
+        if (this.rideController != null) this.rideController.OnEntityEvent(entityEvent, param);
     }
 
 
-    /*public void Ride(int rideId)
+    public void Ride(int rideId)
     {
         if (currentRide == rideId) return;
         currentRide = rideId;
@@ -168,7 +149,7 @@ public class EntityController : MonoBehaviour , IEntityNotify {
             this.rideController.SetRider(this);
             this.anim.SetLayerWeight(1, 1);
         }
-    }*/
+    }
 
     public void SetRidePotision(Vector3 position)
     {

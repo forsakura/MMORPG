@@ -40,7 +40,7 @@ public class PlayerInputController : MonoBehaviour {
     private void FixedUpdate()
     {
 		if (character == null) return;
-		if (InputManager.Instance.isInputMode) return;
+		if (InputManager.Instance != null || InputManager.Instance.isInputMode) return;
 		float v = Input.GetAxis("Vertical");
 		if(v > 0.1f)
 		{
@@ -116,19 +116,11 @@ public class PlayerInputController : MonoBehaviour {
         this.transform.position = this.rb.transform.position;
     }
 
-	private void SendEntityEvent(EntityEvent entityEvent)
-	{
-		if(entityController !=null)
-		{
-			entityController.OnEntityEvent(entityEvent);
-		}
-		MapService.Instance.SendMapEntitySync(entityEvent, character.EntityData);
-	}
-    private void SendEntityEvent(EntityEvent entityEvent, int param = 0)
+    public void SendEntityEvent(EntityEvent entityEvent, int param = 0)
     {
-        if(entityController !=null)
+        if(entityController != null)
 		{
-			entityController.OnEntityEvent(entityEvent);
+			entityController.OnEntityEvent(entityEvent, param);
 		}
 		MapService.Instance.SendMapEntitySync(entityEvent, character.EntityData, param);
     }
