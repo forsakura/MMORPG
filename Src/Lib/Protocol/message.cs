@@ -92,6 +92,9 @@ namespace SkillBridge.Message
         [global::ProtoBuf.ProtoMember(16, Name = @"guild")]
         public NGuildInfo Guild { get; set; }
 
+        [global::ProtoBuf.ProtoMember(17, Name = @"ride")]
+        public int Ride { get; set; }
+
     }
 
     [global::ProtoBuf.ProtoContract()]

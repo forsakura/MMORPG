@@ -24,6 +24,7 @@ namespace GameServer.Managers
         public Dictionary<int, QuestDefine> Quests = null;
         public Dictionary<int, Dictionary<int, SpawnPointDefine>> SpawnPoints = null;
         public Dictionary<int, Dictionary<int, SpawnRuleDefine>> SpawnRules = null;
+        public Dictionary<int, RideDefine> Rides = null;
         public DataManager()
         {
             this.DataPath = "Data/";
@@ -64,6 +65,9 @@ namespace GameServer.Managers
 
             json = File.ReadAllText(DataPath + "SpawnPointDefine.txt");
             this.SpawnPoints = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnPointDefine>>>(json);
+
+            json = File.ReadAllText(DataPath + "RideDefine.txt");
+            this.Rides = JsonConvert.DeserializeObject<Dictionary<int,  RideDefine>>(json);
         }
 
         public IEnumerator LoadData()
@@ -120,6 +124,11 @@ namespace GameServer.Managers
 
             json = File.ReadAllText(DataPath + "SpawnRuleDefine.txt");
             this.SpawnRules = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnRuleDefine>>>(json);
+
+            yield return null;
+
+            json = File.ReadAllText(DataPath + "RideDefine.txt");
+            this.Rides = JsonConvert.DeserializeObject<Dictionary<int, RideDefine>>(json);
 
             yield return null;
         }
