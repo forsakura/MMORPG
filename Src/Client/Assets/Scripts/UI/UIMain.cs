@@ -3,6 +3,7 @@ using Assets.Scripts.Models;
 using Assets.Scripts.UI.CharEquip;
 using Assets.Scripts.UI.Friend;
 using Assets.Scripts.UI.Quest;
+using Assets.Scripts.UI.Ride;
 using Assets.Scripts.UI.Setting;
 using Assets.Scripts.UI.Team;
 using UnityEngine;
@@ -72,7 +73,7 @@ namespace Assets.Scripts.UI
 
         public void OnClickRide()
         {
-
+            UIManager.Instance.Show<UIRide>();
         }
 
         public void OnClickSetting()

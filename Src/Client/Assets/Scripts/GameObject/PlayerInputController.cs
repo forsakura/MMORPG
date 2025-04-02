@@ -40,7 +40,7 @@ public class PlayerInputController : MonoBehaviour {
     private void FixedUpdate()
     {
 		if (character == null) return;
-		if (InputManager.Instance != null || InputManager.Instance.isInputMode) return;
+		if (InputManager.Instance != null && InputManager.Instance.isInputMode) return;
 		float v = Input.GetAxis("Vertical");
 		if(v > 0.1f)
 		{
@@ -50,7 +50,8 @@ public class PlayerInputController : MonoBehaviour {
                 character.MoveForward();
                 SendEntityEvent(EntityEvent.MoveFwd);
             }
-		}
+            rb.velocity = rb.velocity.y * Vector3.up + GameObjectTool.LogicToWorld(character.direction) * (character.speed + 9.81f) / 100f;
+        }
 
         else if (v < -0.1f)
         {
@@ -60,6 +61,7 @@ public class PlayerInputController : MonoBehaviour {
                 character.MoveBack();
                 SendEntityEvent(EntityEvent.MoveBack);
             }
+            rb.velocity = rb.velocity.y * Vector3.up + GameObjectTool.LogicToWorld(character.direction) * (character.speed + 9.81f) / 100f;
         }
 
 		else
@@ -67,11 +69,11 @@ public class PlayerInputController : MonoBehaviour {
 			if(state != CharacterState.Idle)
 			{
 				state = CharacterState.Idle;
+				this.rb.velocity = Vector3.zero;
 				character.Stop();
 				SendEntityEvent(EntityEvent.Idle);
 			}
         }
-        rb.velocity = rb.velocity.y * Vector3.up + GameObjectTool.LogicToWorld(character.direction) * (character.speed + 9.81f) / 100f;
 
 		if(Input.GetButtonDown("Jump"))
 		{

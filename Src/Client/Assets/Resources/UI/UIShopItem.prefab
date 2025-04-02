@@ -412,7 +412,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6CD5\u5E08"
+  m_Text: 
 --- !u!114 &114886863970739196
 MonoBehaviour:
   m_ObjectHideFlags: 1

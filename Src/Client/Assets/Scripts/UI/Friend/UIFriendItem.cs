@@ -18,8 +18,6 @@ namespace Assets.Scripts.UI.Friend
 
         public NFriendInfo NfriendInfo;
 
-        bool isEquiped = false;
-
         private void Start()
         {
             backGround.overrideSprite = normalSprite;
@@ -54,11 +52,6 @@ namespace Assets.Scripts.UI.Friend
         {
             base.OnSelected(selected);
             backGround.overrideSprite = selected ? selectedSprite : normalSprite;
-        }
-
-        public void OnItemSelected(ListView.ListView.ListViewItem item)
-        {
-            Selected = item == this ? true : false;
         }
     }
 }

@@ -3,6 +3,7 @@ using Assets.Scripts.UI.Chat;
 using Assets.Scripts.UI.Friend;
 using Assets.Scripts.UI.Guild;
 using Assets.Scripts.UI.Quest;
+using Assets.Scripts.UI.Ride;
 using Assets.Scripts.UI.Setting;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,7 @@ namespace Assets.Scripts.UI
             UIResources.Add(typeof(UIGuildApplyList), new UIElement() { resource = "UI/UIGuildApplyList", cache = false });
             UIResources.Add(typeof(UISetting), new UIElement() { resource = "UI/UISetting", cache = false });
             UIResources.Add(typeof(UIChatPopMenu), new UIElement() { resource = "UI/UIChatPopMenu", cache = false });
+            UIResources.Add(typeof(UIRide), new UIElement() { resource = "UI/UIRide", cache = false });
         }
 
         public T Show<T>()
