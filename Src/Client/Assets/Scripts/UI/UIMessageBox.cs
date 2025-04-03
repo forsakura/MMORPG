@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Sound;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -48,15 +49,15 @@ namespace Assets.Scripts.UI
 
             buttonNo.gameObject.SetActive(type == MessageBoxType.Confirm);
 
-            /*if (type == MessageBoxType.Error)
+            if (type == MessageBoxType.Error)
                 SoundManager.Instance.PlaySound(SoundDefine.SFX_Message_Error);
             else
-                SoundManager.Instance.PlaySound(SoundDefine.SFX_Message_Info);*/
+                SoundManager.Instance.PlaySound(SoundDefine.SFX_Message_Info);
         }
 
         void OnClickYes()
         {
-            //SoundManager.Instance.PlaySound(SoundDefine.SFX_UI_Confirm);
+            SoundManager.Instance.PlaySound(SoundDefine.SFX_UI_Confirm);
             Destroy(gameObject);
             if (OnYes != null)
                 OnYes();
@@ -64,7 +65,7 @@ namespace Assets.Scripts.UI
 
         void OnClickNo()
         {
-            //SoundManager.Instance.PlaySound(SoundDefine.SFX_UI_Win_Close);
+            SoundManager.Instance.PlaySound(SoundDefine.SFX_UI_Win_Close);
             Destroy(gameObject);
             if (OnNo != null)
                 OnNo();

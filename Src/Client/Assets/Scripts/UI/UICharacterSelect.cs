@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Models;
+using Assets.Scripts.Sound;
 using Common;
 using GameServer.Managers;
 using Services;
@@ -59,6 +60,7 @@ public class UICharacterSelect : MonoBehaviour {
 			titles[i].gameObject.SetActive(i == val);
 		}
 		description.text = DataManager.Instance.Characters[val + 1].Description;
+		SoundManager.Instance.PlaySound(SoundDefine.SFX_UI_Click);
 	}
 
 	public void OnClickCreate()
@@ -68,6 +70,7 @@ public class UICharacterSelect : MonoBehaviour {
 			MessageBox.Show("请输入角色姓名");
 			return;
 		}
+		SoundManager.Instance.PlaySound(SoundDefine.SFX_UI_Click);
 		UserService.Instance.SendCharacterCreate(charName.text, charClass);
 	}
 
@@ -87,6 +90,7 @@ public class UICharacterSelect : MonoBehaviour {
         {
 			UserService.Instance.SendGameEnter(selectCharacterIndex);
         }
+		SoundManager.Instance.PlaySound(SoundDefine.SFX_UI_Click);
     }
 
 	/// <summary>
@@ -144,6 +148,8 @@ public class UICharacterSelect : MonoBehaviour {
 		{
 			uiChars[i].GetComponent<UICharInfo>().Selected = i == index;
 		}
+
+        SoundManager.Instance.PlaySound(SoundDefine.SFX_UI_Click);
     }
 
     void InitCharacters()

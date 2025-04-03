@@ -11,6 +11,11 @@ namespace Assets.Scripts.UI.Setting
             UserService.Instance.SendGameLeave(false);
         }
 
+        public void OnClickSoundConfig()
+        {
+
+        }
+
         public void OnClickExit()
         {
             UserService.Instance.SendGameLeave(true);

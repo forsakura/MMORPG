@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Models;
+using Assets.Scripts.Sound;
 using GameServer.Managers;
 using Network;
 using SkillBridge.Message;
@@ -66,6 +67,7 @@ namespace Assets.Scripts.Services
                 var map = DataManager.Instance.Maps[mapId];
                 User.Instance.curentMiniMap = map;
                 SceneManager.Instance.LoadScene(map.Resource);
+                SoundManager.Instance.PlayMusic(map.Music);
             }
             else Debug.LogErrorFormat("EnterMap: Map {0} not existed", mapId);
         }

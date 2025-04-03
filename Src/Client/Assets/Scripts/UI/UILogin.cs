@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using Assets.Scripts.Sound;
+using Services;
 using SkillBridge.Message;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,6 +40,7 @@ namespace UI
 				MessageBox.Show("未输入密码");
 				return;
 			}
+			SoundManager.Instance.PlaySound(SoundDefine.SFX_UI_Click);
 			UserService.Instance.SendLogin(userName.text, passWord.text);
 		}
 
@@ -46,8 +48,9 @@ namespace UI
 		{
 			if (res == Result.Success)
 			{
-				MessageBox.Show("登录成功，请准备选择角色" + val, "提示", MessageBoxType.Information);
+				//MessageBox.Show("登录成功，请准备选择角色" + val, "提示", MessageBoxType.Information);
 				SceneManager.Instance.LoadScene("CharacterSelect");
+				SoundManager.Instance.PlayMusic(SoundDefine.Music_Select);
 			}
 			else
 			{

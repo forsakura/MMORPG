@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Sound;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,7 @@ namespace Assets.Scripts.UI
         public UnityEngine.GameObject Root;
         public void Close(WindowResult result = WindowResult.None)
         {
+            SoundManager.Instance.PlaySound(SoundDefine.SFX_UI_Win_Close);
             UIManager.Instance.Close(Type);
             if (onClose != null)
             {

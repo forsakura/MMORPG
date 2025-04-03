@@ -37,6 +37,7 @@ namespace Assets.Scripts.UI
             UIResources.Add(typeof(UISetting), new UIElement() { resource = "UI/UISetting", cache = false });
             UIResources.Add(typeof(UIChatPopMenu), new UIElement() { resource = "UI/UIChatPopMenu", cache = false });
             UIResources.Add(typeof(UIRide), new UIElement() { resource = "UI/UIRide", cache = false });
+            UIResources.Add(typeof(UISoundConfig), new UIElement() { resource = "UI/UISoundConfig", cache = false });
         }
 
         public T Show<T>()
