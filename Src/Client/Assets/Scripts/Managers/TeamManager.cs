@@ -16,6 +16,8 @@ namespace Assets.Scripts.Managers
         { 
             get
             {
+                if(User.Instance.TeamInfo == null)
+                    return false;
                 return User.Instance.TeamInfo.teamMembers.Count == GameDefine.TeamMaxMemberCount;
             } 
         }
@@ -36,6 +38,8 @@ namespace Assets.Scripts.Managers
 
         public bool HasTeamMember(int  memberId)
         {
+            if(User.Instance.TeamInfo == null)
+                return false;
             foreach (var teamMember in User.Instance.TeamInfo.teamMembers)
             {
                 if(teamMember.Id == memberId)

@@ -129,6 +129,7 @@ namespace Assets.Scripts.Services
             if (message.Result == Result.Success)
             {
                 MessageBox.Show("已离开队伍", "离开队伍");
+                TeamManager.Instance.UpdateTeamInfo(null);
                 UIMain.Instance.ShowTeamUI(false);
             }
             else if(message.Result == Result.Failed)
