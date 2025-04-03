@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Models;
 using Assets.Scripts.Services;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -33,17 +34,30 @@ namespace Assets.Scripts.UI.Chat
 
         public void OnClickFriendAdd()
         {
-            Debug.Log("ClickFriendAdd");
+            if (FriendManager.Instance.HasFriend(targteId))
+            {
+                MessageBox.Show(string.Format("已和{0}是好友", targetName), "好友", MessageBoxType.Information, "确定");
+                return;
+            }
             MessageBox.Show(string.Format("确定添加玩家{0}吗？", targetName), "好友", MessageBoxType.Information, "确定", "取消").OnYes = () =>
             {
                 FriendService.Instance.SendFriendAddRequest(targteId, targetName);
-            };            
+            };
             this.Close(WindowResult.None);
         }
 
         public void OnClickTeamInvite()
         {
-            Debug.Log("ClickInvite");
+            if(TeamManager.Instance.IsFull)
+            {
+                MessageBox.Show("您的队伍已满", "组队", MessageBoxType.Information, "确定");
+                return;
+            }
+            if (TeamManager.Instance.HasTeamMember(targteId))
+            {
+                MessageBox.Show(string.Format("玩家{0}已在队伍中", targetName), "组队", MessageBoxType.Information, "确定");
+                return;
+            }
             MessageBox.Show(string.Format("确定与玩家{0}组队吗？", targetName), "组队", MessageBoxType.Information, "确定", "取消").OnYes = () =>
             {
                 TeamService.Instance.SendTeamInviteRequest(targteId, targetName);

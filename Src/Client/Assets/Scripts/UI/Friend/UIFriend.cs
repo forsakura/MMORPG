@@ -84,7 +84,13 @@ namespace Assets.Scripts.UI.Friend
 
         public void Chat()
         {
-            MessageBox.Show("暂未开放");
+            if(selectedItem == null)
+            {
+                MessageBox.Show("请选择要私聊的玩家", "好友", MessageBoxType.Information, "确定");
+                return;
+            }
+            ChatManager.Instance.StartPrivateChat(selectedItem.NfriendInfo.friendInfo.Id, selectedItem.NfriendInfo.friendInfo.Name);
+            this.Close(WindowResult.None);
         }
 
         public void OnClickFriendRemove()

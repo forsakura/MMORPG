@@ -1,15 +1,7 @@
 ﻿using Assets.Scripts.Managers;
-using Assets.Scripts.Models;
 using Assets.Scripts.Services;
 using SkillBridge.Message;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Experimental.UIElements;
 
 namespace Assets.Scripts.UI.Guild
 {
@@ -165,11 +157,14 @@ namespace Assets.Scripts.UI.Guild
         public void OnClickChat()
         {
             Debug.Log("ClickChat");
-            if (mainView.SelectedItem == null)
+            if (selectedItem == null)
             {
                 MessageBox.Show("请选择要聊天的玩家", "公会", MessageBoxType.Information);
                 return;
             }
+
+            ChatManager.Instance.StartPrivateChat(selectedItem.member.characterId, selectedItem.member.Info.Name);
+            this.Close(WindowResult.None);
         }
 
         public void OnClickLeave()

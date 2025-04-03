@@ -11,5 +11,6 @@ namespace Common
         public const int GuildMaxMemberCount = 100;
         public const int MaxChatRecordNums = 20;
         public const int MaxChatRecordTime = 600;
+        public const int TeamMaxMemberCount = 5;
     }
 }

@@ -11,5 +11,15 @@ namespace Assets.Scripts.Managers
         {
             allFriends = friends;
         }
+
+        public bool HasFriend(int friendId)
+        {
+            foreach (var item in allFriends)
+            {
+                if(item.friendInfo.Id == friendId)
+                    return true;
+            }
+            return false;
+        }
     }
 }
