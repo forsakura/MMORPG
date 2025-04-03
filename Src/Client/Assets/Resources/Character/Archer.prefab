@@ -1923,7 +1923,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1023616289239580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 33.7, y: 7.9, z: 40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4068600440351762}
@@ -2400,7 +2400,8 @@ MonoBehaviour:
   animSpeed: 1.5
   jumpPower: 3
   isPlayer: 0
-  rideBone: {fileID: 0}
+  rideController: {fileID: 0}
+  rideBone: {fileID: 4947274273310360}
 --- !u!114 &114984784174661268
 MonoBehaviour:
   m_ObjectHideFlags: 1

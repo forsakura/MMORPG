@@ -21,7 +21,7 @@ namespace Assets.Scripts.Models
         public int CurrentRide = 0;
         public void Ride(int id)
         {
-            if(CurrentRide != 0)
+            if(CurrentRide != id)
             {
                 CurrentRide = id;
                 currentCharacterObject.SendEntityEvent(EntityEvent.Ride, CurrentRide);

@@ -128,9 +128,13 @@ public class EntityController : MonoBehaviour , IEntityNotify {
     public void Ride(int rideId)
     {
         if (currentRide == rideId) return;
-        currentRide = rideId;
         if (rideId > 0)
         {
+            if(currentRide > 0)
+            {
+                Destroy(this.rideController.gameObject);
+                this.rideController = null;
+            }
             this.rideController = GameObjectManager.Instance.LoadRide(rideId, this.transform);
         }
         else
@@ -149,6 +153,7 @@ public class EntityController : MonoBehaviour , IEntityNotify {
             this.rideController.SetRider(this);
             this.anim.SetLayerWeight(1, 1);
         }
+        currentRide = rideId;
     }
 
     public void SetRidePotision(Vector3 position)
