@@ -1,8 +1,6 @@
 ﻿using Assets.Scripts.Managers;
 using Common.Data;
 using GameServer.Managers;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +12,7 @@ public class NpcManager : Singleton<NpcManager> {
 
 	public delegate bool NPCActionHandler(NpcDefine npcDefine);
 	public Dictionary<NpcFunction, NPCActionHandler> NpcMaps = new Dictionary<NpcFunction, NPCActionHandler>();	
+	Dictionary<int, Vector3> npcPositions = new Dictionary<int, Vector3>();
 
 	public void RegisterNPCActionHandler(NpcFunction npcFunction, NPCActionHandler handler)
 	{
@@ -60,5 +59,17 @@ public class NpcManager : Singleton<NpcManager> {
 		if (npcDefine.Type != NpcType.Functional) return false;
 		if (!NpcManager.Instance.NpcMaps.ContainsKey(npcDefine.Function)) return false;
 		return NpcManager.Instance.NpcMaps[npcDefine.Function](npcDefine);
+    }
+
+	public void UpdateNpcPosition(int npcID, Vector3 pos)
+	{
+		npcPositions[npcID] = pos;
+	}
+
+    internal Vector3 GetNpcPosition(int npc)
+    {
+		Vector3 pos;
+		npcPositions.TryGetValue(npc, out pos);
+		return pos;
     }
 }

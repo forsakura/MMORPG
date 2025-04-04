@@ -28,6 +28,7 @@ namespace Assets.Scripts.GameObject
         private void Start()
         {
             npcDefine = NpcManager.Instance.GetNPCDefine(npcID);
+            NpcManager.Instance.UpdateNpcPosition(npcID, gameObject.transform.position);
             animator = GetComponent<Animator>();
             skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
             originColor = skinnedMeshRenderer.sharedMaterial.color;
@@ -71,6 +72,16 @@ namespace Assets.Scripts.GameObject
 
         private void OnMouseDown()
         {
+            StartCoroutine(Interact());
+        }
+
+        IEnumerator Interact()
+        {
+            if(Vector3.Distance(this.transform.position, User.Instance.currentCharacterObject.transform.position) > 2f)
+            {
+                User.Instance.currentCharacterObject.StartNav(this.transform.position);
+            }
+            yield return new WaitUntil(() => User.Instance.currentCharacterObject.autoNav);
             Interactive();
         }
 
