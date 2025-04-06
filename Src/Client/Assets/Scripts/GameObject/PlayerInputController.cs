@@ -44,7 +44,8 @@ public class PlayerInputController : MonoBehaviour {
 		if(agent == null)
 		{
 			agent = GetComponent<NavMeshAgent>();
-			agent.stoppingDistance = 1f;
+			agent.Warp(this.transform.position);
+			agent.stoppingDistance = 2f;
 		}
 	}
 
@@ -98,7 +99,7 @@ public class PlayerInputController : MonoBehaviour {
 		}
 
 		NavMeshRenderer.Instance.SetPath(agent.path, agent.destination);
-		if(agent.isStopped || agent.remainingDistance < 1f)
+		if(agent.isStopped || agent.remainingDistance < 2.5f)
 		{
 			StopNav();
 			return;

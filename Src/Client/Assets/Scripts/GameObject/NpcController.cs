@@ -81,7 +81,7 @@ namespace Assets.Scripts.GameObject
             {
                 User.Instance.currentCharacterObject.StartNav(this.transform.position);
             }
-            yield return new WaitUntil(() => User.Instance.currentCharacterObject.autoNav);
+            yield return new WaitUntil(() => Vector3.Distance(this.transform.position, User.Instance.currentCharacterObject.transform.position) < 2f);
             Interactive();
         }
 
