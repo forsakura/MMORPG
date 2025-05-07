@@ -44,15 +44,15 @@ namespace Assets.Scripts.UI
             SoundManager.Instance.PlaySound(SoundDefine.SFX_UI_Click);
         }
 
-        public void MusicVolume(int volume)
+        public void MusicVolume(float volume)
         {
-            Config.MusicVolume = volume;
+            Config.MusicVolume = (int)volume;
             PlaySound();
         }
 
-        public void SoundVolume(int volume)
+        public void SoundVolume(float volume)
         {
-            Config.SoundVolume = volume;
+            Config.SoundVolume = (int)volume;
             PlaySound();
         }
 

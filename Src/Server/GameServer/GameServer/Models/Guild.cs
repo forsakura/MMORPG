@@ -189,7 +189,15 @@ namespace GameServer.Models
         internal bool Leave(Character character)
         {
             var tGuildMember = GetDBMember(character.Id);
-            if(tGuildMember.Title == (int)GuildTitle.President)
+            if (this.Data.Members.Count == 1)
+            {
+                character.Data.GuildId = 0;
+                DBService.Instance.Entities.GuildMembers.Remove(tGuildMember);
+                DBService.Instance.Save();
+                GuildManager.Instance.RemoveGuild(this);
+                return true;
+            }
+            if (tGuildMember.Title == (int)GuildTitle.President)
             {
                 var viceMember = this.Data.Members.FirstOrDefault(v => v.Title == (int)GuildTitle.VicePresident);
                 if (viceMember != null)

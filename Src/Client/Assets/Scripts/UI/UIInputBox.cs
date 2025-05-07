@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Managers;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -34,7 +35,7 @@ namespace Assets.Scripts.UI
         // Update is called once per frame
         void Update()
         {
-
+            InputManager.Instance.isInputMode = input.isFocused;
         }
 
         public void Init(string title, string message, string btnOK = "", string btnCancel = "", string emptyTips = "")

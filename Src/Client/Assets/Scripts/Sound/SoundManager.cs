@@ -50,6 +50,7 @@ namespace Assets.Scripts.Sound
             set
             {
                 musicVolume = value;
+                if (musicOn) this.SetVolume("Music", musicVolume);
             }
         }
 
@@ -63,25 +64,26 @@ namespace Assets.Scripts.Sound
             set
             {
                 soundVolume = value;
+                if (soundOn) this.SetVolume("SFX", soundVolume);
             }
         }
 
         private void Start()
         {
-            this.MusicOn = Config.MusicOn;
-            this.SoundOn = Config.SoundOn;
             this.MusicVolume = Config.MusicVolume;
             this.SoundVolume = Config.SoundVolume;
+            this.MusicOn = Config.MusicOn;
+            this.SoundOn = Config.SoundOn;
         }
 
         public void MusicMute(bool mute)
         {
-            this.SetVolume("MusicVolume", mute ? 0 : musicVolume);
+            this.SetVolume("Music", mute ? 0 : musicVolume);
         }
 
         public void SoundMute(bool mute)
         {
-            this.SetVolume("SoundVolume", mute ? 0 : soundVolume);
+            this.SetVolume("SFX", mute ? 0 : soundVolume);
         }
 
         public void SetVolume(string name, int value)

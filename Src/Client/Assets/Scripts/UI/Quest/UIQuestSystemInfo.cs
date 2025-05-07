@@ -1,6 +1,4 @@
 ﻿using Assets.Scripts.Models;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,17 +14,25 @@ namespace Assets.Scripts.UI.Quest
         public Text questGoldCount;
         public Text questEXPCount;
         public Button navButton;
-        int npc;
+        public UnityEngine.GameObject uiQuestRewardItem;
+        int npc = 0;
 
         public void SetQuestInfo(Models.Quest quest)
         {
+            foreach (var item in questRewards)
+            {
+                if (item.transform.childCount > 0)
+                {
+                    Destroy(item.transform.GetChild(0).gameObject);
+                }
+            }
             title.text = string.Format("[{0}]{1}", quest.Define.Type, quest.Define.Name);
             questGoldCount.text = quest.Define.RewardGold.ToString();
             questEXPCount.text = quest.Define.RewardExp.ToString();
             if (overView != null) overView.text = quest.Define.Overview;
             if (this.questDiscribution != null)
             {
-                if(quest.Info != null)
+                if(quest.Info == null)
                 {
                     this.questDiscribution.text = quest.Define.Dialog;
                 }
@@ -37,6 +43,24 @@ namespace Assets.Scripts.UI.Quest
                         this.questDiscribution.text = quest.Define.DialogFinish;
                     }
                 }
+            }
+            if (quest.Define.RewardItem1 != 0)
+            {
+                var go = Instantiate(uiQuestRewardItem, questRewards[0].transform);
+                var ui = go.GetComponent<UIQuestRewardItem>();
+                ui.SetInfo(quest.Define.RewardItem1, quest.Define.RewardItem1Count);
+            }
+            if (quest.Define.RewardItem2 != 0)
+            {
+                var go = Instantiate(uiQuestRewardItem, questRewards[1].transform);
+                var ui = go.GetComponent<UIQuestRewardItem>();
+                ui.SetInfo(quest.Define.RewardItem2, quest.Define.RewardItem2Count);
+            }
+            if (quest.Define.RewardItem3 != 0)
+            {
+                var go = Instantiate(uiQuestRewardItem, questRewards[2].transform);
+                var ui = go.GetComponent<UIQuestRewardItem>();
+                ui.SetInfo(quest.Define.RewardItem3, quest.Define.RewardItem3Count);
             }
             foreach (var fitter in GetComponentsInChildren<ContentSizeFitter>())
             {

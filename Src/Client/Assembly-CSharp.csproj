@@ -139,6 +139,7 @@
     <Compile Include="Assets\Scripts\UI\Quest\UIQuestDialog.cs" />
     <Compile Include="Assets\Scripts\UI\Quest\UIQuestDialogInfo.cs" />
     <Compile Include="Assets\Scripts\UI\Quest\UIQuestItem.cs" />
+    <Compile Include="Assets\Scripts\UI\Quest\UIQuestRewardItem.cs" />
     <Compile Include="Assets\Scripts\UI\Quest\UIQuestStatus.cs" />
     <Compile Include="Assets\Scripts\UI\Quest\UIQuestSystem.cs" />
     <Compile Include="Assets\Scripts\UI\Quest\UIQuestSystemInfo.cs" />

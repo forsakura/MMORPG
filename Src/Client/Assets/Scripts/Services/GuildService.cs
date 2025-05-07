@@ -212,6 +212,10 @@ namespace Assets.Scripts.Services
         private void OnGuildAdmin(object sender, GuildAdminResponse message)
         {
             Debug.LogFormat("OnGuildAdmin:: {0} {1}", message.Command, message.Result);
+            if (message.Command.Command == GuildAdminCommand.Kickout && message.Result == Result.Success && message.Command.Target == User.Instance.currentCharacter.Id)
+            {
+                GuildManager.Instance.Init(null);
+            }
             MessageBox.Show(string.Format("执行操作：{0} 结果： {1} {2}", message.Command.Command.ToString(), message.Result, message.Errormsg));
         }
     }

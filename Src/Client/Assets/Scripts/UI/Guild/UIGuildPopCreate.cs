@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Services;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Services;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,11 @@ namespace Assets.Scripts.UI.Guild
         private void Start()
         {
             GuildService.Instance.OnGuildCreateResult = OnGuildCreated;
+        }
+
+        private void Update()
+        {
+            InputManager.Instance.isInputMode = InputName.isFocused || InputNotice.isFocused;
         }
 
         private void OnDestroy()

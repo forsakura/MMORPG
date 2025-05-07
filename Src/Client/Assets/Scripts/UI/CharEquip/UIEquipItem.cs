@@ -2,6 +2,7 @@
 using Assets.Scripts.Models;
 using Common.Data;
 using GameServer.Managers;
+using Newtonsoft.Json.Linq;
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,9 +10,9 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.UI.CharEquip
 {
-    public class UIEquipItem : MonoBehaviour, IPointerClickHandler
+    public class UIEquipItem : ListView.ListView.ListViewItem
     {
-        UICharEquip owner;
+        UICharEquip charEquip;
         public Image backgroud;
         public Text title;
         public Text level;
@@ -20,49 +21,34 @@ namespace Assets.Scripts.UI.CharEquip
         public Image equipIcon;
         public Sprite normalBg;
         public Sprite selectedBg;
-        bool selected;
-        public bool Selected
-        {
-            get { return selected; }
-            set
-            {
-                selected = value;
-                backgroud.overrideSprite = selected ? selectedBg : normalBg;
-            }
-        }
         public int index { get; set; }
         Item item;
         bool isEquiped = false;
+        public override void OnSelected(bool selected)
+        {
+            base.OnSelected(selected);
+            backgroud.overrideSprite = selected ? selectedBg : normalBg;
+            if (selected)
+            {
+                if (isEquiped)
+                    UnEquip();
+                else
+                    DoEquip();
+            }
+        }
 
         public void SetEquip(EquipDefine define, UICharEquip owner, Item item, bool isEquiped)
         {
             this.item = item;
             this.isEquiped = isEquiped;
-            this.owner = owner;
-            if(title  != null) title.text = define.Name;
+            this.charEquip = owner;
+            if (title  != null) title.text = define.Name;
             if(category != null) category.text = define.Category.ToString();
 
             ItemDefine itemDefine = DataManager.Instance.Items[define.ID];
             if(level != null) level.text = itemDefine.Level.ToString();
             if(LimitClass != null) LimitClass.text = itemDefine.LimitClass.ToString();
             if(equipIcon != null)equipIcon.overrideSprite = Resloader.Load<Sprite>(itemDefine.Icon);
-        }
-
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            if(this.isEquiped)
-            {
-                UnEquip();
-            }
-            else
-            {
-                if(selected)
-                {
-                    DoEquip();
-                    Selected = false;
-                }
-                else Selected = true;
-            }
         }
 
         private void DoEquip()
@@ -76,11 +62,15 @@ namespace Assets.Scripts.UI.CharEquip
                     var newMsg = MessageBox.Show(string.Format("要替换掉{[0]}吗？", oldEquip.equipDefine.Name), "确认", MessageBoxType.Confirm);
                     newMsg.OnYes = () =>
                     {
-                        this.owner.DoEquip(item);
+                        this.charEquip.DoEquip(item);
                     };
                 }
                 else
-                    owner.DoEquip(item);
+                    charEquip.DoEquip(item);
+            };
+            msg.OnNo = () =>
+            {
+                owner.SelectedItem = null;
             };
         }
         private void UnEquip()
@@ -88,7 +78,11 @@ namespace Assets.Scripts.UI.CharEquip
             var msg = MessageBox.Show(string.Format("要取下装备[{0}]吗？", this.item.equipDefine.Name), "确认", MessageBoxType.Confirm);
             msg.OnYes = () =>
             {
-                owner.UnEquip(item);
+                charEquip.UnEquip(item);
+            };
+            msg.OnNo = () =>
+            {
+                owner.SelectedItem = null;
             };
         }
     }

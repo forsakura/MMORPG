@@ -62,7 +62,7 @@ namespace Assets.Scripts.UI.Friend
 
         public void OnClickFriendAdd()
         {
-            InputBox.Show("请输入好友名称或ID", "添加好友", "添加", "取消").OnSubmit += OnFriendAddSubmit;
+            InputBox.Show("请输入好友ID", "添加好友", "添加", "取消").OnSubmit += OnFriendAddSubmit;
         }
 
         private bool OnFriendAddSubmit(string inputText, out string tips)
@@ -71,8 +71,11 @@ namespace Assets.Scripts.UI.Friend
             int friendId = 0;
             string friendName = "";
             if(!int.TryParse(inputText, out friendId))
-                friendName = inputText;
-            if(friendId == User.Instance.currentCharacter.Id || friendName == User.Instance.currentCharacter.Name)
+            {
+                MessageBox.Show("请输入好友ID", "好友", MessageBoxType.Information);
+                return false;
+            }
+            if (friendId == User.Instance.currentCharacter.Id || friendName == User.Instance.currentCharacter.Name)
             {
                 tips = "不能添加自己";
                 return false;

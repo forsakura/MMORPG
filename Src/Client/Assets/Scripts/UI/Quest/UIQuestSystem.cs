@@ -43,7 +43,8 @@ namespace Assets.Scripts.UI.Quest
                 {
                     if(kv.Value.Info == null) continue;
                 }
-
+                if (kv.Value.Info != null && kv.Value.Info.Status == SkillBridge.Message.QuestStatus.Finished)
+                    continue;
                 UnityEngine.GameObject go = Instantiate(questObject, kv.Value.Define.Type == Common.Data.QuestType.MAIN ? mainList.gameObject.transform : branchList.gameObject.transform);
                 UIQuestItem ui = go.GetComponent<UIQuestItem>();
                 ui.SetQuestInfo(kv.Value);

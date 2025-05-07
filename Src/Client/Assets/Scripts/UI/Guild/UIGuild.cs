@@ -115,7 +115,7 @@ namespace Assets.Scripts.UI.Guild
                 return;
             }
 
-            if(selectedItem.member.Title == GuildTitle.VicePresident)
+            if(selectedItem.member.Title == GuildTitle.President)
             {
                 MessageBox.Show("会长身份不可动摇");
                 return;

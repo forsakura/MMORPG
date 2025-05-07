@@ -34,6 +34,16 @@ namespace GameServer.Managers
             guild.timestamp = TimeUtil.timestamp;
         }
 
+        public void RemoveGuild(Guild guild)
+        {
+            var applies = DBService.Instance.Entities.GuildApplies.Where(v => v.GuildId == guild.Data.Id).ToList();
+            DBService.Instance.Entities.GuildApplies.RemoveRange(applies);
+            DBService.Instance.Entities.Guilds.Remove(guild.Data);
+            this.IDGuilds.Remove(guild.Id);
+            GuildNames.Remove(guild.Name);
+            DBService.Instance.Save();
+        }
+
         public bool CheckNameExisted(string guildName)
         {
             return GuildNames.Contains(guildName);

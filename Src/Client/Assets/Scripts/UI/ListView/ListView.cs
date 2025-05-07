@@ -58,7 +58,7 @@ namespace Assets.Scripts.UI.ListView
             set
             {
                 selectedItem = value;
-                if (onItemSelected != null && value != null)
+                if (onItemSelected != null)
                 {
                     onItemSelected.Invoke(value);
                 }

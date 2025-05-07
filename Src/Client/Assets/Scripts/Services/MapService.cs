@@ -72,21 +72,6 @@ namespace Assets.Scripts.Services
             else Debug.LogErrorFormat("EnterMap: Map {0} not existed", mapId);
         }
 
-        internal void SendMapEntitySync(EntityEvent entityEvent, NEntity entity)
-        {
-            //Debug.LogFormat("MapEntitySyncRequest::ID: {0} POS: {1} DIR: {2} SPD: {3}", entity.Id, entity.Position, entity.Direction, entity.Speed);
-            NetMessage message = new NetMessage();
-            message.Request = new NetMessageRequest();
-            message.Request.mapEntitySync = new MapEntitySyncRequest();
-            message.Request.mapEntitySync.entitySync = new NEntitySync()
-            {
-                Entity = entity,
-                Id = entity.Id,
-                Event = entityEvent,
-            };
-            NetClient.Instance.SendMessage(message);
-        }
-
         internal void SendMapEntitySync(EntityEvent entityEvent, NEntity entityData, int param)
         {
             Debug.LogFormat("MapEntitySyncRequest::ID:{0} POS: {1} DIR: {2} SPD: {3}", entityData.Id, entityData.Position, entityData.Direction, entityData.Speed);

@@ -56,6 +56,10 @@ namespace Assets.Scripts.UI.Guild
         private void OnGuildItemSelected(ListView.ListView.ListViewItem item)
         {
             this.selectedItem = item as UIGuildListItem;
+            foreach (var item1 in mainView.items)
+            {
+                item1.Selected = item1 == this.selectedItem;
+            }
             this.UIInfo.Info = this.selectedItem.info;
         }
 

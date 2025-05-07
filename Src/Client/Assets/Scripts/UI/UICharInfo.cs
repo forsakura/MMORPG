@@ -8,9 +8,11 @@ public class UICharInfo : MonoBehaviour {
 	public Text levelText;
 	public Text nameText;
 	public Text ClassText;
-	public Image highLight;
+    public Image background;
+    public Sprite originSprite;
+    public Sprite selectedSprite;
 
-	private bool selected;
+    private bool selected;
 
 	public bool Selected
 	{
@@ -57,6 +59,6 @@ public class UICharInfo : MonoBehaviour {
 
 	void UpdateSelected()
 	{
-		highLight.gameObject.SetActive(selected);
-	}
+        background.overrideSprite = selected ? selectedSprite : originSprite;
+    }
 }

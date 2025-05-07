@@ -15,9 +15,15 @@ namespace Assets.Scripts.UI.CharEquip
         public UnityEngine.GameObject ItemEquipedPrefab;
         public Transform EquipListRoot;
         public Transform[] Slots;
+        public ListView.ListView mainView;
+        public ListView.ListView equipedView;
+        public UIEquipItem selectedEquip;
+        public UIEquipItem selectedEquiped;
 
         public void Start()
         {
+            mainView.onItemSelected += OnEquipSelected;
+            equipedView.onItemSelected += OnEquipedSelected;
             RefreshUI();
             EquipManager.Instance.OnEquipChange += RefreshUI;
         }
@@ -50,6 +56,7 @@ namespace Assets.Scripts.UI.CharEquip
                     var go = Instantiate(ItemEquipedPrefab, Slots[i]);
                     var ui = go.GetComponent<UIEquipItem>();
                     ui.SetEquip(equip.equipDefine, this, equip, true);
+                    equipedView.AddItem(ui);
                 }
             }
         }
@@ -68,6 +75,7 @@ namespace Assets.Scripts.UI.CharEquip
                     Destroy(uiEquipItem.gameObject);
                 }
             }
+            equipedView.RemoveAll();
         }
 
         /// <summary>
@@ -84,6 +92,7 @@ namespace Assets.Scripts.UI.CharEquip
                     var go = Instantiate(ItemPrefab, EquipListRoot);
                     var uiEquipItem =  go.GetComponent<UIEquipItem>();
                     uiEquipItem.SetEquip(kv.Value.equipDefine, this, kv.Value, false);
+                    mainView.AddItem(uiEquipItem);
                 }
             }
         }
@@ -98,6 +107,7 @@ namespace Assets.Scripts.UI.CharEquip
             {
                 Destroy(item.gameObject);
             }
+            mainView.RemoveAll();
         }
 
         /// <summary>
@@ -116,6 +126,27 @@ namespace Assets.Scripts.UI.CharEquip
         internal void UnEquip(Item item)
         {
             EquipManager.Instance.UnEquipItem(item);
+        }
+        void OnEquipSelected(ListView.ListView.ListViewItem item)
+        {
+            if(this.selectedEquip != null&& item == null)
+                this.selectedEquip = null;
+            else this.selectedEquip = item as UIEquipItem;
+            foreach (var equip in mainView.items)
+            {
+                equip.Selected = equip == selectedEquip;
+            }
+        }
+
+        void OnEquipedSelected(ListView.ListView.ListViewItem item)
+        {
+            if (this.selectedEquiped != null && item == null)
+                this.selectedEquiped = null;
+            else this.selectedEquiped = item as UIEquipItem;
+            foreach (var item1 in equipedView.items)
+            {
+                item1.Selected = item1 == selectedEquiped;
+            }
         }
     }
 }
